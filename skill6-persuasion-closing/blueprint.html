@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Persuasion, Closing &amp; Sales Psychology — Umrah Family</title>
+<style>
+    :root { --bg:#fff; --text:#1f2937; --heading:#1a365d; --accent:#d69e2e; --danger:#e53e3e; --line:#e5e7eb; --muted:#64748b; --soft:#f8fafc; --bridge:#f0f4f8; --lesson:#fffbeb; --whatif:#f5f0ff; }
+    * { box-sizing:border-box; } html { scroll-behavior:smooth; }
+    body { margin:0; background:var(--bg); color:var(--text); font-family:"Segoe UI", system-ui, -apple-system, sans-serif; line-height:1.65; }
+    h1,h2,h3,h4,h5 { font-family:Georgia, "Times New Roman", serif; color:var(--heading); line-height:1.3; scroll-margin-top:80px; }
+    .cover { min-height:100vh; display:grid; place-items:center; text-align:center; padding:2rem; border-bottom:1px solid var(--line); }
+    .cover h1 { font-size:clamp(2rem,4vw,3.3rem); margin:.25rem 0; }
+    .cover .subtitle { color:var(--heading); font-size:1.1rem; } .cover .meta { color:var(--muted); margin-top:1rem; }
+    .layout { display:flex; }
+    .sidebar-toggle { display:none; position:fixed; top:12px; left:12px; z-index:1200; border:1px solid var(--line); background:white; border-radius:8px; padding:.45rem .65rem; }
+    aside { position:sticky; top:0; align-self:flex-start; width:310px; max-height:100vh; overflow:auto; border-right:1px solid var(--line); background:#fff; padding:1rem; }
+    .toc-list,.toc-list ul { list-style:none; margin:0; padding-left:.8rem; } .toc-list>li { margin:.24rem 0; }
+    .toc-list a { text-decoration:none; color:#334155; font-size:.92rem; display:block; padding:.16rem .4rem; border-left:2px solid transparent; border-radius:4px; }
+    .toc-list a.active { color:var(--heading); border-left-color:var(--accent); background:#f8fafc; font-weight:600; }
+    main { flex:1; padding:1.2rem clamp(1rem,3vw,2.5rem) 3rem; } .ebook-content { max-width:980px; margin:auto; }
+    .major-section { padding:1rem 0; border-bottom:1px solid var(--line); } .section-alt { background:var(--soft); padding:1.1rem; border-radius:10px; border:1px solid #edf2f7; }
+    .table-scroll { overflow-x:auto; margin:1rem 0; } table { width:100%; border-collapse:collapse; min-width:640px; background:#fff; }
+    th,td { border:1px solid #dbe1e8; padding:.58rem .6rem; vertical-align:top; } th { background:#f8fafc; font-weight:700; }
+    .scorecard-table th::after { content:" ⇅"; color:#94a3b8; font-size:.78em; } .scorecard-table tbody tr:nth-child(even) { background:#fcfdff; }
+    .status-green { background:#e6ffed; } .status-yellow { background:#fffbea; } .status-red { background:#ffe8e8; } .status-gray { background:#f3f4f6; }
+    .warning-marker { color:var(--danger); font-weight:700; font-size:1.12em; } .controversial-heading { border-left:4px solid var(--danger); padding-left:.55rem; }
+    blockquote { margin:1rem 0; border-left:4px solid #cbd5e1; padding:.6rem .85rem; background:#f8fafc; }
+    .archetype-box { display:flex; flex-wrap:wrap; align-items:center; gap:.45rem; margin:.8rem 0 1rem; } .archetype-label { font-weight:700; color:#475569; }
+    .archetype-pill { background:#ebf4ff; border:1px solid #bfdbfe; color:#1e40af; padding:.22rem .55rem; border-radius:999px; font-size:.86rem; }
+    .lesson-box { background:var(--lesson); border-left:4px solid var(--accent); padding:.7rem .8rem; margin:.9rem 0 1.1rem; font-size:.95rem; } .lesson-title { margin:.2rem 0 .45rem; font-weight:700; }
+    .narrative-bridge { background:var(--bridge); border:1px solid #d7e0ea; border-radius:10px; padding:.75rem .9rem; margin:1rem 0; } .narrative-bridge p { font-style:italic; color:#334155; }
+    .timeline-scroll { overflow-x:auto; padding-bottom:.5rem; margin:.9rem 0 1.2rem; } .timeline-track { display:grid; grid-auto-flow:column; grid-auto-columns:minmax(180px,1fr); gap:.65rem; min-width:max-content; }
+    .timeline-col { border:1px solid #dbe4ee; border-radius:10px; background:#fff; padding:.55rem; } .timeline-year { font-weight:700; color:var(--heading); border-bottom:1px solid #e2e8f0; padding-bottom:.35rem; margin-bottom:.45rem; }
+    .timeline-event { font-size:.9rem; padding:.42rem .5rem; border-radius:7px; margin:.36rem 0; border:1px solid transparent; } .timeline-event.positive { background:#ecfdf3; border-color:#b7efcc; } .timeline-event.negative { background:#fff1f1; border-color:#f6c2c2; }
+    .pattern-chain { display:flex; flex-direction:column; gap:.4rem; margin:1rem 0 1.2rem; } .chain-card { border:1px solid #dbe4ee; border-radius:9px; background:#fff; padding:.6rem .7rem; } .chain-arrow { text-align:center; color:#64748b; font-size:1.2rem; }
+    .juxtaposition-wrap { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:.8rem; margin:.75rem 0 1rem; } .juxta-card { border-radius:10px; border:1px solid #e2e8f0; padding:.65rem .75rem; }
+    .juxta-card.positive { background:#f0fff4; border-color:#bbf7d0; } .juxta-card.positive h5 { color:#166534; } .juxta-card.negative { background:#fff1f2; border-color:#fecdd3; } .juxta-card.negative h5 { color:#991b1b; }
+    .whatif-card { background:var(--whatif); border-left:4px solid #7c3aed; padding:.65rem .8rem; border-radius:8px; margin:.6rem 0; }
+    .checklist-table tbody tr td:first-child { font-weight:700; text-align:center; width:48px; } .fake-checkbox { display:inline-block; border:1px solid #cbd5e1; border-radius:6px; padding:.14rem .38rem; background:#fff; font-family:ui-monospace,monospace; }
+    .retro-score-table td:nth-child(2) { font-weight:700; text-align:center; } .score-safe { background:#ecfdf3; color:#166534; } .score-low { background:#fffbea; color:#92400e; } .score-mid { background:#fff7ed; color:#9a3412; } .score-high { background:#fee2e2; color:#991b1b; }
+    .back-to-top { position:fixed; right:16px; bottom:18px; border:none; background:var(--heading); color:#fff; width:42px; height:42px; border-radius:999px; cursor:pointer; opacity:0; transform:translateY(8px); transition:.2s; } .back-to-top.show { opacity:1; transform:translateY(0); }
+    /* --- Overlay backdrop --- */
+    .sidebar-overlay { display:none; position:fixed; inset:0; background:rgba(0,0,0,.45); z-index:1050; opacity:0; transition:opacity .24s; }
+    .sidebar-overlay.show { display:block; opacity:1; }
+
+    /* --- Reading progress bar --- */
+    .reading-progress { position:fixed; top:0; left:0; height:3px; background:linear-gradient(90deg,var(--accent),#f59e0b); z-index:1300; width:0; transition:width .12s linear; }
+
+    /* --- Accordion for mobile profiles --- */
+    .profile-collapse-btn { display:none; }
+
+    /* ===== TABLET: ≤1024px ===== */
+    @media (max-width:1024px) {
+      .sidebar-toggle { display:block; }
+      aside { position:fixed; top:0; left:0; transform:translateX(-105%); transition:.24s; z-index:1100; width:min(82vw,320px); box-shadow:0 10px 30px rgba(2,6,23,.18); }
+      aside.open { transform:translateX(0); }
+      main { padding-top:3.8rem; }
+      .juxtaposition-wrap { grid-template-columns:1fr; }
+      .toc-list a { padding:.4rem .5rem; min-height:36px; display:flex; align-items:center; }
+    }
+
+    /* ===== MOBILE: ≤768px ===== */
+    @media (max-width:768px) {
+      body { font-size:15px; line-height:1.7; -webkit-text-size-adjust:100%; }
+      h1 { font-size:1.6rem; } h2 { font-size:1.35rem; scroll-margin-top:56px; } h3 { font-size:1.15rem; scroll-margin-top:56px; } h4 { font-size:1.05rem; }
+      main { padding:3.2rem .75rem 4rem; }
+      .cover { min-height:80vh; padding:1.5rem 1rem; }
+      .cover h1 { font-size:1.6rem; }
+      .cover .subtitle { font-size:.95rem; }
+
+      /* Tables: scroll hint + shadow */
+      .table-scroll { position:relative; }
+      .table-scroll::after { content:"← geser →"; display:block; text-align:center; font-size:.78rem; color:var(--muted); padding:.3rem 0; }
+      table { min-width:520px; font-size:.85rem; }
+      th,td { padding:.4rem .45rem; }
+
+      /* TOC touch targets */
+      .toc-list a { padding:.5rem .55rem; min-height:44px; font-size:.95rem; border-radius:6px; }
+      .toc-list>li { margin:.12rem 0; }
+
+      /* Sidebar wider on mobile */
+      aside { width:min(88vw,340px); padding:.8rem .6rem; }
+
+      /* Lesson box, bridge, whatif — full width */
+      .lesson-box, .narrative-bridge, .whatif-card { padding:.6rem .65rem; font-size:.9rem; }
+      blockquote { padding:.5rem .65rem; font-size:.93rem; }
+
+      /* Timeline: smaller columns */
+      .timeline-track { grid-auto-columns:minmax(150px,1fr); }
+      .timeline-event { font-size:.82rem; padding:.35rem .4rem; }
+
+      /* Pattern chain */
+      .chain-card { padding:.5rem .55rem; font-size:.9rem; }
+
+      /* Archetype pills */
+      .archetype-pill { font-size:.8rem; padding:.18rem .45rem; }
+
+      /* Back to top: larger touch target */
+      .back-to-top { width:48px; height:48px; font-size:1.2rem; right:12px; bottom:14px; }
+
+      /* Hamburger: larger */
+      .sidebar-toggle { padding:.55rem .75rem; font-size:1.15rem; top:8px; left:8px; }
+
+      /* Profile accordion */
+      .profile-collapse-btn { display:inline-block; background:none; border:1px solid var(--line); border-radius:6px; padding:.3rem .6rem; font-size:.82rem; color:var(--muted); cursor:pointer; margin-left:.5rem; vertical-align:middle; }
+      .profile-body.collapsed { display:none; }
+
+      /* Juxtaposition cards stacked */
+      .juxta-card { padding:.55rem .6rem; font-size:.9rem; }
+
+      /* Checklist table */
+      .checklist-table { min-width:400px; }
+
+      /* Scorecard table */
+      .scorecard-table { min-width:700px; font-size:.8rem; }
+    }
+
+    /* ===== SMALL PHONE: ≤480px ===== */
+    @media (max-width:480px) {
+      body { font-size:14px; }
+      h1 { font-size:1.4rem; } h2 { font-size:1.2rem; } h3 { font-size:1.08rem; }
+      main { padding:3rem .5rem 4rem; }
+      .cover { min-height:70vh; padding:1.2rem .8rem; }
+      .cover h1 { font-size:1.35rem; }
+      .cover .subtitle { font-size:.88rem; }
+      .section-alt { padding:.7rem; border-radius:8px; }
+      .lesson-box, .narrative-bridge, .whatif-card { margin:.6rem -.15rem; border-radius:6px; }
+      table { min-width:440px; font-size:.78rem; }
+      th,td { padding:.32rem .35rem; }
+      .timeline-track { grid-auto-columns:minmax(130px,1fr); gap:.45rem; }
+      .archetype-box { gap:.3rem; }
+      .archetype-pill { font-size:.75rem; }
+      aside { width:min(92vw,300px); }
+      .toc-list a { font-size:.9rem; }
+    }
+
+    /* ===== PRINT ===== */
+    @media print { @page { margin:2cm; } .sidebar-toggle,aside,.back-to-top,.reading-progress,.sidebar-overlay,.profile-collapse-btn { display:none !important; } main { padding:0; } .major-section,.section-alt { break-inside:avoid; page-break-inside:avoid; border:none; background:#fff; } h2 { break-before:page; page-break-before:always; } a { color:#000; text-decoration:none; } .profile-body.collapsed { display:block !important; } }
+  
+.back-home { padding:.8rem 1.5rem .2rem; }
+.back-home a { display:inline-flex; align-items:center; gap:.4rem; color:#4a5568; text-decoration:none; font-size:.9rem; font-weight:500; padding:.4rem .8rem; border-radius:6px; border:1px solid #e2e8f0; background:#fff; transition:all .15s; }
+.back-home a:hover { color:#1a365d; border-color:#1a365d; background:#f7fafc; box-shadow:0 1px 3px rgba(0,0,0,.08); }
+@media(max-width:600px) { .back-home { padding:.6rem 1rem .2rem; } .back-home a { font-size:.82rem; } }
+</style>
+</head>
+<body>
+<header class="cover">
+<div>
+<h1>Persuasion, Closing &amp; Sales Psychology — Umrah Family</h1>
+<p class="subtitle">Blueprint persuasi, handling objection, dan closing high-ticket Umrah Family untuk kanal WhatsApp dan konsultasi kantor perwakilan.</p>
+<p class="meta">Regenerasi HTML &#8226; 28 April 2026</p>
+</div>
+</header>
+<div class="reading-progress" id="readingProgress"></div>
+<div class="sidebar-overlay" id="sidebarOverlay"></div>
+<button aria-label="Buka/Tutup Daftar Isi" class="sidebar-toggle" id="sidebarToggle" type="button">&#9776;</button>
+<div class="layout">
+<aside id="sidebar"><h2>Daftar Isi</h2><ul class="toc-list">
+<li><a data-target="1-sasaran-closing-90-hari" href="#1-sasaran-closing-90-hari">1) Sasaran Closing 90 Hari</a></li>
+<li><a data-target="2-3-tens-certainty-stack-untuk-umrah-family" href="#2-3-tens-certainty-stack-untuk-umrah-family">2) 3 Tens Certainty Stack untuk Umrah Family</a></li>
+<li><a data-target="3-straight-line-yang-diadaptasi-untuk-whatsapp" href="#3-straight-line-yang-diadaptasi-untuk-whatsapp">3) Straight Line yang Diadaptasi untuk WhatsApp</a></li>
+<li><a data-target="4-4-tonalitas-untuk-konsultasi-umrah" href="#4-4-tonalitas-untuk-konsultasi-umrah">4) 4 Tonalitas untuk Konsultasi Umrah</a></li>
+<li><a data-target="5-top-10-objection-handling-scripts" href="#5-top-10-objection-handling-scripts">5) Top 10 Objection Handling Scripts</a></li>
+<li><a data-target="6-high-ticket-close-6-langkah-untuk-keputusan-keluarga" href="#6-high-ticket-close-6-langkah-untuk-keputusan-keluarga">6) High-Ticket Close 6 Langkah untuk Keputusan Keluarga</a></li>
+<li><a data-target="7-looping-teknik-untuk-nanti-dulu-tanpa-pushy" href="#7-looping-teknik-untuk-nanti-dulu-tanpa-pushy">7) Looping Teknik untuk “Nanti Dulu” Tanpa Pushy</a></li>
+<li><a data-target="8-written-persuasion-lp-wa-template-follow-up" href="#8-written-persuasion-lp-wa-template-follow-up">8) Written Persuasion: LP, WA Template, Follow-up</a></li>
+<li><a data-target="9-social-proof-framework" href="#9-social-proof-framework">9) Social Proof Framework</a></li>
+<li><a data-target="10-rencana-implementasi-faseminggu" href="#10-rencana-implementasi-faseminggu">10) Rencana Implementasi FASE/MINGGU</a></li>
+<li><a data-target="11-kpi-dashboard-mingguan-untuk-team-leader" href="#11-kpi-dashboard-mingguan-untuk-team-leader">11) KPI Dashboard Mingguan untuk Team Leader</a></li>
+<li><a data-target="12-lampiran-a-hook-persuasi-wa-18-hook" href="#12-lampiran-a-hook-persuasi-wa-18-hook">12) Lampiran A — Hook Persuasi WA (18 Hook)</a></li>
+<li><a data-target="13-lampiran-b-cta-closing-10-cta" href="#13-lampiran-b-cta-closing-10-cta">13) Lampiran B — CTA Closing (10 CTA)</a></li>
+<li><a data-target="14-lampiran-c-faq-closing-8-faq" href="#14-lampiran-c-faq-closing-8-faq">14) Lampiran C — FAQ Closing (8 FAQ)</a></li>
+</ul></aside>
+<main><nav class="back-home"><a href="../index.html">&larr; Back to Home Page</a></nav><article class="ebook-content"><section class="major-section"><h1>Persuasion, Closing &amp; Sales Psychology — Umrah Family</h1>
+<h2 id="1-sasaran-closing-90-hari">1) Sasaran Closing 90 Hari</h2>
+<p>Target closing ini kita pakai biar tim sales punya tolok ukur yang sama, dari chat awal sampai pendaftaran. Target respons awal WA &lt; 5 menit pada jam kerja 08.00-20.00. Target rasio lead ke konsultasi terjadwal: 38% dari seluruh lead masuk. Target show-up konsultasi: 35% dari lead yang sudah terjadwal. Target closing dari show-up: 17% untuk paket campuran Silver/Gold/Platinum. Target closing dari total lead: 6% untuk siklus keputusan keluarga 14-45 hari.</p>
+<h2 id="2-3-tens-certainty-stack-untuk-umrah-family">2) 3 Tens Certainty Stack untuk Umrah Family</h2>
+<p>Transfer kepastian harus dibangun berurutan biar prospek tidak berhenti di fase “nanti dulu”.</p>
+<div class="table-scroll"><table>
+<thead><tr>
+<th>Dimensi Kepastian</th>
+<th>Definisi Umrah Family</th>
+<th>Bukti Wajib</th>
+<th>Target Skor Konsultan</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Product Certainty</td>
+<td>Paket umrah berkualitas dan relevan untuk kebutuhan keluarga</td>
+<td>Tabel paket 9/12 hari, rincian layanan, alur perjalanan</td>
+<td>9/10</td>
+</tr>
+<tr>
+<td>Company Certainty</td>
+<td>Perusahaan resmi, legal, dan punya rekam jejak</td>
+<td>Izin Kemenag, 5.000+ jamaah, 50 kantor, data keberangkatan</td>
+<td>9/10</td>
+</tr>
+<tr>
+<td>Salesperson Certainty</td>
+<td>Konsultan mampu mendampingi keputusan keluarga sampai berangkat</td>
+<td>Profil konsultan cabang, SOP konsultasi, follow-up terjadwal</td>
+<td>8,5/10</td>
+</tr>
+</tbody>
+</table></div>
+<p>Skor 3 Tens dievaluasi di 2 titik. Titik evaluasi pertama: setelah chat ke-3 di WhatsApp. Titik evaluasi kedua: 10 menit sebelum sesi konsultasi selesai di kantor.</p>
+<h2 id="3-straight-line-yang-diadaptasi-untuk-whatsapp">3) Straight Line yang Diadaptasi untuk WhatsApp</h2>
+<p>Model straight line dipakai untuk jaga arah percakapan tetap ke keputusan konkret. Versi WhatsApp harus terasa konsultatif, karena siklus pembelian umrah melibatkan pasangan dan orang tua.</p>
+<h3 id="struktur-5-segmen-percakapan-wa">Struktur 5 Segmen Percakapan WA</h3>
+<ol>
+<li>Opening 60 detik: validasi kebutuhan dan konteks keluarga.</li>
+<li>Discovery 5-7 menit: gali tujuan, jadwal target, kemampuan dana, pengambil keputusan.</li>
+<li>Certainty build 5-10 menit: kirim bukti legal, bukti keberangkatan, dan perbandingan paket.</li>
+<li>Isolasi hambatan 2-4 menit: identifikasi keberatan utama dan pihak yang belum yakin.</li>
+<li>Next step 1 menit: kunci jadwal konsultasi atau kunci follow-up tanggal spesifik.</li>
+</ol>
+<h3 id="aturan-arah-percakapan">Aturan Arah Percakapan</h3>
+<p>Setiap chat harus berakhir dengan tindakan yang punya waktu jelas. Kalau prospek berhenti membalas, follow-up maksimal 24 jam dengan bukti baru. Kalau prospek minta waktu diskusi keluarga, konsultan harus kunci tanggal dan jam follow-up.</p>
+<h2 id="4-4-tonalitas-untuk-konsultasi-umrah">4) 4 Tonalitas untuk Konsultasi Umrah</h2>
+<p>Konsultan wajib ubah tonalitas sesuai fase percakapan, biar kepercayaan tumbuh alami.</p>
+<div class="table-scroll"><table>
+<thead><tr>
+<th>Tonalitas</th>
+<th>Kapan Dipakai</th>
+<th>Contoh Kalimat</th>
+<th>Batas Pemakaian</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Reasonable</td>
+<td>Saat membahas biaya, jadwal, dan opsi paket</td>
+<td>“Mari kita hitung opsi yang paling realistis untuk keluarga Bapak/Ibu.”</td>
+<td>Maksimal 40% durasi chat</td>
+</tr>
+<tr>
+<td>Caring</td>
+<td>Saat membahas kekhawatiran tertipu atau takut gagal berangkat</td>
+<td>“Kekhawatiran itu wajar, tugas kami memastikan prosesnya aman sampai berangkat.”</td>
+<td>Wajib muncul di 3 pesan awal</td>
+</tr>
+<tr>
+<td>Authoritative</td>
+<td>Saat menjelaskan legalitas, SOP, dan keputusan teknis</td>
+<td>“Untuk keamanan, kami selalu mulai dari verifikasi izin dan rincian biaya tertulis.”</td>
+<td>Dipakai setelah discovery selesai</td>
+</tr>
+<tr>
+<td>Empathetic</td>
+<td>Saat prospek menunda karena pasangan belum setuju atau dana belum siap</td>
+<td>“Kita bisa atur langkah bertahap supaya keputusan keluarga tetap tenang.”</td>
+<td>Dipakai saat objection keluarga</td>
+</tr>
+</tbody>
+</table></div>
+<p>Training tonalitas dilakukan mingguan dengan rekaman 5 chat dan 2 call per konsultan. Skor pelatihan pakai rubrik 1-5 pada 4 tonalitas dengan minimum kelulusan 16 poin.</p>
+<h2 id="5-top-10-objection-handling-scripts">5) Top 10 Objection Handling Scripts</h2>
+<p>Setiap objection dijawab dengan pola: validasi → klarifikasi → bukti → langkah lanjut.</p>
+<div class="table-scroll"><table>
+<thead><tr>
+<th>No</th>
+<th>Objection Utama</th>
+<th>Respons Inti 3 Langkah</th>
+<th>CTA Lanjut</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>“Saya takut tertipu travel.”</td>
+<td>Validasi kekhawatiran, kirim izin Kemenag, kirim data keberangkatan 12 bulan</td>
+<td>“Boleh kita jadwalkan verifikasi dokumen di kantor Rabu 14.00?”</td>
+</tr>
+<tr>
+<td>2</td>
+<td>“Harganya terasa mahal.”</td>
+<td>Tanyakan pembanding, tampilkan tabel nilai layanan, jelaskan biaya final tertulis</td>
+<td>“Saya kirim 3 opsi paket sesuai prioritas keluarga, setuju?”</td>
+</tr>
+<tr>
+<td>3</td>
+<td>“Saya belum siap dana.”</td>
+<td>Hitung rencana dana 6/9/12 bulan, petakan target bulanan, pilih paket bertahap</td>
+<td>“Kita kunci target bulan berangkat dulu, lalu saya kirim rencana nominalnya.”</td>
+</tr>
+<tr>
+<td>4</td>
+<td>“Saya sudah punya travel langganan.”</td>
+<td>Hormati pilihan, ajukan perbandingan objektif 5 poin, sorot legalitas dan rekam jejak</td>
+<td>“Boleh dibandingkan berdampingan 15 menit via call besok?”</td>
+</tr>
+<tr>
+<td>5</td>
+<td>“Saya mau cari info sendiri dulu.”</td>
+<td>Afirmasi, beri checklist 17 titik, tawarkan sesi review hasil cek mandiri</td>
+<td>“Setelah Bapak/Ibu cek, kita review bersama Kamis jam 10.00?”</td>
+</tr>
+<tr>
+<td>6</td>
+<td>“Keluarga belum setuju.”</td>
+<td>Identifikasi pihak kunci, tawarkan konsultasi bersama pasangan, kirim materi ringkas keluarga</td>
+<td>“Bisa ajak Ibu ikut sesi 30 menit agar semua pertanyaan dijawab sekaligus?”</td>
+</tr>
+<tr>
+<td>7</td>
+<td>“Nanti dulu, saya pikir-pikir.”</td>
+<td>Isolasi alasan inti, tanyakan 1 hambatan utama, kirim bukti spesifik hambatan itu</td>
+<td>“Kalau hambatan ini jelas, kita lanjut tentukan langkah berikutnya ya?”</td>
+</tr>
+<tr>
+<td>8</td>
+<td>“Takut tidak jadi berangkat.”</td>
+<td>Tunjukkan SOP keberangkatan, bukti 100% keberangkatan, timeline batch per bulan</td>
+<td>“Saya kirim timeline keberangkatan batch terdekat sekarang.”</td>
+</tr>
+<tr>
+<td>9</td>
+<td>“Saya sibuk, belum sempat ke kantor.”</td>
+<td>Tawarkan 3 slot fleksibel, sediakan sesi awal online 20 menit, konfirmasi agenda</td>
+<td>“Pilih slot Senin 19.30 atau Selasa 07.30 untuk sesi awal?”</td>
+</tr>
+<tr>
+<td>10</td>
+<td>“Saya tunggu promo dulu.”</td>
+<td>Reframe fokus dari promo ke keamanan dan kepastian, jelaskan risiko menunda slot</td>
+<td>“Boleh saya cekkan slot batch yang masih tersedia hari ini?”</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="6-high-ticket-close-6-langkah-untuk-keputusan-keluarga">6) High-Ticket Close 6 Langkah untuk Keputusan Keluarga</h2>
+<p>Penutupan high-ticket umrah harus menghormati fakta bahwa keputusan biasanya melibatkan 2-4 stakeholder.</p>
+<h3 id="langkah-1-build-trust-cepat-3-5-menit">Langkah 1 — Build Trust Cepat (3-5 menit)</h3>
+<p>Mulai dari tujuan ibadah keluarga dan target waktu berangkat. Sebutkan ringkas rekam jejak perusahaan dalam 2 angka: 5.000+ jamaah dan 50 kantor. Pastikan prospek tahu alur sesi biar tidak merasa ditekan.</p>
+<h3 id="langkah-2-qualify-mendalam-8-12-menit">Langkah 2 — Qualify Mendalam (8-12 menit)</h3>
+<p>Gali 4 area inti: prioritas kenyamanan, rentang dana, kesiapan dokumen, pihak pengambil keputusan. Kalau salah satu area belum jelas, konsultan tidak boleh langsung presentasi paket detail. Tujuan tahap ini: menghindari rekomendasi paket yang tidak relevan.</p>
+<h3 id="langkah-3-present-solusi-preskriptif-10-15-menit">Langkah 3 — Present Solusi Preskriptif (10-15 menit)</h3>
+<p>Tampilkan 3 paket dengan urutan anchor: Silver, Gold, Platinum. Tekankan alasan pemilihan dari kebutuhan keluarga, bukan dorongan harga. Gunakan 1 lembar perbandingan biar pembahasan fokus dan tidak melebar.</p>
+<h3 id="langkah-4-isolate-handle-objection-6-10-menit">Langkah 4 — Isolate &amp; Handle Objection (6-10 menit)</h3>
+<p>Tanyakan “Hambatan paling utama satu saja, apa yang perlu kami jelaskan dulu?” Catat hambatan di formulir konsultasi biar follow-up tidak mengulang dari nol. Kirim bukti yang relevan dengan hambatan, bukan brosur massal.</p>
+<h3 id="langkah-5-micro-commitment-decision">Langkah 5 — Micro-Commitment Decision</h3>
+<p>Minta komitmen kecil yang jelas, misalnya menyepakati paket kandidat atau tanggal keputusan. Micro-commitment bikin keputusan final lebih ringan untuk keluarga yang butuh diskusi internal. Contoh komitmen: “Pilih 1 dari 2 paket kandidat sebelum Jumat 20.00”.</p>
+<h3 id="langkah-6-close-atau-jadwalkan-close-ulang">Langkah 6 — Close atau Jadwalkan Close Ulang</h3>
+<p>Kalau semua pihak siap, arahkan pendaftaran di sesi yang sama dengan dokumen tertulis lengkap. Kalau belum siap, jadwalkan close ulang maksimal 72 jam dengan agenda yang disepakati. Close ulang tanpa agenda jelas dilarang karena menurunkan tingkat kepastian dan disiplin tim.</p>
+<h2 id="7-looping-teknik-untuk-nanti-dulu-tanpa-pushy">7) Looping Teknik untuk “Nanti Dulu” Tanpa Pushy</h2>
+<p>Looping dipakai saat prospek menunda tanpa alasan utama yang spesifik. Tujuan loop: memperjelas hambatan nyata, bukan memaksa keputusan instan.</p>
+<h3 id="pola-loop-4-tahap">Pola Loop 4 Tahap</h3>
+<ol>
+<li>Acknowledge: “Baik Bapak/Ibu, wajar sekali kalau keputusan ini perlu dipikirkan.”</li>
+<li>Clarify: “Supaya saya bantu tepat, satu hal utama yang masih mengganjal apa?”</li>
+<li>Resolve: kirim 1 bukti yang langsung menjawab hambatan utama.</li>
+<li>Re-close: “Dengan poin ini sudah lebih jelas, kita lanjut ke langkah berikutnya atau butuh data tambahan?”</li>
+</ol>
+<h3 id="batas-etis-looping">Batas Etis Looping</h3>
+<p>Maksimal 3 loop per sesi WhatsApp dan maksimal 4 loop per sesi tatap muka. Kalau hambatan masuk kategori fatal, konsultan berhenti menutup dan beralih ke nurturing 30 hari. Kalau hambatan cuma kurang data, konsultan wajib kirim data maksimal 15 menit setelah sesi.</p>
+<h2 id="8-written-persuasion-lp-wa-template-follow-up">8) Written Persuasion: LP, WA Template, Follow-up</h2>
+<h3 id="81-framework-copy-landing-page">8.1 Framework Copy Landing Page</h3>
+<p>Urutan LP wajib 9 blok biar narasi kepastian terbentuk dari atas ke bawah.</p>
+<ol>
+<li>Hero: janji amanah + legal + pasti berangkat dalam 1 kalimat utama.</li>
+<li>Bukti legal: izin Kemenag dan penjelasan verifikasi mandiri.</li>
+<li>Social proof angka: 5.000+ jamaah dan 50 kantor perwakilan.</li>
+<li>Pain reliever: ketakutan tertipu, biaya tersembunyi, jadwal tidak pasti.</li>
+<li>Solusi paket: perbandingan Silver/Gold/Platinum 9/12 hari.</li>
+<li>Testimoni video keluarga: minimal 3 video durasi 30-90 detik.</li>
+<li>Transparansi biaya: tabel komponen biaya dan kebijakan tanpa denda.</li>
+<li>FAQ keputusan keluarga: 6-8 pertanyaan paling umum.</li>
+<li>CTA tunggal: jadwal konsultasi kantor terdekat.</li>
+</ol>
+<h3 id="82-template-whatsapp-inti">8.2 Template WhatsApp Inti</h3>
+<p>Template WA 1 — Balasan pertama: “Assalamu’alaikum Bapak/Ibu, terima kasih sudah menghubungi Umrah Family. Saya [Nama], konsultan dari kantor [Kota]. Supaya saya rekomendasikan paket yang tepat, target berangkatnya kisaran bulan apa dan rencana berangkat berapa orang?”</p>
+<p>Template WA 2 — Build certainty legal: “Untuk keamanan, kami selalu mulai dari verifikasi legalitas. Ini izin resmi Kemenag dan data keberangkatan jamaah 12 bulan terakhir. Jika berkenan, kita lanjutkan dengan simulasi biaya yang sesuai kebutuhan keluarga Bapak/Ibu.”</p>
+<p>Template WA 3 — Ajak konsultasi kantor: “Agar keputusan lebih tenang, saya sarankan sesi 30 menit di kantor terdekat. Bapak/Ibu bisa pilih slot Selasa 10.00, Rabu 14.00, atau Jumat 16.00. Saya siapkan tabel paket dan rincian biaya final.”</p>
+<p>Template WA 4 — Follow-up setelah no response 24 jam: “Assalamu’alaikum Bapak/Ibu, izin follow-up. Saya kirim 1 video testimoni keluarga yang sebelumnya punya kekhawatiran serupa soal biaya. Jika Bapak/Ibu berkenan, kita lanjutkan diskusi sesuai waktu luang.”</p>
+<p>Template WA 5 — Menjelang close: “Terima kasih sudah berdiskusi bersama keluarga. Berdasarkan kebutuhan yang Bapak/Ibu sampaikan, paket [X] paling sesuai. Jika sudah cocok, saya bantu proses pendaftaran dengan dokumen lengkap hari ini agar slot batch tetap aman.”</p>
+<h3 id="83-skrip-follow-up-14-hari">8.3 Skrip Follow-up 14 Hari</h3>
+<div class="table-scroll"><table>
+<thead><tr>
+<th>Hari</th>
+<th>Tujuan</th>
+<th>Konten Utama</th>
+<th>Target Respons</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>H1</td>
+<td>Reconnect cepat</td>
+<td>Ringkasan kebutuhan keluarga + 1 rekomendasi paket</td>
+<td>Balasan teks sederhana</td>
+</tr>
+<tr>
+<td>H2</td>
+<td>Legal certainty</td>
+<td>Dokumen legal + cara cek mandiri</td>
+<td>Prospek membuka dokumen</td>
+</tr>
+<tr>
+<td>H4</td>
+<td>Financial clarity</td>
+<td>Simulasi biaya sesuai jumlah jamaah</td>
+<td>Prospek memilih skenario dana</td>
+</tr>
+<tr>
+<td>H6</td>
+<td>Social proof</td>
+<td>Video testimoni keluarga serupa</td>
+<td>Prospek memberi pertanyaan lanjutan</td>
+</tr>
+<tr>
+<td>H8</td>
+<td>Objection resolve</td>
+<td>Jawaban hambatan utama yang pernah disebut</td>
+<td>Prospek setuju sesi lanjut</td>
+</tr>
+<tr>
+<td>H10</td>
+<td>Decision support</td>
+<td>Ajak pasangan ikut sesi</td>
+<td>Jadwal sesi bersama</td>
+</tr>
+<tr>
+<td>H12</td>
+<td>Urgency real</td>
+<td>Info ketersediaan slot batch aktual</td>
+<td>Prospek konfirmasi minat</td>
+</tr>
+<tr>
+<td>H14</td>
+<td>Final checkpoint</td>
+<td>Ringkasan keputusan + next step</td>
+<td>Prospek pilih lanjut / tunda terjadwal</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="9-social-proof-framework">9) Social Proof Framework</h2>
+<p>Strategi social proof wajib fokus ke bukti yang paling mudah dipercaya di konteks keluarga Indonesia. Urutan kekuatan bukti: video &gt; voice note &gt; teks dengan identitas lengkap &gt; teks anonim.</p>
+<div class="table-scroll"><table>
+<thead><tr>
+<th>Jenis Bukti</th>
+<th>Format</th>
+<th>Frekuensi Publikasi</th>
+<th>Kriteria Kualitas</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Testimoni video keluarga</td>
+<td>Video 30-90 detik</td>
+<td>2 konten per minggu</td>
+<td>Menyebut kondisi awal, alasan memilih, hasil setelah berangkat</td>
+</tr>
+<tr>
+<td>Studi kasus terukur</td>
+<td>Carousel 5-7 slide</td>
+<td>1 konten per minggu</td>
+<td>Menampilkan timeline keputusan 30-60 hari</td>
+</tr>
+<tr>
+<td>Bukti operasional keberangkatan</td>
+<td>Foto batch + data tanggal</td>
+<td>1 konten per batch</td>
+<td>Menyebut jumlah jamaah dan rute maskapai</td>
+</tr>
+<tr>
+<td>Bukti legalitas</td>
+<td>Dokumen + penjelasan singkat</td>
+<td>2 konten per bulan</td>
+<td>Tautan verifikasi publik harus jelas</td>
+</tr>
+<tr>
+<td>Bukti pengalaman layanan</td>
+<td>Cuplikan proses pendampingan</td>
+<td>1 konten per minggu</td>
+<td>Menampilkan langkah layanan, bukan klaim kosong</td>
+</tr>
+</tbody>
+</table></div>
+<p>Distribusi social proof dalam funnel harus terjadwal. Top funnel menonjolkan legalitas dan rekam jejak keberangkatan. Middle funnel menonjolkan studi kasus keluarga dengan profil mirip ICP. Bottom funnel menonjolkan video keputusan final dan pengalaman layanan real.</p>
+<h2 id="10-rencana-implementasi-faseminggu">10) Rencana Implementasi FASE/MINGGU</h2>
+<div class="table-scroll"><table>
+<thead><tr>
+<th>Minggu</th>
+<th>Prioritas Eksekusi</th>
+<th>Target Metrik</th>
+<th>Keputusan Akhir Minggu</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Fase 1 / Minggu 1</td>
+<td>Audit script WA seluruh cabang dan mapping objection</td>
+<td>100 chat ter-audit</td>
+<td>Tetapkan 10 objection prioritas nasional</td>
+</tr>
+<tr>
+<td>Fase 1 / Minggu 2</td>
+<td>Training 4 tonalitas dan scoring call</td>
+<td>80% konsultan lulus skor &gt;= 16</td>
+<td>Lanjut coaching untuk 20% terbawah</td>
+</tr>
+<tr>
+<td>Fase 2 / Minggu 3</td>
+<td>Terapkan straight line WA dan template baru</td>
+<td>Response &lt; 5 menit di 85% lead</td>
+<td>Revisi opening message yang drop-off tinggi</td>
+</tr>
+<tr>
+<td>Fase 2 / Minggu 4</td>
+<td>Terapkan loop anti-pushy pada objection “nanti dulu”</td>
+<td>Re-open chat rate &gt;= 30%</td>
+<td>Pertahankan 3 loop terbaik</td>
+</tr>
+<tr>
+<td>Fase 3 / Minggu 5</td>
+<td>Integrasikan social proof tersegmentasi per ICP</td>
+<td>Booking konsultasi naik &gt;= 12%</td>
+<td>Gandakan konten bukti paling efektif</td>
+</tr>
+<tr>
+<td>Fase 3 / Minggu 6</td>
+<td>Optimasi close 6 langkah di kantor</td>
+<td>Show-up to close &gt;= 17%</td>
+<td>Standarkan form isolate objection</td>
+</tr>
+<tr>
+<td>Fase 4 / Minggu 7</td>
+<td>Jalankan follow-up 14 hari berbasis CRM</td>
+<td>Lead-to-scheduled &gt;= 38%</td>
+<td>Hapus pesan follow-up performa rendah</td>
+</tr>
+<tr>
+<td>Fase 4 / Minggu 8</td>
+<td>Review data lintas cabang dan final SOP</td>
+<td>Closing total lead &gt;= 6%</td>
+<td>Lock SOP nasional versi 1.0</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="11-kpi-dashboard-mingguan-untuk-team-leader">11) KPI Dashboard Mingguan untuk Team Leader</h2>
+<p>KPI 1: First response time median. KPI 2: Persentase lead yang menerima minimal 3 touchpoint dalam 7 hari. KPI 3: Scheduled consultation rate. KPI 4: Show-up rate kantor. KPI 5: Show-up to close rate. KPI 6: Rata-rata jumlah objection terselesaikan per sesi. KPI 7: Rasio follow-up tepat waktu sesuai SLA. KPI 8: Persentase penggunaan template script terbaru.</p>
+<p>Rapat review dilakukan setiap Senin pukul 09.00 selama 45 menit. Setiap team leader wajib bawa 3 contoh chat menang dan 2 contoh chat gagal untuk dibedah. Perbaikan mingguan harus berujung ke 1 revisi script yang langsung dipakai minggu berikutnya.</p>
+<h2 id="12-lampiran-a-hook-persuasi-wa-18-hook">12) Lampiran A — Hook Persuasi WA (18 Hook)</h2>
+<ol>
+<li>“Bapak/Ibu, supaya aman, kita mulai dari verifikasi legalitas dulu sebelum bicara paket.”</li>
+<li>“Kekhawatiran tertipu itu wajar, karena keputusan ini menyangkut ibadah keluarga.”</li>
+<li>“Saya bantu hitung skenario biaya yang paling realistis untuk kondisi keluarga Bapak/Ibu.”</li>
+<li>“Kalau target berangkatnya jelas, rencana dan proses jadi lebih ringan.”</li>
+<li>“Sebelum memutuskan, mari bandingkan 3 paket dalam satu tabel agar objektif.”</li>
+<li>“Boleh saya kirim contoh keluarga dengan kebutuhan yang mirip?”</li>
+<li>“Jika orang tua ikut berangkat, kita prioritaskan kenyamanan dan pendampingan.”</li>
+<li>“Tujuan kami bukan mempercepat pendaftaran, tetapi memastikan keputusan tepat.”</li>
+<li>“Satu data yang belum jelas biasanya jadi alasan utama keputusan tertunda.”</li>
+<li>“Kalau Bapak/Ibu berkenan, saya bantu ringkas semua poin untuk didiskusikan bersama pasangan.”</li>
+<li>“Kita pilih langkah kecil dulu, lalu keputusan besar menyusul lebih tenang.”</li>
+<li>“Setiap keluarga punya prioritas beda, jadi rekomendasi paketnya juga harus personal.”</li>
+<li>“Mari pastikan biaya final dipahami dulu agar ibadah lebih tenang.”</li>
+<li>“Saya siap bantu sampai proses berangkat, bukan hanya sampai chat ini.”</li>
+<li>“Yang paling penting bukan cepatnya daftar, tetapi tepatnya keputusan.”</li>
+<li>“Kalau masih ragu, kita pecah jadi satu pertanyaan utama dulu.”</li>
+<li>“Saya kirim bukti yang relevan dengan pertanyaan Bapak/Ibu, bukan brosur umum.”</li>
+<li>“Konsultasi 30 menit sering membuat keputusan keluarga jauh lebih jelas.”</li>
+</ol>
+<h2 id="13-lampiran-b-cta-closing-10-cta">13) Lampiran B — CTA Closing (10 CTA)</h2>
+<ol>
+<li>“Pilih slot konsultasi keluarga: Selasa 10.00, Rabu 14.00, atau Jumat 16.00.”</li>
+<li>“Kirim kota domisili agar saya arahkan ke kantor perwakilan terdekat.”</li>
+<li>“Izinkan saya kirim tabel paket yang sesuai kebutuhan Bapak/Ibu hari ini.”</li>
+<li>“Boleh saya jadwalkan sesi bersama pasangan agar semua pertanyaan terjawab sekaligus?”</li>
+<li>“Jika sudah cocok, kita lanjutkan proses pendaftaran dengan dokumen lengkap.”</li>
+<li>“Pilih 1 paket kandidat dulu, lalu kita finalkan setelah diskusi keluarga.”</li>
+<li>“Amankan jadwal konsultasi sebelum slot minggu ini penuh.”</li>
+<li>“Saya bantu review hasil cek mandiri Bapak/Ibu besok pagi.”</li>
+<li>“Mari tetapkan tanggal keputusan supaya prosesnya tetap terarah.”</li>
+<li>“Jika setuju, saya siapkan berkas awal agar proses lebih cepat.”</li>
+</ol>
+<h2 id="14-lampiran-c-faq-closing-8-faq">14) Lampiran C — FAQ Closing (8 FAQ)</h2>
+<h3 id="faq-1-kenapa-harus-konsultasi-dulu-sebelum-daftar">FAQ 1: “Kenapa harus konsultasi dulu sebelum daftar?”</h3>
+<p>Konsultasi membantu memetakan kebutuhan keluarga, bukan sekadar pilih paket dari brosur. Dalam 30-45 menit, konsultan bisa jelaskan legalitas, rincian biaya, dan opsi jadwal secara menyeluruh. Proses ini menurunkan risiko salah pilih yang biasanya muncul saat keputusan diambil terlalu cepat.</p>
+<h3 id="faq-2-kalau-saya-masih-ragu-apa-harus-langsung-daftar">FAQ 2: “Kalau saya masih ragu, apa harus langsung daftar?”</h3>
+<p>Keputusan tidak perlu dipaksakan di sesi pertama kalau ada data yang belum jelas. Konsultan akan bantu isolasi satu hambatan utama lalu beri bukti yang relevan. Setelah itu, keluarga bisa lanjut dengan jadwal keputusan yang disepakati bersama.</p>
+<h3 id="faq-3-apa-bedanya-konsultasi-whatsapp-dan-konsultasi-kantor">FAQ 3: “Apa bedanya konsultasi WhatsApp dan konsultasi kantor?”</h3>
+<p>WhatsApp efektif untuk screening awal dan pertanyaan cepat. Konsultasi kantor lebih efektif untuk verifikasi dokumen dan diskusi keluarga yang lebih lengkap. Kombinasi keduanya biasanya bikin keputusan lebih matang dan minim salah paham.</p>
+<h3 id="faq-4-bagaimana-jika-pasangan-saya-belum-sempat-ikut">FAQ 4: “Bagaimana jika pasangan saya belum sempat ikut?”</h3>
+<p>Konsultan bisa jadwalkan sesi lanjutan dengan waktu yang sesuai agenda pasangan. Materi ringkas bisa dikirim lebih dulu biar pasangan paham poin utama sebelum sesi. Pendekatan ini menjaga kualitas keputusan karena semua pihak mendapat informasi yang sama.</p>
+<h3 id="faq-5-apakah-tim-sales-akan-menekan-untuk-langsung-bayar">FAQ 5: “Apakah tim sales akan menekan untuk langsung bayar?”</h3>
+<p>SOP closing Umrah Family menekankan kejelasan data dan kecocokan paket sebelum pendaftaran. Tim sales diarahkan pakai micro-commitment, bukan tekanan keputusan instan. Kalau ada hambatan valid, proses dialihkan ke follow-up terjadwal yang lebih nyaman.</p>
+<h3 id="faq-6-jika-saya-ingin-membandingkan-dengan-travel-lain-boleh">FAQ 6: “Jika saya ingin membandingkan dengan travel lain, boleh?”</h3>
+<p>Membandingkan itu langkah sehat biar keputusan lebih objektif. Konsultan bisa bantu perbandingan berbasis 5 poin utama: legalitas, biaya final, layanan, jadwal, dan rekam jejak. Metode ini membantu keluarga melihat nilai secara utuh, bukan cuma angka harga awal.</p>
+<h3 id="faq-7-berapa-lama-biasanya-proses-dari-chat-sampai-keputusan">FAQ 7: “Berapa lama biasanya proses dari chat sampai keputusan?”</h3>
+<p>Rata-rata proses berlangsung 14-45 hari, tergantung kesiapan dana dan ketersediaan stakeholder keluarga. Tim follow-up pakai ritme 14 hari dengan materi yang disesuaikan hambatan utama. Proses terstruktur ini menjaga komunikasi tetap aktif tanpa terasa mendesak.</p>
+<h3 id="faq-8-apa-yang-terjadi-setelah-saya-menyatakan-setuju">FAQ 8: “Apa yang terjadi setelah saya menyatakan setuju?”</h3>
+<p>Setelah setuju, tim akan pandu pengisian data dan pengecekan dokumen secara runtut. Konsultan memastikan rincian biaya dan jadwal dipahami sebelum langkah administrasi jalan. Setiap tahap punya konfirmasi tertulis biar proses transparan dari awal sampai keberangkatan.</p></section></article></main>
+</div>
+<button aria-label="Kembali ke atas" class="back-to-top" id="backToTop" type="button">&#8593;</button>
+<script>
+    (function () {
+      'use strict';
+      var sidebar = document.getElementById('sidebar');
+      var overlay = document.getElementById('sidebarOverlay');
+      var toggle = document.getElementById('sidebarToggle');
+      var backBtn = document.getElementById('backToTop');
+      var progressBar = document.getElementById('readingProgress');
+      var tocLinks = Array.from(document.querySelectorAll('.toc-list a'));
+      var sections = tocLinks
+        .map(function (a) { return document.getElementById(a.dataset.target); })
+        .filter(Boolean);
+
+      /* --- Sidebar open/close with overlay --- */
+      function openSidebar() {
+        sidebar.classList.add('open');
+        overlay.classList.add('show');
+        document.body.style.overflow = 'hidden';
+      }
+      function closeSidebar() {
+        sidebar.classList.remove('open');
+        overlay.classList.remove('show');
+        document.body.style.overflow = '';
+      }
+
+      if (toggle) {
+        toggle.addEventListener('click', function () {
+          if (sidebar.classList.contains('open')) { closeSidebar(); }
+          else { openSidebar(); }
+        });
+      }
+      if (overlay) {
+        overlay.addEventListener('click', closeSidebar);
+      }
+
+      /* --- Swipe to close sidebar --- */
+      var touchStartX = 0;
+      var touchStartY = 0;
+      sidebar.addEventListener('touchstart', function (e) {
+        touchStartX = e.touches[0].clientX;
+        touchStartY = e.touches[0].clientY;
+      }, { passive: true });
+      sidebar.addEventListener('touchend', function (e) {
+        var dx = e.changedTouches[0].clientX - touchStartX;
+        var dy = Math.abs(e.changedTouches[0].clientY - touchStartY);
+        if (dx < -60 && dy < 80) { closeSidebar(); }
+      }, { passive: true });
+
+      /* --- TOC link click closes sidebar on mobile --- */
+      tocLinks.forEach(function (a) {
+        a.addEventListener('click', function () {
+          if (window.innerWidth <= 1024) { closeSidebar(); }
+        });
+      });
+
+      /* --- Scroll spy --- */
+      var observer = new IntersectionObserver(
+        function (entries) {
+          entries.forEach(function (entry) {
+            if (!entry.isIntersecting) return;
+            var id = entry.target.id;
+            tocLinks.forEach(function (link) {
+              if (link.dataset.target === id) {
+                link.classList.add('active');
+                /* Auto-scroll TOC to active item on desktop */
+                if (window.innerWidth > 1024 && sidebar.scrollHeight > sidebar.clientHeight) {
+                  link.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+                }
+              } else {
+                link.classList.remove('active');
+              }
+            });
+          });
+        },
+        { rootMargin: '-30% 0px -55% 0px', threshold: 0.1 }
+      );
+      sections.forEach(function (sec) { observer.observe(sec); });
+
+      /* --- Reading progress bar + back-to-top --- */
+      var ticking = false;
+      window.addEventListener('scroll', function () {
+        if (!ticking) {
+          window.requestAnimationFrame(function () {
+            var scrollTop = window.scrollY || document.documentElement.scrollTop;
+            var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            if (docHeight > 0) {
+              progressBar.style.width = Math.min((scrollTop / docHeight) * 100, 100) + '%';
+            }
+            if (scrollTop > 400) { backBtn.classList.add('show'); }
+            else { backBtn.classList.remove('show'); }
+            ticking = false;
+          });
+          ticking = true;
+        }
+      }, { passive: true });
+
+      backBtn.addEventListener('click', function () {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+
+      /* --- Profile accordion on mobile --- */
+      function initAccordion() {
+        var isMobile = window.innerWidth <= 768;
+        var profiles = document.querySelectorAll('h3[id]');
+        profiles.forEach(function (h3) {
+          /* Only profile headings (G0-x, numbered, S-x, T-x) */
+          var text = h3.textContent || '';
+          if (!/^(G0-|[0-9]+\.|S[0-9]|T-[0-9])/.test(text.trim())) return;
+
+          var existingBtn = h3.querySelector('.profile-collapse-btn');
+          if (!existingBtn) {
+            var btn = document.createElement('button');
+            btn.className = 'profile-collapse-btn';
+            btn.textContent = '▼';
+            btn.setAttribute('aria-label', 'Buka/tutup profil');
+            h3.appendChild(btn);
+          }
+
+          var btn = h3.querySelector('.profile-collapse-btn');
+          /* Collect siblings until next h3 or h2 */
+          var body = h3.nextElementSibling;
+          if (body && body.classList.contains('profile-body')) {
+            /* Already wrapped */
+            if (isMobile && !body.classList.contains('collapsed')) {
+              body.classList.add('collapsed');
+              btn.textContent = '▶';
+            } else if (!isMobile) {
+              body.classList.remove('collapsed');
+              btn.textContent = '▼';
+            }
+            return;
+          }
+
+          /* Wrap profile content in a div */
+          var wrapper = document.createElement('div');
+          wrapper.className = 'profile-body';
+          var sibling = h3.nextElementSibling;
+          while (sibling && sibling.tagName !== 'H3' && sibling.tagName !== 'H2') {
+            var next = sibling.nextElementSibling;
+            wrapper.appendChild(sibling);
+            sibling = next;
+          }
+          h3.parentNode.insertBefore(wrapper, sibling);
+
+          if (isMobile) {
+            wrapper.classList.add('collapsed');
+            btn.textContent = '▶';
+          }
+        });
+      }
+
+      /* Toggle accordion on click */
+      document.addEventListener('click', function (e) {
+        if (!e.target.classList.contains('profile-collapse-btn')) return;
+        var h3 = e.target.closest('h3');
+        if (!h3) return;
+        var body = h3.nextElementSibling;
+        if (body && body.classList.contains('profile-body')) {
+          body.classList.toggle('collapsed');
+          e.target.textContent = body.classList.contains('collapsed') ? '▶' : '▼';
+        }
+      });
+
+      /* Init accordion on load and resize */
+      initAccordion();
+      var resizeTimer;
+      window.addEventListener('resize', function () {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(initAccordion, 250);
+      });
+
+      /* --- Keyboard: Escape closes sidebar --- */
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && sidebar.classList.contains('open')) {
+          closeSidebar();
+        }
+      });
+    })();
+    
+</script>
+</body>
+</html>

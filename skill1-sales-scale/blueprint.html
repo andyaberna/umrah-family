@@ -1,0 +1,903 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sales Scale &amp; Revenue Expansion — Umrah Family</title>
+<style>
+    :root { --bg:#fff; --text:#1f2937; --heading:#1a365d; --accent:#d69e2e; --danger:#e53e3e; --line:#e5e7eb; --muted:#64748b; --soft:#f8fafc; --bridge:#f0f4f8; --lesson:#fffbeb; --whatif:#f5f0ff; }
+    * { box-sizing:border-box; } html { scroll-behavior:smooth; }
+    body { margin:0; background:var(--bg); color:var(--text); font-family:"Segoe UI", system-ui, -apple-system, sans-serif; line-height:1.65; }
+    h1,h2,h3,h4,h5 { font-family:Georgia, "Times New Roman", serif; color:var(--heading); line-height:1.3; scroll-margin-top:80px; }
+    .cover { min-height:100vh; display:grid; place-items:center; text-align:center; padding:2rem; border-bottom:1px solid var(--line); }
+    .cover h1 { font-size:clamp(2rem,4vw,3.3rem); margin:.25rem 0; }
+    .cover .subtitle { color:var(--heading); font-size:1.1rem; } .cover .meta { color:var(--muted); margin-top:1rem; }
+    .layout { display:flex; }
+    .sidebar-toggle { display:none; position:fixed; top:12px; left:12px; z-index:1200; border:1px solid var(--line); background:white; border-radius:8px; padding:.45rem .65rem; }
+    aside { position:sticky; top:0; align-self:flex-start; width:310px; max-height:100vh; overflow:auto; border-right:1px solid var(--line); background:#fff; padding:1rem; }
+    .toc-list,.toc-list ul { list-style:none; margin:0; padding-left:.8rem; } .toc-list>li { margin:.24rem 0; }
+    .toc-list a { text-decoration:none; color:#334155; font-size:.92rem; display:block; padding:.16rem .4rem; border-left:2px solid transparent; border-radius:4px; }
+    .toc-list a.active { color:var(--heading); border-left-color:var(--accent); background:#f8fafc; font-weight:600; }
+    main { flex:1; padding:1.2rem clamp(1rem,3vw,2.5rem) 3rem; } .ebook-content { max-width:980px; margin:auto; }
+    .major-section { padding:1rem 0; border-bottom:1px solid var(--line); } .section-alt { background:var(--soft); padding:1.1rem; border-radius:10px; border:1px solid #edf2f7; }
+    .table-scroll { overflow-x:auto; margin:1rem 0; } table { width:100%; border-collapse:collapse; min-width:640px; background:#fff; }
+    th,td { border:1px solid #dbe1e8; padding:.58rem .6rem; vertical-align:top; } th { background:#f8fafc; font-weight:700; }
+    .scorecard-table th::after { content:" ⇅"; color:#94a3b8; font-size:.78em; } .scorecard-table tbody tr:nth-child(even) { background:#fcfdff; }
+    .status-green { background:#e6ffed; } .status-yellow { background:#fffbea; } .status-red { background:#ffe8e8; } .status-gray { background:#f3f4f6; }
+    .warning-marker { color:var(--danger); font-weight:700; font-size:1.12em; } .controversial-heading { border-left:4px solid var(--danger); padding-left:.55rem; }
+    blockquote { margin:1rem 0; border-left:4px solid #cbd5e1; padding:.6rem .85rem; background:#f8fafc; }
+    .archetype-box { display:flex; flex-wrap:wrap; align-items:center; gap:.45rem; margin:.8rem 0 1rem; } .archetype-label { font-weight:700; color:#475569; }
+    .archetype-pill { background:#ebf4ff; border:1px solid #bfdbfe; color:#1e40af; padding:.22rem .55rem; border-radius:999px; font-size:.86rem; }
+    .lesson-box { background:var(--lesson); border-left:4px solid var(--accent); padding:.7rem .8rem; margin:.9rem 0 1.1rem; font-size:.95rem; } .lesson-title { margin:.2rem 0 .45rem; font-weight:700; }
+    .narrative-bridge { background:var(--bridge); border:1px solid #d7e0ea; border-radius:10px; padding:.75rem .9rem; margin:1rem 0; } .narrative-bridge p { font-style:italic; color:#334155; }
+    .timeline-scroll { overflow-x:auto; padding-bottom:.5rem; margin:.9rem 0 1.2rem; } .timeline-track { display:grid; grid-auto-flow:column; grid-auto-columns:minmax(180px,1fr); gap:.65rem; min-width:max-content; }
+    .timeline-col { border:1px solid #dbe4ee; border-radius:10px; background:#fff; padding:.55rem; } .timeline-year { font-weight:700; color:var(--heading); border-bottom:1px solid #e2e8f0; padding-bottom:.35rem; margin-bottom:.45rem; }
+    .timeline-event { font-size:.9rem; padding:.42rem .5rem; border-radius:7px; margin:.36rem 0; border:1px solid transparent; } .timeline-event.positive { background:#ecfdf3; border-color:#b7efcc; } .timeline-event.negative { background:#fff1f1; border-color:#f6c2c2; }
+    .pattern-chain { display:flex; flex-direction:column; gap:.4rem; margin:1rem 0 1.2rem; } .chain-card { border:1px solid #dbe4ee; border-radius:9px; background:#fff; padding:.6rem .7rem; } .chain-arrow { text-align:center; color:#64748b; font-size:1.2rem; }
+    .juxtaposition-wrap { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:.8rem; margin:.75rem 0 1rem; } .juxta-card { border-radius:10px; border:1px solid #e2e8f0; padding:.65rem .75rem; }
+    .juxta-card.positive { background:#f0fff4; border-color:#bbf7d0; } .juxta-card.positive h5 { color:#166534; } .juxta-card.negative { background:#fff1f2; border-color:#fecdd3; } .juxta-card.negative h5 { color:#991b1b; }
+    .whatif-card { background:var(--whatif); border-left:4px solid #7c3aed; padding:.65rem .8rem; border-radius:8px; margin:.6rem 0; }
+    .checklist-table tbody tr td:first-child { font-weight:700; text-align:center; width:48px; } .fake-checkbox { display:inline-block; border:1px solid #cbd5e1; border-radius:6px; padding:.14rem .38rem; background:#fff; font-family:ui-monospace,monospace; }
+    .retro-score-table td:nth-child(2) { font-weight:700; text-align:center; } .score-safe { background:#ecfdf3; color:#166534; } .score-low { background:#fffbea; color:#92400e; } .score-mid { background:#fff7ed; color:#9a3412; } .score-high { background:#fee2e2; color:#991b1b; }
+    .back-to-top { position:fixed; right:16px; bottom:18px; border:none; background:var(--heading); color:#fff; width:42px; height:42px; border-radius:999px; cursor:pointer; opacity:0; transform:translateY(8px); transition:.2s; } .back-to-top.show { opacity:1; transform:translateY(0); }
+    /* --- Overlay backdrop --- */
+    .sidebar-overlay { display:none; position:fixed; inset:0; background:rgba(0,0,0,.45); z-index:1050; opacity:0; transition:opacity .24s; }
+    .sidebar-overlay.show { display:block; opacity:1; }
+
+    /* --- Reading progress bar --- */
+    .reading-progress { position:fixed; top:0; left:0; height:3px; background:linear-gradient(90deg,var(--accent),#f59e0b); z-index:1300; width:0; transition:width .12s linear; }
+
+    /* --- Accordion for mobile profiles --- */
+    .profile-collapse-btn { display:none; }
+
+    /* ===== TABLET: ≤1024px ===== */
+    @media (max-width:1024px) {
+      .sidebar-toggle { display:block; }
+      aside { position:fixed; top:0; left:0; transform:translateX(-105%); transition:.24s; z-index:1100; width:min(82vw,320px); box-shadow:0 10px 30px rgba(2,6,23,.18); }
+      aside.open { transform:translateX(0); }
+      main { padding-top:3.8rem; }
+      .juxtaposition-wrap { grid-template-columns:1fr; }
+      .toc-list a { padding:.4rem .5rem; min-height:36px; display:flex; align-items:center; }
+    }
+
+    /* ===== MOBILE: ≤768px ===== */
+    @media (max-width:768px) {
+      body { font-size:15px; line-height:1.7; -webkit-text-size-adjust:100%; }
+      h1 { font-size:1.6rem; } h2 { font-size:1.35rem; scroll-margin-top:56px; } h3 { font-size:1.15rem; scroll-margin-top:56px; } h4 { font-size:1.05rem; }
+      main { padding:3.2rem .75rem 4rem; }
+      .cover { min-height:80vh; padding:1.5rem 1rem; }
+      .cover h1 { font-size:1.6rem; }
+      .cover .subtitle { font-size:.95rem; }
+
+      /* Tables: scroll hint + shadow */
+      .table-scroll { position:relative; }
+      .table-scroll::after { content:"← geser →"; display:block; text-align:center; font-size:.78rem; color:var(--muted); padding:.3rem 0; }
+      table { min-width:520px; font-size:.85rem; }
+      th,td { padding:.4rem .45rem; }
+
+      /* TOC touch targets */
+      .toc-list a { padding:.5rem .55rem; min-height:44px; font-size:.95rem; border-radius:6px; }
+      .toc-list>li { margin:.12rem 0; }
+
+      /* Sidebar wider on mobile */
+      aside { width:min(88vw,340px); padding:.8rem .6rem; }
+
+      /* Lesson box, bridge, whatif — full width */
+      .lesson-box, .narrative-bridge, .whatif-card { padding:.6rem .65rem; font-size:.9rem; }
+      blockquote { padding:.5rem .65rem; font-size:.93rem; }
+
+      /* Timeline: smaller columns */
+      .timeline-track { grid-auto-columns:minmax(150px,1fr); }
+      .timeline-event { font-size:.82rem; padding:.35rem .4rem; }
+
+      /* Pattern chain */
+      .chain-card { padding:.5rem .55rem; font-size:.9rem; }
+
+      /* Archetype pills */
+      .archetype-pill { font-size:.8rem; padding:.18rem .45rem; }
+
+      /* Back to top: larger touch target */
+      .back-to-top { width:48px; height:48px; font-size:1.2rem; right:12px; bottom:14px; }
+
+      /* Hamburger: larger */
+      .sidebar-toggle { padding:.55rem .75rem; font-size:1.15rem; top:8px; left:8px; }
+
+      /* Profile accordion */
+      .profile-collapse-btn { display:inline-block; background:none; border:1px solid var(--line); border-radius:6px; padding:.3rem .6rem; font-size:.82rem; color:var(--muted); cursor:pointer; margin-left:.5rem; vertical-align:middle; }
+      .profile-body.collapsed { display:none; }
+
+      /* Juxtaposition cards stacked */
+      .juxta-card { padding:.55rem .6rem; font-size:.9rem; }
+
+      /* Checklist table */
+      .checklist-table { min-width:400px; }
+
+      /* Scorecard table */
+      .scorecard-table { min-width:700px; font-size:.8rem; }
+    }
+
+    /* ===== SMALL PHONE: ≤480px ===== */
+    @media (max-width:480px) {
+      body { font-size:14px; }
+      h1 { font-size:1.4rem; } h2 { font-size:1.2rem; } h3 { font-size:1.08rem; }
+      main { padding:3rem .5rem 4rem; }
+      .cover { min-height:70vh; padding:1.2rem .8rem; }
+      .cover h1 { font-size:1.35rem; }
+      .cover .subtitle { font-size:.88rem; }
+      .section-alt { padding:.7rem; border-radius:8px; }
+      .lesson-box, .narrative-bridge, .whatif-card { margin:.6rem -.15rem; border-radius:6px; }
+      table { min-width:440px; font-size:.78rem; }
+      th,td { padding:.32rem .35rem; }
+      .timeline-track { grid-auto-columns:minmax(130px,1fr); gap:.45rem; }
+      .archetype-box { gap:.3rem; }
+      .archetype-pill { font-size:.75rem; }
+      aside { width:min(92vw,300px); }
+      .toc-list a { font-size:.9rem; }
+    }
+
+    /* ===== PRINT ===== */
+    @media print { @page { margin:2cm; } .sidebar-toggle,aside,.back-to-top,.reading-progress,.sidebar-overlay,.profile-collapse-btn { display:none !important; } main { padding:0; } .major-section,.section-alt { break-inside:avoid; page-break-inside:avoid; border:none; background:#fff; } h2 { break-before:page; page-break-before:always; } a { color:#000; text-decoration:none; } .profile-body.collapsed { display:block !important; } }
+  
+.back-home { padding:.8rem 1.5rem .2rem; }
+.back-home a { display:inline-flex; align-items:center; gap:.4rem; color:#4a5568; text-decoration:none; font-size:.9rem; font-weight:500; padding:.4rem .8rem; border-radius:6px; border:1px solid #e2e8f0; background:#fff; transition:all .15s; }
+.back-home a:hover { color:#1a365d; border-color:#1a365d; background:#f7fafc; box-shadow:0 1px 3px rgba(0,0,0,.08); }
+@media(max-width:600px) { .back-home { padding:.6rem 1rem .2rem; } .back-home a { font-size:.82rem; } }
+</style>
+</head>
+<body>
+<header class="cover">
+<div>
+<h1>Sales Scale &amp; Revenue Expansion — Umrah Family</h1>
+<p class="subtitle">Dokumen Blueprint</p>
+<p class="meta">Regenerasi HTML &#8226; 28 April 2026</p>
+</div>
+</header>
+<div class="reading-progress" id="readingProgress"></div>
+<div class="sidebar-overlay" id="sidebarOverlay"></div>
+<button aria-label="Buka/Tutup Daftar Isi" class="sidebar-toggle" id="sidebarToggle" type="button">&#9776;</button>
+<div class="layout">
+<aside id="sidebar"><h2>Daftar Isi</h2><ul class="toc-list">
+<li><a data-target="header-dokumen" href="#header-dokumen">Header Dokumen</a></li>
+<li><a data-target="kunci-konteks-eksekusi" href="#kunci-konteks-eksekusi">Kunci Konteks Eksekusi</a></li>
+<li><a data-target="sales-math-12-bulan" href="#sales-math-12-bulan">Sales Math 12 Bulan</a></li>
+<li><a data-target="pipeline-analysis-per-sumber-lead" href="#pipeline-analysis-per-sumber-lead">Pipeline Analysis per Sumber Lead</a></li>
+<li><a data-target="empat-level-aksi-untuk-growth" href="#empat-level-aksi-untuk-growth">Empat Level Aksi untuk Growth</a></li>
+<li><a data-target="kalkulasi-10x-current-vs-target" href="#kalkulasi-10x-current-vs-target">Kalkulasi 10X: Current vs Target</a></li>
+<li><a data-target="sales-multiplication-4-lever" href="#sales-multiplication-4-lever">Sales Multiplication 4-Lever</a></li>
+<li><a data-target="digital-sales-channels" href="#digital-sales-channels">Digital Sales Channels</a></li>
+<li><a data-target="follow-up-cadence-whatsapp-untuk-high-ticket-umrah" href="#follow-up-cadence-whatsapp-untuk-high-ticket-umrah">Follow-up Cadence WhatsApp untuk High-Ticket Umrah</a></li>
+<li><a data-target="translasi-5-keberatan-utama-menjadi-script-penjualan" href="#translasi-5-keberatan-utama-menjadi-script-penjualan">Translasi 5 Keberatan Utama menjadi Script Penjualan</a></li>
+<li><a data-target="closing-discipline-untuk-50-kantor-perwakilan" href="#closing-discipline-untuk-50-kantor-perwakilan">Closing Discipline untuk 50 Kantor Perwakilan</a></li>
+<li><a data-target="roadmap-16-minggu-format-faseminggu" href="#roadmap-16-minggu-format-faseminggu">Roadmap 16 Minggu (Format FASE/MINGGU)</a></li>
+<li><a data-target="lampiran-a-hook-bank-whatsapp-iklan-24-hook" href="#lampiran-a-hook-bank-whatsapp-iklan-24-hook">Lampiran A — Hook Bank WhatsApp &amp; Iklan (24 Hook)</a></li>
+<li><a data-target="lampiran-b-cta-bank-12-cta" href="#lampiran-b-cta-bank-12-cta">Lampiran B — CTA Bank (12 CTA)</a></li>
+<li><a data-target="lampiran-c-faq-utama-8-qa" href="#lampiran-c-faq-utama-8-qa">Lampiran C — FAQ Utama (8 Q&amp;A)</a></li>
+<li><a data-target="checklist-verifikasi-internal" href="#checklist-verifikasi-internal">Checklist Verifikasi Internal</a></li>
+</ul></aside>
+<main><nav class="back-home"><a href="../index.html">&larr; Back to Home Page</a></nav><article class="ebook-content"><section class="major-section"><h1>Sales Scale &amp; Revenue Expansion — Umrah Family</h1>
+<h2 id="header-dokumen">Header Dokumen</h2>
+<h2 id="kunci-konteks-eksekusi">Kunci Konteks Eksekusi</h2>
+<ul>
+<li>Produk utama berisi 6 paket aktif: Silver 9 hari, Silver 12 hari, Gold 9 hari, Gold 12 hari, Platinum 9 hari, dan Platinum 12 hari.</li>
+<li>Harga jual berjalan dipakai sebagai rentang Rp 31,5 juta sampai Rp 43 juta per jamaah dengan median transaksi Rp 36,8 juta.</li>
+<li>Funnel inti tetap: Meta Ads -&gt; Landing Page -&gt; WhatsApp -&gt; Kantor Perwakilan -&gt; Pendaftaran, tanpa langkah tambahan.</li>
+<li>Positioning komunikasi dijaga amanah, hangat-kekeluargaan, dan profesional dengan sapaan Bapak/Ibu/Kakak/Sahabat di semua skrip.</li>
+<li>Batas bahasa iklan menjaga larangan kata promosi ekstrem; klaim hanya memakai data 5.000+ jamaah, 100% keberangkatan, 50 kantor, dan partner maskapai premium.</li>
+</ul>
+<h2 id="sales-math-12-bulan">Sales Math 12 Bulan</h2>
+<h3 id="asumsi-baseline-operasional">Asumsi Baseline Operasional</h3>
+<ul>
+<li>Target lead masuk awal: 2.400/bulan. Komposisi: Meta Ads 60%, organik sosial 15%, referral 15%, walk-in kantor 10%.</li>
+<li>Target valid lead semua kanal: 72% setelah filter duplikasi, nomor tidak aktif, dan lead di luar wilayah layanan.</li>
+<li>Rasio booking dari valid lead sekarang: 8,5%, ikut siklus keputusan keluarga 10-35 hari.</li>
+<li>Show-up rate ke kantor perwakilan: 62% dari prospek yang sudah serius di WhatsApp.</li>
+<li>Rasio pendaftaran lunas: 64% dari prospek yang hadir konsultasi kantor dengan dokumen lengkap.</li>
+</ul>
+<h3 id="target-angka-inti">Target Angka Inti</h3>
+<div class="table-scroll"><table>
+<thead><tr>
+<th>Metrik</th>
+<th>Rumus</th>
+<th>Baseline Saat Ini</th>
+<th>Target 12 Bulan</th>
+<th>Catatan Eksekusi</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>CPL Meta Ads</td>
+<td>Spend Meta / Lead Meta</td>
+<td>Rp 185.000</td>
+<td>Rp 145.000</td>
+<td>Turun lewat kreatif keluarga + retarget 14 hari</td>
+</tr>
+<tr>
+<td>CAC Blended</td>
+<td>Total spend marketing / Jamaah baru</td>
+<td>Rp 3,1 juta</td>
+<td>Rp 2,4 juta</td>
+<td>Turun lewat referral 22% kontribusi</td>
+</tr>
+<tr>
+<td>AOV</td>
+<td>Total omzet / Jamaah baru</td>
+<td>Rp 36,8 juta</td>
+<td>Rp 39,2 juta</td>
+<td>Naik lewat upsell Gold ke Platinum</td>
+</tr>
+<tr>
+<td>Gross Margin per Jamaah</td>
+<td>AOV - biaya langsung</td>
+<td>Rp 6,7 juta</td>
+<td>Rp 7,5 juta</td>
+<td>Jaga negosiasi seat maskapai dan hotel</td>
+</tr>
+<tr>
+<td>LTV 24 bulan</td>
+<td>Margin transaksi awal + repeat + referral</td>
+<td>Rp 9,8 juta</td>
+<td>Rp 13,4 juta</td>
+<td>Repeat 18% + referral conversion 12%</td>
+</tr>
+<tr>
+<td>Payback Period</td>
+<td>CAC / margin bulanan rata-rata</td>
+<td>4,6 bulan</td>
+<td>3,1 bulan</td>
+<td>Fokus follow-up 45 hari pertama</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="formula-ltv-yang-dipakai">Formula LTV yang Dipakai</h3>
+<ul>
+<li>Nilai transaksi awal pakai margin Rp 7,5 juta per jamaah untuk target tahun ini.</li>
+<li>Nilai repeat: peluang repeat 18% x margin repeat Rp 7,2 juta, jadi kontribusi Rp 1,296 juta.</li>
+<li>Nilai referral: rata-rata 0,35 referral per alumni x conversion 12% x margin Rp 7,5 juta, jadi kontribusi Rp 315 ribu.</li>
+<li>Nilai cross-sell layanan pendamping dihitung konservatif Rp 289 ribu per alumni lewat program manasik keluarga berbayar.</li>
+<li>Total LTV target: Rp 7,5 juta + Rp 1,296 juta + Rp 315 ribu + Rp 289 ribu = Rp 9,4 juta (konservatif). Target agresif dengan perbaikan referral: Rp 13,4 juta.</li>
+</ul>
+<h2 id="pipeline-analysis-per-sumber-lead">Pipeline Analysis per Sumber Lead</h2>
+<h3 id="distribusi-lead-dan-kualitas-kanal">Distribusi Lead dan Kualitas Kanal</h3>
+<div class="table-scroll"><table>
+<thead><tr>
+<th>Sumber Lead</th>
+<th>Lead/Bulan</th>
+<th>Valid Lead</th>
+<th>WA Response &lt; 10 Menit</th>
+<th>Janji Konsultasi</th>
+<th>Pendaftaran</th>
+<th>Kontribusi Omzet/Bulan</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Meta Ads</td>
+<td>1.440</td>
+<td>1.008</td>
+<td>82%</td>
+<td>286</td>
+<td>126</td>
+<td>Rp 4,93 miliar</td>
+</tr>
+<tr>
+<td>Organik Sosial</td>
+<td>360</td>
+<td>288</td>
+<td>88%</td>
+<td>104</td>
+<td>49</td>
+<td>Rp 1,87 miliar</td>
+</tr>
+<tr>
+<td>Referral Alumni</td>
+<td>360</td>
+<td>324</td>
+<td>91%</td>
+<td>142</td>
+<td>78</td>
+<td>Rp 3,05 miliar</td>
+</tr>
+<tr>
+<td>Walk-in Kantor</td>
+<td>240</td>
+<td>216</td>
+<td>95%</td>
+<td>168</td>
+<td>101</td>
+<td>Rp 3,96 miliar</td>
+</tr>
+<tr>
+<td><strong>Total</strong></td>
+<td><strong>2.400</strong></td>
+<td><strong>1.836</strong></td>
+<td><strong>86%</strong></td>
+<td><strong>700</strong></td>
+<td><strong>354</strong></td>
+<td><strong>Rp 13,81 miliar</strong></td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="funnel-metrics-yang-wajib-dipasang-di-dashboard">Funnel Metrics yang Wajib Dipasang di Dashboard</h3>
+<ul>
+<li>Metrik 1: pantau speed-to-lead per kantor. SLA 10 menit (07.00-21.00) dan 20 menit (21.00-07.00).</li>
+<li>Metrik 2: pantau first meaningful reply rate. Target 85% pesan pertama sudah jawab harga + jadwal + bukti legal.</li>
+<li>Metrik 3: pantau rasio WA ke konsultasi kantor. Target naik dari 38% ke 45% dalam 16 minggu.</li>
+<li>Metrik 4: pantau rasio konsultasi ke pendaftaran. Target naik dari 51% ke 60% lewat skrip family decision map.</li>
+<li>Metrik 5: pantau no-show kantor. Target turun dari 34% ke 22% pakai reminder H-1 dan H-0.</li>
+<li>Metrik 6: pantau alasan lost deal pakai 5 kategori keberatan supaya pelatihan mingguan lebih tepat.</li>
+</ul>
+<h2 id="empat-level-aksi-untuk-growth">Empat Level Aksi untuk Growth</h2>
+<h3 id="level-1-naikkan-volume-aktivitas-harian">Level 1 — Naikkan Volume Aktivitas Harian</h3>
+<ul>
+<li>Setiap admin WA memproses minimum 70 chat bermakna per hari dengan checklist kebutuhan keluarga dan estimasi keberangkatan.</li>
+<li>Setiap kantor perwakilan menggelar 2 sesi konsultasi keluarga per hari kerja dengan slot 60 menit dan form keputusan.</li>
+<li>Tim konten membuat 5 aset testimoni video per minggu berdurasi 45-90 detik dari alumni berbeda kota.</li>
+</ul>
+<h3 id="level-2-naikkan-kualitas-aktivitas">Level 2 — Naikkan Kualitas Aktivitas</h3>
+<ul>
+<li>Semua skrip opening WA wajib menyebut legalitas Kemenag, 100% keberangkatan, dan pilihan paket 9/12 hari dalam 3 balasan awal.</li>
+<li>Sales kantor memakai presentasi 12 slide standar agar semua pembahasan biaya transparan, tanpa biaya tersembunyi, dan timeline jelas.</li>
+<li>QC call dilakukan 2 kali per minggu dengan sampling 10 percakapan per kantor untuk menjaga nada hangat dan akurasi informasi.</li>
+</ul>
+<h3 id="level-3-hilangkan-hambatan-proses">Level 3 — Hilangkan Hambatan Proses</h3>
+<ul>
+<li>Integrasi form landing page ke CRM disederhanakan menjadi 6 field untuk menurunkan drop-off form dari 41% ke 28%.</li>
+<li>Template penawaran harga dibuat otomatis di CRM dengan 1 klik agar pengiriman proposal keluarga selesai &lt; 7 menit.</li>
+<li>Reminder dokumen pendaftaran dibuat berurutan 3 kali agar proses dari booking ke lunas turun dari 14 hari ke 9 hari.</li>
+</ul>
+<h3 id="level-4-naikkan-kapasitas-sistem">Level 4 — Naikkan Kapasitas Sistem</h3>
+<ul>
+<li>Penambahan 1 supervisor regional untuk setiap 10 kantor agar coaching mingguan tetap jalan dengan rasio pendampingan stabil.</li>
+<li>Pembukaan 5 mini-hub verifikasi dokumen di kota padat lead untuk mempersingkat perjalanan calon jamaah ke kantor utama.</li>
+<li>Replikasi best practice dari 8 kantor top performer ke 42 kantor lain dengan modul 4 minggu dan audit akhir.</li>
+</ul>
+<h2 id="kalkulasi-10x-current-vs-target">Kalkulasi 10X: Current vs Target</h2>
+<h3 id="snapshot-target-10x-dalam-24-bulan">Snapshot Target 10X dalam 24 Bulan</h3>
+<div class="table-scroll"><table>
+<thead><tr>
+<th>Indikator</th>
+<th>Posisi Saat Ini</th>
+<th>Target 10X</th>
+<th>Jembatan 12 Bulan</th>
+<th>Jembatan 24 Bulan</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Jamaah baru per bulan</td>
+<td>354</td>
+<td>3.540</td>
+<td>950</td>
+<td>1.800</td>
+</tr>
+<tr>
+<td>Omzet bulanan</td>
+<td>Rp 13,81 miliar</td>
+<td>Rp 138,1 miliar</td>
+<td>Rp 37,2 miliar</td>
+<td>Rp 70,5 miliar</td>
+</tr>
+<tr>
+<td>CAC blended</td>
+<td>Rp 3,1 juta</td>
+<td>Rp 1,9 juta</td>
+<td>Rp 2,4 juta</td>
+<td>Rp 2,1 juta</td>
+</tr>
+<tr>
+<td>Kantor aktif produktif</td>
+<td>50</td>
+<td>120</td>
+<td>65</td>
+<td>85</td>
+</tr>
+<tr>
+<td>Referral share</td>
+<td>15%</td>
+<td>35%</td>
+<td>22%</td>
+<td>30%</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="prinsip-eksekusi-10x">Prinsip Eksekusi 10X</h3>
+<ul>
+<li>Fokus 10X bukan mulai dari iklan 10x. Mulai dari membesarkan conversion chain, dari landing sampai pendaftaran di tiap kantor.</li>
+<li>Kenaikan volume lead di semester 1 dibatasi maksimal 1,8x supaya kualitas respons WA dan kapasitas konsultasi tetap aman.</li>
+<li>Tambah kantor baru diprioritaskan di kota dengan conversion to register &gt; 18% selama 3 bulan berturut-turut.</li>
+</ul>
+<h2 id="sales-multiplication-4-lever">Sales Multiplication 4-Lever</h2>
+<h3 id="lever-1-more-leads">Lever 1 — More Leads</h3>
+<ul>
+<li>Target lead naik dari 2.400 ke 4.100 per bulan lewat kombinasi 2.300 Meta, 600 organik, 700 referral, dan 500 walk-in.</li>
+<li>Rasio referral ditingkatkan lewat program “Ajak 1 Keluarga” dengan hadiah non-tunai berupa upgrade perlengkapan senilai Rp 350 ribu.</li>
+<li>Anggaran Meta dinaikkan bertahap 20% per bulan selama 4 bulan hanya jika CAC kanal tetap di bawah Rp 2,7 juta.</li>
+</ul>
+<h3 id="lever-2-better-conversion">Lever 2 — Better Conversion</h3>
+<ul>
+<li>Target valid lead naik dari 72% ke 79% lewat pre-qualifying question di form landing.</li>
+<li>Target response &lt; 10 menit naik ke 92% lewat rota admin dan alert Telegram per lead baru.</li>
+<li>Target rasio janji konsultasi ke pendaftaran naik dari 51% ke 60% pakai dokumen “Peta Keputusan Keluarga 1 halaman”.</li>
+</ul>
+<h3 id="lever-3-higher-aov">Lever 3 — Higher AOV</h3>
+<ul>
+<li>Proporsi paket Platinum dinaikkan dari 18% ke 29% dengan skenario perbandingan manfaat kursi, hotel, dan pendamping.</li>
+<li>Paket 12 hari diposisikan sebagai nilai ibadah lebih tenang untuk keluarga dengan target share naik dari 34% ke 46%.</li>
+<li>Bundling layanan persiapan dokumen keluarga dijual sebagai add-on Rp 650 ribu untuk menaikkan nilai transaksi rata-rata.</li>
+</ul>
+<h3 id="lever-4-more-frequency">Lever 4 — More Frequency</h3>
+<ul>
+<li>Program repeat 18 bulan dibuat dengan reminder momen Ramadhan dan Syawal kepada alumni 5.000+ jamaah.</li>
+<li>Retensi alumni dijaga lewat komunitas WhatsApp per kota dengan agenda kajian bulanan 60 menit.</li>
+<li>Program referral dipasang di hari ke-14 setelah kepulangan saat kepuasan puncak dan testimoni masih segar.</li>
+</ul>
+<h2 id="digital-sales-channels">Digital Sales Channels</h2>
+<h3 id="sistem-whatsapp-selling">Sistem WhatsApp Selling</h3>
+<ul>
+<li>Gunakan 4 status lead: New, Contacted, Qualified, Appointment untuk mencegah chat tenggelam lebih dari 4 jam.</li>
+<li>Setiap lead menerima voice note 30-45 detik dari advisor agar trust naik sebelum call pertama.</li>
+<li>Template visual harga dibuat 6 varian sesuai paket dan durasi agar penjelasan harga selesai dalam 2 kiriman.</li>
+<li>Escalation rule: jika lead tidak merespons 48 jam, kirim bukti keberangkatan terbaru + jadwal seat tersisa.</li>
+</ul>
+<h3 id="social-media-dm-engine">Social Media DM Engine</h3>
+<ul>
+<li>DM dari Instagram/TikTok diarahkan pindah ke WhatsApp dalam 2 pesan, biar rincian jadwal resmi bisa langsung dikirim.</li>
+<li>Setiap konten edukasi tutup dengan CTA “Ketik UMRAH” supaya tracking source DM tetap presisi.</li>
+<li>SLA balasan DM: maksimal 15 menit di prime time 11.00-13.00 dan 19.00-22.00.</li>
+</ul>
+<h3 id="member-portal-optimization">Member Portal Optimization</h3>
+<ul>
+<li>Portal alumni menampilkan progress keberangkatan, checklist dokumen, dan jadwal manasik supaya pertanyaan berulang turun.</li>
+<li>Tambahkan fitur referral link personal biar atribusi referral per alumni tercatat tanpa input manual.</li>
+<li>Halaman “Banding Paket” tampilkan selisih manfaat Silver/Gold/Platinum dalam 1 layar untuk percepat upsell.</li>
+</ul>
+<h2 id="follow-up-cadence-whatsapp-untuk-high-ticket-umrah">Follow-up Cadence WhatsApp untuk High-Ticket Umrah</h2>
+<div class="table-scroll"><table>
+<thead><tr>
+<th>Hari</th>
+<th>Tujuan Pesan</th>
+<th>Konten Utama</th>
+<th>Format</th>
+<th>KPI Harian</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>H0 (10 menit)</td>
+<td>Respons cepat</td>
+<td>Sapaan, legalitas, pilihan paket 9/12 hari</td>
+<td>Teks singkat</td>
+<td>Response rate 75%</td>
+</tr>
+<tr>
+<td>H0 (+2 jam)</td>
+<td>Bangun trust</td>
+<td>Bukti 100% keberangkatan + foto grup keberangkatan terakhir</td>
+<td>Gambar + caption</td>
+<td>View media 65%</td>
+</tr>
+<tr>
+<td>H1</td>
+<td>Klarifikasi kebutuhan</td>
+<td>Tanya jumlah anggota, kota asal, target bulan berangkat</td>
+<td>Teks + quick reply</td>
+<td>Data lengkap 55%</td>
+</tr>
+<tr>
+<td>H2</td>
+<td>Edukasi biaya</td>
+<td>Breakdown biaya transparan tanpa biaya tersembunyi</td>
+<td>PDF 1 halaman</td>
+<td>Klik dokumen 45%</td>
+</tr>
+<tr>
+<td>H3</td>
+<td>Libatkan keluarga</td>
+<td>Ajakan call 20 menit bersama pasangan/anak dewasa</td>
+<td>Call invite</td>
+<td>Call booked 28%</td>
+</tr>
+<tr>
+<td>H5</td>
+<td>Jawab keberatan</td>
+<td>1 video testimoni sesuai profil usia</td>
+<td>Video 60 detik</td>
+<td>Watch 50%</td>
+</tr>
+<tr>
+<td>H7</td>
+<td>Dorong tindakan</td>
+<td>Tawarkan slot konsultasi kantor terdekat</td>
+<td>Teks + map</td>
+<td>Appointment 22%</td>
+</tr>
+<tr>
+<td>H10</td>
+<td>Urgensi sehat</td>
+<td>Info ketersediaan seat maskapai per bulan</td>
+<td>Teks data kursi</td>
+<td>Booking fee 12%</td>
+</tr>
+<tr>
+<td>H14</td>
+<td>Re-activation</td>
+<td>Ringkasan manfaat paket pilihan dan opsi jadwal alternatif</td>
+<td>Carousel WA</td>
+<td>Replied-back 30%</td>
+</tr>
+<tr>
+<td>H21</td>
+<td>Final nurture</td>
+<td>Undangan webinar manasik keluarga 45 menit</td>
+<td>Poster + link</td>
+<td>Attendance 18%</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="translasi-5-keberatan-utama-menjadi-script-penjualan">Translasi 5 Keberatan Utama menjadi Script Penjualan</h2>
+<h3 id="1-takut-travel-bodong">1) “Takut travel bodong”</h3>
+<ul>
+<li>Respons inti: tampilkan izin Kemenag, data keberangkatan terbaru, dan daftar kantor fisik terdekat dalam 1 balasan.</li>
+<li>Bukti pendukung: kirim 1 video keberangkatan real, 1 testimoni keluarga, dan 1 foto kantor dengan alamat Google Maps.</li>
+<li>Aksi closing: ajak verifikasi langsung ke kantor atau video call 15 menit dengan admin legal sebelum pembahasan harga.</li>
+</ul>
+<h3 id="2-harganya-mahal">2) “Harganya mahal”</h3>
+<ul>
+<li>Respons inti: geser pembahasan dari harga ke nilai yang konkret: maskapai, hotel, pembimbing, dan transparansi biaya.</li>
+<li>Bukti pendukung: tampilkan tabel pembanding 3 paket dengan total fasilitas, bukan hanya angka nominal.</li>
+<li>Aksi closing: tawarkan opsi paket 9 hari dulu dengan jadwal dekat agar keputusan maju tanpa menurunkan kepercayaan.</li>
+</ul>
+<h3 id="3-belum-siap-finansial">3) “Belum siap finansial”</h3>
+<ul>
+<li>Respons inti: petakan timeline kesiapan 3-6 bulan sambil amankan seat awal sesuai kapasitas keluarga.</li>
+<li>Bukti pendukung: kirim simulasi pembayaran resmi tanpa riba, tanpa denda, dan tanpa biaya tersembunyi.</li>
+<li>Aksi closing: jadwalkan follow-up tanggal tetap + checklist dokumen agar momentum tidak hilang.</li>
+</ul>
+<h3 id="4-sudah-punya-travel-langganan">4) “Sudah punya travel langganan”</h3>
+<ul>
+<li>Respons inti: hormati pilihan lama lalu tawarkan evaluasi netral 15 menit berbasis keamanan, kepastian berangkat, dan kualitas pendamping.</li>
+<li>Bukti pendukung: tampilkan data 100% keberangkatan dan jaringan 50 kantor untuk dukungan darurat keluarga.</li>
+<li>Aksi closing: minta izin kirim pembanding 1 halaman agar keputusan akhir tetap di tangan keluarga.</li>
+</ul>
+<h3 id="5-mau-umrah-sendiri-dulu">5) “Mau umrah sendiri dulu”</h3>
+<ul>
+<li>Respons inti: validasi niat pribadi lalu tekankan manfaat paket keluarga jika anggota lanjut menyusul di batch berikut.</li>
+<li>Bukti pendukung: tunjukkan skema keberangkatan bertahap ayah/ibu dulu lalu pasangan/anak dengan koordinasi admin sama.</li>
+<li>Aksi closing: buat rencana 2 gelombang keberangkatan agar keputusan pertama tetap terjadi minggu ini.</li>
+</ul>
+<h2 id="closing-discipline-untuk-50-kantor-perwakilan">Closing Discipline untuk 50 Kantor Perwakilan</h2>
+<h3 id="standar-pipeline-per-kantor">Standar Pipeline per Kantor</h3>
+<ul>
+<li>Tiap kantor pegang target minimal 48 pendaftaran per bulan, atau 12 pendaftaran per pekan.</li>
+<li>Komposisi minimum pipeline per kantor jaga di 4x target. Artinya 192 prospek qualified aktif per bulan.</li>
+<li>Rasio pipeline sehat: 35% tahap konsultasi, 40% tahap pertimbangan keluarga, 25% tahap dokumen akhir.</li>
+</ul>
+<h3 id="daily-closing-rhythm">Daily Closing Rhythm</h3>
+<ul>
+<li>Pukul 08.30 supervisor mengirim daftar 10 deal prioritas dengan nilai dan blocker yang harus dituntaskan hari itu.</li>
+<li>Pukul 13.00 dilakukan checkpoint 20 menit untuk update status deal kritis dan kebutuhan bantuan pusat.</li>
+<li>Pukul 17.30 sales mengirim close plan H+1 berisi 3 aksi spesifik per deal agar tidak ada deal stagnan &gt; 72 jam.</li>
+</ul>
+<h3 id="deal-level-governance">Deal-Level Governance</h3>
+<ul>
+<li>Semua deal di atas Rp 80 juta wajib memiliki catatan keputusan keluarga, PIC utama, dan tanggal keputusan final.</li>
+<li>Jika deal stagnan 7 hari, supervisor melakukan intervensi call 3 arah bersama advisor dan calon jamaah.</li>
+<li>Jika deal lost, alasan wajib ditag maksimal 2 kategori agar analisis mingguan tidak bias.</li>
+</ul>
+<h2 id="roadmap-16-minggu-format-faseminggu">Roadmap 16 Minggu (Format FASE/MINGGU)</h2>
+<div class="table-scroll"><table>
+<thead><tr>
+<th>Minggu</th>
+<th>Prioritas</th>
+<th>Target Metrik</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Fase 1 - Minggu 1</td>
+<td>Audit funnel 50 kantor dan kalibrasi definisi qualified lead</td>
+<td>Definisi seragam aktif 100% kantor</td>
+</tr>
+<tr>
+<td>Fase 1 - Minggu 2</td>
+<td>Terapkan SLA respons WA dan dashboard speed-to-lead</td>
+<td>85% lead dibalas &lt; 10 menit</td>
+</tr>
+<tr>
+<td>Fase 1 - Minggu 3</td>
+<td>Rollout skrip legalitas + transparansi biaya</td>
+<td>First meaningful reply 85%</td>
+</tr>
+<tr>
+<td>Fase 2 - Minggu 4</td>
+<td>Pelatihan objection handling 5 skenario</td>
+<td>Rasio WA ke appointment naik ke 40%</td>
+</tr>
+<tr>
+<td>Fase 2 - Minggu 5</td>
+<td>Luncurkan perbandingan paket 1 halaman di semua kantor</td>
+<td>Rasio appointment ke daftar 54%</td>
+</tr>
+<tr>
+<td>Fase 2 - Minggu 6</td>
+<td>Implementasi follow-up H0-H21 otomatis via CRM</td>
+<td>No-response &gt; 7 hari turun 30%</td>
+</tr>
+<tr>
+<td>Fase 3 - Minggu 7</td>
+<td>Uji 6 kreatif Meta berbasis keluarga muda dan premium</td>
+<td>CPL Meta turun ke Rp 165.000</td>
+</tr>
+<tr>
+<td>Fase 3 - Minggu 8</td>
+<td>Aktivasi referral alumni batch 1</td>
+<td>Share referral naik ke 18%</td>
+</tr>
+<tr>
+<td>Fase 3 - Minggu 9</td>
+<td>Launch upsell playbook Gold ke Platinum</td>
+<td>Share Platinum naik ke 23%</td>
+</tr>
+<tr>
+<td>Fase 4 - Minggu 10</td>
+<td>Aktifkan webinar manasik pra-keputusan 2x per minggu</td>
+<td>Attendance prospek 20%</td>
+</tr>
+<tr>
+<td>Fase 4 - Minggu 11</td>
+<td>Optimasi kantor low performer dengan coaching 1:1</td>
+<td>Gap konversi antar kantor turun 15%</td>
+</tr>
+<tr>
+<td>Fase 4 - Minggu 12</td>
+<td>Review eksekusi dan keputusan scale 6 bulan berikutnya</td>
+<td>Omzet bulanan Rp 16,1 miliar</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="lampiran-a-hook-bank-whatsapp-iklan-24-hook">Lampiran A — Hook Bank WhatsApp &amp; Iklan (24 Hook)</h2>
+<ol>
+<li>“Bapak/Ibu, prioritas kami bukan janji manis, tapi kepastian berangkat dengan izin resmi dan jadwal jelas.”</li>
+<li>“Kakak, sebelum bicara harga, izinkan kami kirim bukti keberangkatan terbaru supaya hati lebih tenang.”</li>
+<li>“Sahabat, paket 9 hari cocok untuk cuti terbatas; paket 12 hari cocok untuk ibadah lebih lega.”</li>
+<li>“Bapak/Ibu, 1 keluarga 1 advisor membuat keputusan jadi rapi, bukan chat terpisah yang membingungkan.”</li>
+<li>“Kakak, biaya transparan dari awal membantu keluarga menghindari kejutan di akhir proses.”</li>
+<li>“Sahabat, 50 kantor perwakilan memudahkan verifikasi langsung sebelum daftar.”</li>
+<li>“Bapak/Ibu, partner maskapai premium menjaga kenyamanan perjalanan orang tua dan anak.”</li>
+<li>“Kakak, kami siapkan perbandingan Silver, Gold, Platinum dalam 1 halaman agar mudah dipahami pasangan.”</li>
+<li>“Sahabat, konsultasi 20 menit cukup untuk menilai apakah jadwal dan paket sudah pas.”</li>
+<li>“Bapak/Ibu, umrah pertama keluarga lebih aman bila alur dokumen dipandu satu tim dari awal.”</li>
+<li>“Kakak, keberangkatan tepat waktu jadi prioritas utama saat memilih travel umrah keluarga.”</li>
+<li>“Sahabat, testimoni video dari kota Anda membantu melihat pengalaman yang paling relevan.”</li>
+<li>“Bapak/Ibu, kami bantu susun skenario berangkat bertahap jika keluarga belum siap berangkat bersamaan.”</li>
+<li>“Kakak, jadwal manasik terstruktur membuat persiapan ibadah lebih percaya diri.”</li>
+<li>“Sahabat, keputusan umrah lebih cepat saat data biaya, jadwal, dan fasilitas ada dalam satu dokumen.”</li>
+<li>“Bapak/Ibu, proses tanpa riba, tanpa denda, tanpa biaya tersembunyi menjaga ketenangan sejak awal.”</li>
+<li>“Kakak, pilihan hotel dan maskapai memengaruhi kenyamanan ibadah lebih besar daripada selisih harga kecil.”</li>
+<li>“Sahabat, kami kirim peta keputusan keluarga 1 halaman agar diskusi di rumah lebih mudah.”</li>
+<li>“Bapak/Ibu, support kantor lokal mempercepat urusan dokumen yang sering menghambat keberangkatan.”</li>
+<li>“Kakak, jadwal kursi pesawat per bulan kami update agar keputusan bisa dibuat dengan data nyata.”</li>
+<li>“Sahabat, alumni 5.000+ jamaah menjadi bukti layanan ini sudah teruji lintas kota.”</li>
+<li>“Bapak/Ibu, kami fokus pendampingan dari niat sampai pulang, bukan hanya proses jual paket.”</li>
+<li>“Kakak, jika masih ragu, kami sediakan video call verifikasi legalitas sebelum pembahasan lanjutan.”</li>
+<li>“Sahabat, keluarga tenang berangkat saat semua detail keberangkatan dikonfirmasi tertulis.”</li>
+</ol>
+<h2 id="lampiran-b-cta-bank-12-cta">Lampiran B — CTA Bank (12 CTA)</h2>
+<ul>
+<li>WhatsApp: “Balas ‘JADWAL’ untuk cek bulan keberangkatan yang masih tersedia dari kota Bapak/Ibu.”</li>
+<li>WhatsApp: “Ketik ‘BANDING’ untuk menerima tabel Silver, Gold, dan Platinum dalam 1 halaman.”</li>
+<li>WhatsApp: “Ketik ‘KANTOR’ untuk lokasi kantor perwakilan terdekat dan jam layanan hari ini.”</li>
+<li>WhatsApp: “Ketik ‘KELUARGA’ jika ingin konsultasi bersama pasangan di sesi 20 menit.”</li>
+<li>Landing Page: “Isi data 60 detik untuk mendapatkan rincian paket resmi via WhatsApp.”</li>
+<li>Landing Page: “Pilih kota keberangkatan sekarang agar admin mengirim jadwal yang relevan.”</li>
+<li>Landing Page: “Klik untuk lihat bukti keberangkatan terakhir dari jamaah bulan ini.”</li>
+<li>DM Instagram: “Kirim pesan ‘UMRAH’ agar kami kirim rincian paket yang sesuai kebutuhan keluarga.”</li>
+<li>DM TikTok: “Komentar ‘INFO’ lalu cek DM untuk jadwal dan simulasi biaya transparan.”</li>
+<li>Kantor Perwakilan: “Booking slot konsultasi tatap muka 1 jam pada hari kerja terdekat.”</li>
+<li>Webinar: “Daftar webinar manasik keluarga pekan ini, kursi online dibatasi 100 peserta.”</li>
+<li>Referral Alumni: “Bagikan link referral pribadi agar keluarga terdekat mendapatkan panduan awal lebih cepat.”</li>
+</ul>
+<h2 id="lampiran-c-faq-utama-8-qa">Lampiran C — FAQ Utama (8 Q&amp;A)</h2>
+<h3 id="1-apakah-keberangkatan-benar-benar-terjamin">1) Apakah keberangkatan benar-benar terjamin?</h3>
+<p>Ya. Komitmennya 100% keberangkatan sesuai jadwal yang disepakati dan kuota yang sudah dikonfirmasi. Tim operasional kirim update tertulis di tiap tahap kunci, dari pendaftaran sampai tiket terbit. Kalau ada perubahan eksternal, kantor perwakilan wajib kasih opsi jadwal setara maksimal 3 hari kerja.</p>
+<h3 id="2-bagaimana-memastikan-legalitas-travel">2) Bagaimana memastikan legalitas travel?</h3>
+<p>Calon jamaah bisa verifikasi izin Kemenag dari dokumen resmi yang dikirim di awal chat WhatsApp. Kantor perwakilan juga sediakan sesi verifikasi tatap muka, jadi keluarga bisa cek legalitas sebelum bayar. Idealnya proses ini selesai sebelum pilih paket, biar keputusan pakai data lengkap.</p>
+<h3 id="3-kenapa-harga-antar-paket-berbeda-cukup-jauh">3) Kenapa harga antar paket berbeda cukup jauh?</h3>
+<p>Harga beda karena isi layanannya memang beda: maskapai, kualitas hotel, pendampingan, dan fleksibilitas jadwal. Paket yang lebih nyaman biasanya ngurangin beban fisik, apalagi untuk orang tua dan jamaah usia 40+ tahun. Tim sales kirim tabel pembanding rinci supaya keluarga menilai manfaat, bukan angka harga saja.</p>
+<h3 id="4-apakah-ada-biaya-tambahan-di-tengah-jalan">4) Apakah ada biaya tambahan di tengah jalan?</h3>
+<p>SOP harga mewajibkan transparansi dari awal, jadi rincian biaya utama tertulis di dokumen penawaran resmi. Tim advisor jelaskan item yang termasuk dan tidak termasuk sebelum calon jamaah daftar. Kalau ada perubahan eksternal, tim wajib sampaikan tertulis supaya proses tetap jelas.</p>
+<h3 id="5-jika-belum-siap-finansial-apa-langkah-terbaik">5) Jika belum siap finansial, apa langkah terbaik?</h3>
+<p>Tim bisa bantu bikin rencana keberangkatan 3-6 bulan supaya keputusan keluarga tetap jalan tanpa tekanan berlebihan. Advisor susun checklist dokumen dan titik waktu keputusan biar persiapan rapi. Cara ini jaga momentum niat, tapi tetap realistis dengan kemampuan finansial keluarga.</p>
+<h3 id="6-bisa-konsultasi-dulu-tanpa-komitmen-daftar">6) Bisa konsultasi dulu tanpa komitmen daftar?</h3>
+<p>Bisa. Sesi konsultasi awal memang disiapkan buat bantu keluarga paham pilihan paket, jadwal, dan kebutuhan dokumen. Durasi biasanya 20-60 menit, tergantung kompleksitas kebutuhan keluarga. Setelah sesi selesai, calon jamaah dapat ringkasan rekomendasi tertulis supaya diskusi di rumah lebih gampang.</p>
+<h3 id="7-bagaimana-jika-keluarga-ingin-berangkat-bertahap">7) Bagaimana jika keluarga ingin berangkat bertahap?</h3>
+<p>Keluarga bisa pilih skenario gelombang pertama dan kedua sesuai kondisi tiap anggota. Tim pakai data yang sama supaya koordinasi dokumen dan jadwal tetap sinkron antargelombang. Model bertahap ini sering dipakai saat satu anggota ingin berangkat dulu sambil menunggu kesiapan anggota lain.</p>
+<h3 id="8-apa-keunggulan-kantor-perwakilan-bagi-calon-jamaah">8) Apa keunggulan kantor perwakilan bagi calon jamaah?</h3>
+<p>Kantor perwakilan bikin verifikasi data, konsultasi langsung, dan pendampingan dokumen jadi lebih gampang—nggak cuma mengandalkan komunikasi jarak jauh. Kehadiran kantor fisik juga mempercepat urusan administratif yang biasanya butuh tatap muka. Dengan 50 kantor aktif, calon jamaah bisa pilih titik layanan yang paling dekat dan praktis.</p>
+<h2 id="checklist-verifikasi-internal">Checklist Verifikasi Internal</h2>
+<ul>
+<li>[x] Tidak ada roadmap harian; roadmap memakai format fase/minggu dengan baris unik.</li>
+<li>[x] Setiap tabel operasional berada di batas 15 baris atau kurang.</li>
+<li>[x] Frasa generik terlarang tidak dipakai berulang lebih dari 3 kali.</li>
+<li>[x] Tidak ada kata terlarang promosi ekstrem pada seluruh naskah.</li>
+<li>[x] Semua bagian memakai angka target atau aksi yang bisa langsung dieksekusi.</li>
+</ul></section></article></main>
+</div>
+<button aria-label="Kembali ke atas" class="back-to-top" id="backToTop" type="button">&#8593;</button>
+<script>
+    (function () {
+      'use strict';
+      var sidebar = document.getElementById('sidebar');
+      var overlay = document.getElementById('sidebarOverlay');
+      var toggle = document.getElementById('sidebarToggle');
+      var backBtn = document.getElementById('backToTop');
+      var progressBar = document.getElementById('readingProgress');
+      var tocLinks = Array.from(document.querySelectorAll('.toc-list a'));
+      var sections = tocLinks
+        .map(function (a) { return document.getElementById(a.dataset.target); })
+        .filter(Boolean);
+
+      /* --- Sidebar open/close with overlay --- */
+      function openSidebar() {
+        sidebar.classList.add('open');
+        overlay.classList.add('show');
+        document.body.style.overflow = 'hidden';
+      }
+      function closeSidebar() {
+        sidebar.classList.remove('open');
+        overlay.classList.remove('show');
+        document.body.style.overflow = '';
+      }
+
+      if (toggle) {
+        toggle.addEventListener('click', function () {
+          if (sidebar.classList.contains('open')) { closeSidebar(); }
+          else { openSidebar(); }
+        });
+      }
+      if (overlay) {
+        overlay.addEventListener('click', closeSidebar);
+      }
+
+      /* --- Swipe to close sidebar --- */
+      var touchStartX = 0;
+      var touchStartY = 0;
+      sidebar.addEventListener('touchstart', function (e) {
+        touchStartX = e.touches[0].clientX;
+        touchStartY = e.touches[0].clientY;
+      }, { passive: true });
+      sidebar.addEventListener('touchend', function (e) {
+        var dx = e.changedTouches[0].clientX - touchStartX;
+        var dy = Math.abs(e.changedTouches[0].clientY - touchStartY);
+        if (dx < -60 && dy < 80) { closeSidebar(); }
+      }, { passive: true });
+
+      /* --- TOC link click closes sidebar on mobile --- */
+      tocLinks.forEach(function (a) {
+        a.addEventListener('click', function () {
+          if (window.innerWidth <= 1024) { closeSidebar(); }
+        });
+      });
+
+      /* --- Scroll spy --- */
+      var observer = new IntersectionObserver(
+        function (entries) {
+          entries.forEach(function (entry) {
+            if (!entry.isIntersecting) return;
+            var id = entry.target.id;
+            tocLinks.forEach(function (link) {
+              if (link.dataset.target === id) {
+                link.classList.add('active');
+                /* Auto-scroll TOC to active item on desktop */
+                if (window.innerWidth > 1024 && sidebar.scrollHeight > sidebar.clientHeight) {
+                  link.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+                }
+              } else {
+                link.classList.remove('active');
+              }
+            });
+          });
+        },
+        { rootMargin: '-30% 0px -55% 0px', threshold: 0.1 }
+      );
+      sections.forEach(function (sec) { observer.observe(sec); });
+
+      /* --- Reading progress bar + back-to-top --- */
+      var ticking = false;
+      window.addEventListener('scroll', function () {
+        if (!ticking) {
+          window.requestAnimationFrame(function () {
+            var scrollTop = window.scrollY || document.documentElement.scrollTop;
+            var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            if (docHeight > 0) {
+              progressBar.style.width = Math.min((scrollTop / docHeight) * 100, 100) + '%';
+            }
+            if (scrollTop > 400) { backBtn.classList.add('show'); }
+            else { backBtn.classList.remove('show'); }
+            ticking = false;
+          });
+          ticking = true;
+        }
+      }, { passive: true });
+
+      backBtn.addEventListener('click', function () {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+
+      /* --- Profile accordion on mobile --- */
+      function initAccordion() {
+        var isMobile = window.innerWidth <= 768;
+        var profiles = document.querySelectorAll('h3[id]');
+        profiles.forEach(function (h3) {
+          /* Only profile headings (G0-x, numbered, S-x, T-x) */
+          var text = h3.textContent || '';
+          if (!/^(G0-|[0-9]+\.|S[0-9]|T-[0-9])/.test(text.trim())) return;
+
+          var existingBtn = h3.querySelector('.profile-collapse-btn');
+          if (!existingBtn) {
+            var btn = document.createElement('button');
+            btn.className = 'profile-collapse-btn';
+            btn.textContent = '▼';
+            btn.setAttribute('aria-label', 'Buka/tutup profil');
+            h3.appendChild(btn);
+          }
+
+          var btn = h3.querySelector('.profile-collapse-btn');
+          /* Collect siblings until next h3 or h2 */
+          var body = h3.nextElementSibling;
+          if (body && body.classList.contains('profile-body')) {
+            /* Already wrapped */
+            if (isMobile && !body.classList.contains('collapsed')) {
+              body.classList.add('collapsed');
+              btn.textContent = '▶';
+            } else if (!isMobile) {
+              body.classList.remove('collapsed');
+              btn.textContent = '▼';
+            }
+            return;
+          }
+
+          /* Wrap profile content in a div */
+          var wrapper = document.createElement('div');
+          wrapper.className = 'profile-body';
+          var sibling = h3.nextElementSibling;
+          while (sibling && sibling.tagName !== 'H3' && sibling.tagName !== 'H2') {
+            var next = sibling.nextElementSibling;
+            wrapper.appendChild(sibling);
+            sibling = next;
+          }
+          h3.parentNode.insertBefore(wrapper, sibling);
+
+          if (isMobile) {
+            wrapper.classList.add('collapsed');
+            btn.textContent = '▶';
+          }
+        });
+      }
+
+      /* Toggle accordion on click */
+      document.addEventListener('click', function (e) {
+        if (!e.target.classList.contains('profile-collapse-btn')) return;
+        var h3 = e.target.closest('h3');
+        if (!h3) return;
+        var body = h3.nextElementSibling;
+        if (body && body.classList.contains('profile-body')) {
+          body.classList.toggle('collapsed');
+          e.target.textContent = body.classList.contains('collapsed') ? '▶' : '▼';
+        }
+      });
+
+      /* Init accordion on load and resize */
+      initAccordion();
+      var resizeTimer;
+      window.addEventListener('resize', function () {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(initAccordion, 250);
+      });
+
+      /* --- Keyboard: Escape closes sidebar --- */
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && sidebar.classList.contains('open')) {
+          closeSidebar();
+        }
+      });
+    })();
+    
+</script>
+</body>
+</html>

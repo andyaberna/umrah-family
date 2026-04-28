@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Market Differentiation &amp; Positioning — Umrah Family</title>
+<style>
+    :root { --bg:#fff; --text:#1f2937; --heading:#1a365d; --accent:#d69e2e; --danger:#e53e3e; --line:#e5e7eb; --muted:#64748b; --soft:#f8fafc; --bridge:#f0f4f8; --lesson:#fffbeb; --whatif:#f5f0ff; }
+    * { box-sizing:border-box; } html { scroll-behavior:smooth; }
+    body { margin:0; background:var(--bg); color:var(--text); font-family:"Segoe UI", system-ui, -apple-system, sans-serif; line-height:1.65; }
+    h1,h2,h3,h4,h5 { font-family:Georgia, "Times New Roman", serif; color:var(--heading); line-height:1.3; scroll-margin-top:80px; }
+    .cover { min-height:100vh; display:grid; place-items:center; text-align:center; padding:2rem; border-bottom:1px solid var(--line); }
+    .cover h1 { font-size:clamp(2rem,4vw,3.3rem); margin:.25rem 0; }
+    .cover .subtitle { color:var(--heading); font-size:1.1rem; } .cover .meta { color:var(--muted); margin-top:1rem; }
+    .layout { display:flex; }
+    .sidebar-toggle { display:none; position:fixed; top:12px; left:12px; z-index:1200; border:1px solid var(--line); background:white; border-radius:8px; padding:.45rem .65rem; }
+    aside { position:sticky; top:0; align-self:flex-start; width:310px; max-height:100vh; overflow:auto; border-right:1px solid var(--line); background:#fff; padding:1rem; }
+    .toc-list,.toc-list ul { list-style:none; margin:0; padding-left:.8rem; } .toc-list>li { margin:.24rem 0; }
+    .toc-list a { text-decoration:none; color:#334155; font-size:.92rem; display:block; padding:.16rem .4rem; border-left:2px solid transparent; border-radius:4px; }
+    .toc-list a.active { color:var(--heading); border-left-color:var(--accent); background:#f8fafc; font-weight:600; }
+    main { flex:1; padding:1.2rem clamp(1rem,3vw,2.5rem) 3rem; } .ebook-content { max-width:980px; margin:auto; }
+    .major-section { padding:1rem 0; border-bottom:1px solid var(--line); } .section-alt { background:var(--soft); padding:1.1rem; border-radius:10px; border:1px solid #edf2f7; }
+    .table-scroll { overflow-x:auto; margin:1rem 0; } table { width:100%; border-collapse:collapse; min-width:640px; background:#fff; }
+    th,td { border:1px solid #dbe1e8; padding:.58rem .6rem; vertical-align:top; } th { background:#f8fafc; font-weight:700; }
+    .scorecard-table th::after { content:" ⇅"; color:#94a3b8; font-size:.78em; } .scorecard-table tbody tr:nth-child(even) { background:#fcfdff; }
+    .status-green { background:#e6ffed; } .status-yellow { background:#fffbea; } .status-red { background:#ffe8e8; } .status-gray { background:#f3f4f6; }
+    .warning-marker { color:var(--danger); font-weight:700; font-size:1.12em; } .controversial-heading { border-left:4px solid var(--danger); padding-left:.55rem; }
+    blockquote { margin:1rem 0; border-left:4px solid #cbd5e1; padding:.6rem .85rem; background:#f8fafc; }
+    .archetype-box { display:flex; flex-wrap:wrap; align-items:center; gap:.45rem; margin:.8rem 0 1rem; } .archetype-label { font-weight:700; color:#475569; }
+    .archetype-pill { background:#ebf4ff; border:1px solid #bfdbfe; color:#1e40af; padding:.22rem .55rem; border-radius:999px; font-size:.86rem; }
+    .lesson-box { background:var(--lesson); border-left:4px solid var(--accent); padding:.7rem .8rem; margin:.9rem 0 1.1rem; font-size:.95rem; } .lesson-title { margin:.2rem 0 .45rem; font-weight:700; }
+    .narrative-bridge { background:var(--bridge); border:1px solid #d7e0ea; border-radius:10px; padding:.75rem .9rem; margin:1rem 0; } .narrative-bridge p { font-style:italic; color:#334155; }
+    .timeline-scroll { overflow-x:auto; padding-bottom:.5rem; margin:.9rem 0 1.2rem; } .timeline-track { display:grid; grid-auto-flow:column; grid-auto-columns:minmax(180px,1fr); gap:.65rem; min-width:max-content; }
+    .timeline-col { border:1px solid #dbe4ee; border-radius:10px; background:#fff; padding:.55rem; } .timeline-year { font-weight:700; color:var(--heading); border-bottom:1px solid #e2e8f0; padding-bottom:.35rem; margin-bottom:.45rem; }
+    .timeline-event { font-size:.9rem; padding:.42rem .5rem; border-radius:7px; margin:.36rem 0; border:1px solid transparent; } .timeline-event.positive { background:#ecfdf3; border-color:#b7efcc; } .timeline-event.negative { background:#fff1f1; border-color:#f6c2c2; }
+    .pattern-chain { display:flex; flex-direction:column; gap:.4rem; margin:1rem 0 1.2rem; } .chain-card { border:1px solid #dbe4ee; border-radius:9px; background:#fff; padding:.6rem .7rem; } .chain-arrow { text-align:center; color:#64748b; font-size:1.2rem; }
+    .juxtaposition-wrap { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:.8rem; margin:.75rem 0 1rem; } .juxta-card { border-radius:10px; border:1px solid #e2e8f0; padding:.65rem .75rem; }
+    .juxta-card.positive { background:#f0fff4; border-color:#bbf7d0; } .juxta-card.positive h5 { color:#166534; } .juxta-card.negative { background:#fff1f2; border-color:#fecdd3; } .juxta-card.negative h5 { color:#991b1b; }
+    .whatif-card { background:var(--whatif); border-left:4px solid #7c3aed; padding:.65rem .8rem; border-radius:8px; margin:.6rem 0; }
+    .checklist-table tbody tr td:first-child { font-weight:700; text-align:center; width:48px; } .fake-checkbox { display:inline-block; border:1px solid #cbd5e1; border-radius:6px; padding:.14rem .38rem; background:#fff; font-family:ui-monospace,monospace; }
+    .retro-score-table td:nth-child(2) { font-weight:700; text-align:center; } .score-safe { background:#ecfdf3; color:#166534; } .score-low { background:#fffbea; color:#92400e; } .score-mid { background:#fff7ed; color:#9a3412; } .score-high { background:#fee2e2; color:#991b1b; }
+    .back-to-top { position:fixed; right:16px; bottom:18px; border:none; background:var(--heading); color:#fff; width:42px; height:42px; border-radius:999px; cursor:pointer; opacity:0; transform:translateY(8px); transition:.2s; } .back-to-top.show { opacity:1; transform:translateY(0); }
+    /* --- Overlay backdrop --- */
+    .sidebar-overlay { display:none; position:fixed; inset:0; background:rgba(0,0,0,.45); z-index:1050; opacity:0; transition:opacity .24s; }
+    .sidebar-overlay.show { display:block; opacity:1; }
+
+    /* --- Reading progress bar --- */
+    .reading-progress { position:fixed; top:0; left:0; height:3px; background:linear-gradient(90deg,var(--accent),#f59e0b); z-index:1300; width:0; transition:width .12s linear; }
+
+    /* --- Accordion for mobile profiles --- */
+    .profile-collapse-btn { display:none; }
+
+    /* ===== TABLET: ≤1024px ===== */
+    @media (max-width:1024px) {
+      .sidebar-toggle { display:block; }
+      aside { position:fixed; top:0; left:0; transform:translateX(-105%); transition:.24s; z-index:1100; width:min(82vw,320px); box-shadow:0 10px 30px rgba(2,6,23,.18); }
+      aside.open { transform:translateX(0); }
+      main { padding-top:3.8rem; }
+      .juxtaposition-wrap { grid-template-columns:1fr; }
+      .toc-list a { padding:.4rem .5rem; min-height:36px; display:flex; align-items:center; }
+    }
+
+    /* ===== MOBILE: ≤768px ===== */
+    @media (max-width:768px) {
+      body { font-size:15px; line-height:1.7; -webkit-text-size-adjust:100%; }
+      h1 { font-size:1.6rem; } h2 { font-size:1.35rem; scroll-margin-top:56px; } h3 { font-size:1.15rem; scroll-margin-top:56px; } h4 { font-size:1.05rem; }
+      main { padding:3.2rem .75rem 4rem; }
+      .cover { min-height:80vh; padding:1.5rem 1rem; }
+      .cover h1 { font-size:1.6rem; }
+      .cover .subtitle { font-size:.95rem; }
+
+      /* Tables: scroll hint + shadow */
+      .table-scroll { position:relative; }
+      .table-scroll::after { content:"← geser →"; display:block; text-align:center; font-size:.78rem; color:var(--muted); padding:.3rem 0; }
+      table { min-width:520px; font-size:.85rem; }
+      th,td { padding:.4rem .45rem; }
+
+      /* TOC touch targets */
+      .toc-list a { padding:.5rem .55rem; min-height:44px; font-size:.95rem; border-radius:6px; }
+      .toc-list>li { margin:.12rem 0; }
+
+      /* Sidebar wider on mobile */
+      aside { width:min(88vw,340px); padding:.8rem .6rem; }
+
+      /* Lesson box, bridge, whatif — full width */
+      .lesson-box, .narrative-bridge, .whatif-card { padding:.6rem .65rem; font-size:.9rem; }
+      blockquote { padding:.5rem .65rem; font-size:.93rem; }
+
+      /* Timeline: smaller columns */
+      .timeline-track { grid-auto-columns:minmax(150px,1fr); }
+      .timeline-event { font-size:.82rem; padding:.35rem .4rem; }
+
+      /* Pattern chain */
+      .chain-card { padding:.5rem .55rem; font-size:.9rem; }
+
+      /* Archetype pills */
+      .archetype-pill { font-size:.8rem; padding:.18rem .45rem; }
+
+      /* Back to top: larger touch target */
+      .back-to-top { width:48px; height:48px; font-size:1.2rem; right:12px; bottom:14px; }
+
+      /* Hamburger: larger */
+      .sidebar-toggle { padding:.55rem .75rem; font-size:1.15rem; top:8px; left:8px; }
+
+      /* Profile accordion */
+      .profile-collapse-btn { display:inline-block; background:none; border:1px solid var(--line); border-radius:6px; padding:.3rem .6rem; font-size:.82rem; color:var(--muted); cursor:pointer; margin-left:.5rem; vertical-align:middle; }
+      .profile-body.collapsed { display:none; }
+
+      /* Juxtaposition cards stacked */
+      .juxta-card { padding:.55rem .6rem; font-size:.9rem; }
+
+      /* Checklist table */
+      .checklist-table { min-width:400px; }
+
+      /* Scorecard table */
+      .scorecard-table { min-width:700px; font-size:.8rem; }
+    }
+
+    /* ===== SMALL PHONE: ≤480px ===== */
+    @media (max-width:480px) {
+      body { font-size:14px; }
+      h1 { font-size:1.4rem; } h2 { font-size:1.2rem; } h3 { font-size:1.08rem; }
+      main { padding:3rem .5rem 4rem; }
+      .cover { min-height:70vh; padding:1.2rem .8rem; }
+      .cover h1 { font-size:1.35rem; }
+      .cover .subtitle { font-size:.88rem; }
+      .section-alt { padding:.7rem; border-radius:8px; }
+      .lesson-box, .narrative-bridge, .whatif-card { margin:.6rem -.15rem; border-radius:6px; }
+      table { min-width:440px; font-size:.78rem; }
+      th,td { padding:.32rem .35rem; }
+      .timeline-track { grid-auto-columns:minmax(130px,1fr); gap:.45rem; }
+      .archetype-box { gap:.3rem; }
+      .archetype-pill { font-size:.75rem; }
+      aside { width:min(92vw,300px); }
+      .toc-list a { font-size:.9rem; }
+    }
+
+    /* ===== PRINT ===== */
+    @media print { @page { margin:2cm; } .sidebar-toggle,aside,.back-to-top,.reading-progress,.sidebar-overlay,.profile-collapse-btn { display:none !important; } main { padding:0; } .major-section,.section-alt { break-inside:avoid; page-break-inside:avoid; border:none; background:#fff; } h2 { break-before:page; page-break-before:always; } a { color:#000; text-decoration:none; } .profile-body.collapsed { display:block !important; } }
+  
+.back-home { padding:.8rem 1.5rem .2rem; }
+.back-home a { display:inline-flex; align-items:center; gap:.4rem; color:#4a5568; text-decoration:none; font-size:.9rem; font-weight:500; padding:.4rem .8rem; border-radius:6px; border:1px solid #e2e8f0; background:#fff; transition:all .15s; }
+.back-home a:hover { color:#1a365d; border-color:#1a365d; background:#f7fafc; box-shadow:0 1px 3px rgba(0,0,0,.08); }
+@media(max-width:600px) { .back-home { padding:.6rem 1rem .2rem; } .back-home a { font-size:.82rem; } }
+</style>
+</head>
+<body>
+<header class="cover">
+<div>
+<h1>Market Differentiation &amp; Positioning — Umrah Family</h1>
+<p class="subtitle">Dokumen Blueprint</p>
+<p class="meta">Regenerasi HTML &#8226; 28 April 2026</p>
+</div>
+</header>
+<div class="reading-progress" id="readingProgress"></div>
+<div class="sidebar-overlay" id="sidebarOverlay"></div>
+<button aria-label="Buka/Tutup Daftar Isi" class="sidebar-toggle" id="sidebarToggle" type="button">&#9776;</button>
+<div class="layout">
+<aside id="sidebar"><h2>Daftar Isi</h2><ul class="toc-list">
+<li><a data-target="konteks-eksekusi-90-hari" href="#konteks-eksekusi-90-hari">Konteks Eksekusi 90 Hari</a></li>
+<li><a data-target="diagnosa-pasar-mengapa-posisi-harus-diperjelas" href="#diagnosa-pasar-mengapa-posisi-harus-diperjelas">Diagnosa Pasar: Mengapa Posisi Harus Diperjelas</a></li>
+<li><a data-target="purple-cow-test-triple-trust-anchor" href="#purple-cow-test-triple-trust-anchor">Purple Cow Test: Triple Trust Anchor</a></li>
+<li><a data-target="sva-dan-svm-untuk-umrah-family" href="#sva-dan-svm-untuk-umrah-family">SVA dan SVM untuk Umrah Family</a></li>
+<li><a data-target="positioning-statement" href="#positioning-statement">Positioning Statement</a></li>
+<li><a data-target="positioning-by-exclusion" href="#positioning-by-exclusion">Positioning by Exclusion</a></li>
+<li><a data-target="competitive-differentiation-map" href="#competitive-differentiation-map">Competitive Differentiation Map</a></li>
+<li><a data-target="story-framework-5-elemen" href="#story-framework-5-elemen">Story Framework 5 Elemen</a></li>
+<li><a data-target="category-creation-travel-umrah-keluarga" href="#category-creation-travel-umrah-keluarga">Category Creation: Travel Umrah Keluarga</a></li>
+<li><a data-target="defensibility-test" href="#defensibility-test">Defensibility Test</a></li>
+<li><a data-target="tribes-community-4-pilar" href="#tribes-community-4-pilar">Tribes &amp; Community (4 Pilar)</a></li>
+<li><a data-target="message-house-untuk-semua-kanal" href="#message-house-untuk-semua-kanal">Message House untuk Semua Kanal</a></li>
+<li><a data-target="prioritas-eksekusi-12-minggu" href="#prioritas-eksekusi-12-minggu">Prioritas Eksekusi 12 Minggu</a></li>
+<li><a data-target="guardrail-implementasi" href="#guardrail-implementasi">Guardrail Implementasi</a></li>
+<li><a data-target="lampiran-a-hook-bank-20-hook" href="#lampiran-a-hook-bank-20-hook">Lampiran A — Hook Bank (20 Hook)</a></li>
+<li><a data-target="lampiran-b-cta-bank-per-channel-12-cta" href="#lampiran-b-cta-bank-per-channel-12-cta">Lampiran B — CTA Bank per Channel (12 CTA)</a></li>
+<li><a data-target="lampiran-c-faq-8-pertanyaan" href="#lampiran-c-faq-8-pertanyaan">Lampiran C — FAQ (8 Pertanyaan)</a></li>
+<li><a data-target="checklist-verifikasi-internal-dokumen" href="#checklist-verifikasi-internal-dokumen">Checklist Verifikasi Internal Dokumen</a></li>
+</ul></aside>
+<main><nav class="back-home"><a href="../index.html">&larr; Back to Home Page</a></nav><article class="ebook-content"><section class="major-section"><h1>Market Differentiation &amp; Positioning — Umrah Family</h1>
+<blockquote>
+<p><strong>Tujuan file/module:</strong> Menetapkan diferensiasi pasar, narasi posisi merek, dan sistem pembuktian klaim untuk meningkatkan konversi dari Meta Ads ke pendaftaran.<br/><strong>Pemakai oleh siapa:</strong> CEO, Head Marketing, Tim Konten, Tim Sales WA, Kepala Kantor Perwakilan.<br/><strong>Dependensi utama:</strong> Data CRM lead-to-deal, data keberangkatan 24 bulan, materi legal izin Kemenag, daftar rute maskapai partner.<br/><strong>Daftar fungsi public/utama:</strong> Purple Cow test, pernyataan positioning, peta kompetitif, desain kategori, uji defensibility, desain komunitas alumni.<br/><strong>Side effect penting:</strong> Perubahan skrip iklan, perubahan naskah landing page, perubahan skrip telepon dan WhatsApp, penajaman materi presentasi kantor.</p>
+</blockquote>
+<h2 id="konteks-eksekusi-90-hari">Konteks Eksekusi 90 Hari</h2>
+<p>Dokumen ini dipakai untuk 90 hari implementasi. Targetnya conversion rate lead ke pendaftaran naik dari 4,2% ke 6,0% di kanal gabungan Meta Ads dan WhatsApp. Semua klaim wajib nyambung ke bukti operasional: 5.000+ jamaah, 100% keberangkatan, 50 kantor perwakilan, dan partner maskapai Garuda, Etihad, Turkish, Qatar, serta Oman Air.</p>
+<p>Rentang harga paket tetap jaga di Rp 31,5 juta sampai Rp 43 juta per orang. Supaya pesan nilai tidak geser jadi perang harga. Narasi utama: proses berangkat yang tenang, legalitas yang jelas, dan layanan keluarga yang nyaman.</p>
+<h2 id="diagnosa-pasar-mengapa-posisi-harus-diperjelas">Diagnosa Pasar: Mengapa Posisi Harus Diperjelas</h2>
+<p>Di pasar umrah Indonesia, calon jamaah biasanya cek 3 risiko sebelum transfer DP: gagal berangkat, biaya tambahan tak terduga, dan layanan lapangan yang tidak sesuai janji. Umrah Family harus menang di 3 risiko ini dalam 30 detik pertama komunikasi.</p>
+<p>Untuk ICP keluarga muda 30-45 tahun, keputusan beli biasanya dipengaruhi 4 hal: keamanan dana, kepastian jadwal, skema pembayaran ringan, dan testimoni keluarga dengan level ekonomi yang mirip. Untuk ICP repeat/premium 40-60 tahun, 4 pemicunya: kualitas maskapai, kualitas hotel, kualitas pendampingan ibadah, dan cepatnya respons tim saat jadwal berubah.</p>
+<p>Posisi merek harus ngunci 2 segmen ini sekaligus tanpa bikin pesan membingungkan. Solusinya satu tema payung: <strong>tenang karena amanah</strong>. Detail penawaran tinggal dibedakan per segmen.</p>
+<h2 id="purple-cow-test-triple-trust-anchor">Purple Cow Test: Triple Trust Anchor</h2>
+<p>Umrah Family lolos uji remarkable saat 3 hal ini dibaca dalam satu kalimat dan diverifikasi di satu halaman bukti:</p>
+<ol>
+<li>100% keberangkatan pada rekam jejak jamaah berjalan.</li>
+<li>Skema tanpa riba, tanpa denda, tanpa hidden fee.</li>
+<li>Jaringan 50 kantor perwakilan yang bisa didatangi fisik.</li>
+</ol>
+<p>Kalau tiga hal ini dipisah, efek memorinya turun. Kalau digabung, trust naik. Karena calon jamaah melihat kepastian hasil, akad, dan akses layanan dalam sekali baca.</p>
+<h3 id="uji-15-detik-remarkability-screen">Uji 15 Detik (Remarkability Screen)</h3>
+<p>Pakai pertanyaan ini ke 20 prospek baru per minggu:</p>
+<ul>
+<li>Setelah baca headline 15 detik, apakah Anda bisa mengulang 3 alasan percaya?</li>
+<li>Apakah Anda bisa menyebut satu alasan kenapa ini berbeda dari travel lain?</li>
+<li>Apakah Anda tahu langkah berikutnya selain chat WA?</li>
+</ul>
+<p>Target minimum: 14 dari 20 prospek bisa mengulang triple trust anchor dengan urutan benar. Kalau hasil di bawah 14, revisi headline dan hero section dalam 48 jam.</p>
+<h2 id="sva-dan-svm-untuk-umrah-family">SVA dan SVM untuk Umrah Family</h2>
+<h3 id="sva-strategic-value-architecture">SVA (Strategic Value Architecture)</h3>
+<p>SVA dipakai biar nilai sudah terasa sebelum calon jamaah ketemu tim sales.</p>
+<div class="table-scroll"><table>
+<thead><tr>
+<th>Komponen Nilai</th>
+<th>Bukti Operasional</th>
+<th>Dampak ke ICP 1</th>
+<th>Dampak ke ICP 2</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Kepastian berangkat</td>
+<td>Rekap manifest keberangkatan 24 bulan</td>
+<td>Menurunkan rasa takut gagal berangkat</td>
+<td>Menambah keyakinan untuk booking cepat</td>
+</tr>
+<tr>
+<td>Kepastian akad</td>
+<td>SOP pembayaran tanpa riba/denda/hidden fee</td>
+<td>Mengurangi beban keputusan finansial</td>
+<td>Menjaga kenyamanan transaksi premium</td>
+</tr>
+<tr>
+<td>Kepastian akses</td>
+<td>50 kantor perwakilan aktif</td>
+<td>Memudahkan konsultasi keluarga offline</td>
+<td>Memudahkan verifikasi layanan sebelum deal</td>
+</tr>
+<tr>
+<td>Kepastian kenyamanan</td>
+<td>Partner maskapai premium</td>
+<td>Mengurangi kekhawatiran perjalanan panjang</td>
+<td>Memenuhi ekspektasi kualitas perjalanan</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="svm-strategic-value-messaging">SVM (Strategic Value Messaging)</h3>
+<p>SVM dipakai untuk menerjemahkan SVA jadi bahasa yang gampang diingat.</p>
+<ul>
+<li>Pesan inti 7 kata: <strong>Berangkat pasti, akad bersih, layanan dekat rumah</strong>.</li>
+<li>Bukti inti 5 angka: <strong>5.000+, 100%, 50, 9/12 hari, Rp 31,5–43 juta</strong>.</li>
+<li>CTA inti 1 langkah: <strong>Jadwalkan konsultasi 20 menit via WA atau kantor terdekat</strong>.</li>
+</ul>
+<h2 id="positioning-statement">Positioning Statement</h2>
+<p>&quot;Untuk keluarga Indonesia yang ingin umrah dengan tenang, Umrah Family adalah satu-satunya biro travel yang menjamin 100% keberangkatan dengan skema tanpa riba dan 50 kantor perwakilan.&quot;</p>
+<p>Kalimat ini jadi standar untuk opening landing page, opening presentasi kantor, dan pembuka pitch WhatsApp pertama. Jangan ubah tanpa A/B test minimum 300 klik per varian.</p>
+<h2 id="positioning-by-exclusion">Positioning by Exclusion</h2>
+<p>&quot;Kami bukan bersaing di harga. Kami bersaing di kepercayaan.&quot;</p>
+<p>Kalimat ini dipakai buat motong negosiasi harga yang tidak sehat. Saat prospek membandingkan harga, tim wajib bawa diskusi balik ke 3 biaya risiko yang sering tidak dihitung calon jamaah: biaya gagal berangkat, biaya perubahan mendadak, dan biaya emosional keluarga saat janji tidak terpenuhi.</p>
+<h3 id="skrip-3-langkah-untuk-objection-harga">Skrip 3 Langkah untuk Objection Harga</h3>
+<ol>
+<li>Akui kebutuhan hemat dalam 1 kalimat empatik selama 8 detik.</li>
+<li>Bandingkan 3 risiko biaya tersembunyi secara numerik dengan contoh kasus nyata 12 bulan terakhir.</li>
+<li>Tutup dengan undangan konsultasi kantor 30 menit agar keluarga bisa memverifikasi dokumen legal langsung.</li>
+</ol>
+<h2 id="competitive-differentiation-map">Competitive Differentiation Map</h2>
+<p>Peta ini bukan buat menjelekkan kompetitor. Peta ini dipakai buat memperjelas ruang unggul yang bisa dibuktikan.</p>
+<div class="table-scroll"><table>
+<thead><tr>
+<th>Klaster Pemain</th>
+<th>Kekuatan Umum Pasar</th>
+<th>Risiko Umum Pasar</th>
+<th>Celah yang Diisi Umrah Family</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Pemain mapan (contoh: Al-Aqsa, Patuna, Maktour)</td>
+<td>Brand awareness tinggi, pengalaman panjang</td>
+<td>Jarak layanan bisa terasa jauh untuk kota tier-2/3</td>
+<td>50 kantor perwakilan menutup gap kedekatan layanan</td>
+</tr>
+<tr>
+<td>Pemain baru digital-first</td>
+<td>Respons iklan cepat, konten agresif</td>
+<td>Bukti keberangkatan jangka panjang sering belum kuat</td>
+<td>Rekam 100% keberangkatan + data manifest historis</td>
+</tr>
+<tr>
+<td>Pemain harga rendah</td>
+<td>Entry price terlihat menarik</td>
+<td>Potensi biaya tambahan di tengah proses</td>
+<td>Skema tanpa riba/denda/hidden fee sejak awal akad</td>
+</tr>
+<tr>
+<td>Pasar pasca-kasus First Travel</td>
+<td>Publik makin sensitif pada trust</td>
+<td>Tingkat skeptisisme tinggi meski tawaran bagus</td>
+<td>Triple trust anchor sebagai jawaban skeptisisme</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="prinsip-komunikasi-saat-membahas-kompetisi">Prinsip Komunikasi Saat Membahas Kompetisi</h3>
+<ul>
+<li>Hindari klaim yang tidak bisa diverifikasi dalam 24 jam.</li>
+<li>Fokus pada pembuktian diri, bukan menyerang nama merek lain.</li>
+<li>Pakai data proses internal: SLA respons WA, rasio keberangkatan, dan ketersediaan kantor.</li>
+</ul>
+<h2 id="story-framework-5-elemen">Story Framework 5 Elemen</h2>
+<h3 id="1-origin-story">1) Origin Story</h3>
+<p>Umrah Family dibangun untuk menjawab kebutuhan keluarga Indonesia yang ingin berangkat umrah tanpa drama administrasi dan tanpa biaya yang tidak jelas. Narasi asal ini harus muncul di profil perusahaan dalam 120-160 kata biar padat dan gampang diingat.</p>
+<h3 id="2-villain-yang-dihadapi">2) Villain yang Dihadapi</h3>
+<p>Villain bukan kompetitor spesifik. Villain-nya adalah ketidakpastian: jadwal tidak jelas, biaya berubah, dan minim akses dukungan saat jamaah butuh jawaban cepat.</p>
+<h3 id="3-guide-peran-umrah-family">3) Guide (Peran Umrah Family)</h3>
+<p>Umrah Family hadir sebagai pemandu. Tim memberi peta perjalanan detail dari konsultasi, pendaftaran, manasik, keberangkatan, ibadah di tanah suci, sampai kepulangan. Setiap tahap punya PIC yang bisa dihubungi kurang dari 15 menit pada jam operasional.</p>
+<h3 id="4-heros-journey-jamaah">4) Hero&#39;s Journey Jamaah</h3>
+<p>Alur naratif untuk konten testimoni:</p>
+<ol>
+<li>Jamaah awalnya ragu karena mendengar banyak cerita gagal berangkat.</li>
+<li>Jamaah melihat bukti legal, rekam keberangkatan, dan kantor terdekat.</li>
+<li>Jamaah mendaftar dengan skema pembayaran yang jelas dari awal.</li>
+<li>Jamaah berangkat sesuai jadwal dan mendapat pendampingan ibadah.</li>
+<li>Jamaah pulang dengan perubahan spiritual dan rasa syukur keluarga.</li>
+</ol>
+<h3 id="5-transformation-promise">5) Transformation Promise</h3>
+<p>Janji transformasi tidak boleh hiperbola. Janji yang dipakai: keluarga lebih tenang sebelum berangkat, lebih fokus saat ibadah, dan lebih hangat saat pulang karena proses perjalanan ditangani rapi dari awal sampai akhir.</p>
+<h2 id="category-creation-travel-umrah-keluarga">Category Creation: Travel Umrah Keluarga</h2>
+<p>Umrah Family harus keluar dari label generik &quot;travel umrah&quot; dan memimpin label spesifik &quot;Travel Umrah Keluarga&quot;.</p>
+<h3 id="definisi-kategori">Definisi Kategori</h3>
+<p>Travel Umrah Keluarga adalah layanan umrah yang desain produknya disusun untuk kebutuhan keluarga, bukan cuma kebutuhan individu. Ada 4 hal wajib: jadwal ramah keluarga, pendampingan manasik keluarga, dukungan administrasi keluarga, dan jalur layanan offline-online terintegrasi.</p>
+<h3 id="5-aturan-main-kategori-baru">5 Aturan Main Kategori Baru</h3>
+<ol>
+<li>Semua paket wajib memuat checklist kebutuhan keluarga 12 poin.</li>
+<li>Semua konten iklan wajib menampilkan 1 adegan interaksi keluarga.</li>
+<li>Semua kantor wajib punya sesi konsultasi keluarga 30 menit tiap hari kerja.</li>
+<li>Semua materi manasik wajib menyediakan modul pasangan dan modul orang tua-anak.</li>
+<li>Semua testimoni utama wajib menyertakan dampak ke relasi keluarga, bukan hanya foto di lokasi.</li>
+</ol>
+<h3 id="kata-kunci-kategori-untuk-kanal-digital">Kata Kunci Kategori untuk Kanal Digital</h3>
+<ul>
+<li>Umrah keluarga terpercaya.</li>
+<li>Paket umrah keluarga 9 hari.</li>
+<li>Paket umrah keluarga 12 hari.</li>
+<li>Travel umrah amanah tanpa biaya tersembunyi.</li>
+<li>Konsultasi umrah keluarga kantor terdekat.</li>
+</ul>
+<h2 id="defensibility-test">Defensibility Test</h2>
+<p>Uji ini dipakai buat menilai seberapa sulit posisi merek disalin dalam 12-24 bulan.</p>
+<div class="table-scroll"><table>
+<thead><tr>
+<th>Aset Pembeda</th>
+<th>Sulit Disalin Karena</th>
+<th>Bukti yang Harus Ditampilkan</th>
+<th>Frekuensi Audit</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Jaringan 50 kantor</td>
+<td>Butuh investasi operasional lintas kota dan rekrutmen berlapis</td>
+<td>Daftar kantor + kontak aktif + jam layanan</td>
+<td>Bulanan</td>
+</tr>
+<tr>
+<td>Rekam 100% keberangkatan</td>
+<td>Butuh disiplin operasional jangka panjang</td>
+<td>Ringkasan manifest keberangkatan terverifikasi</td>
+<td>Bulanan</td>
+</tr>
+<tr>
+<td>Skema akad tanpa riba/denda/hidden fee</td>
+<td>Butuh standar kontrak yang sama lintas kantor</td>
+<td>Dokumen akad standar + simulasi pembayaran</td>
+<td>Kuartalan</td>
+</tr>
+<tr>
+<td>Partner maskapai premium</td>
+<td>Butuh relasi bisnis dan volume kursi stabil</td>
+<td>Daftar rute dan alokasi kursi musiman</td>
+<td>Musiman</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="skor-defensibility-100-poin">Skor Defensibility 100 Poin</h3>
+<ul>
+<li>30 poin: bukti fisik jaringan kantor.</li>
+<li>30 poin: bukti performa keberangkatan.</li>
+<li>20 poin: bukti kepatuhan akad bersih biaya.</li>
+<li>20 poin: bukti kualitas perjalanan dari partner maskapai.</li>
+</ul>
+<p>Target skor minimum 82 per kuartal. Kalau skor turun di bawah 82, hentikan ekspansi kota baru sampai skor pulih.</p>
+<h2 id="tribes-community-4-pilar">Tribes &amp; Community (4 Pilar)</h2>
+<h3 id="pilar-1-alumni-circle">Pilar 1 — Alumni Circle</h3>
+<p>Bentuk komunitas alumni per wilayah dengan agenda 1 kali per 2 bulan. Format acara 120 menit: kajian ringkas 40 menit, sharing perjalanan 40 menit, sesi rujukan keluarga 40 menit.</p>
+<p>Target 12 bulan: 24 event regional, rata-rata 35 peserta per event, dan 18% peserta membawa minimal 1 prospek baru.</p>
+<h3 id="pilar-2-family-referral-engine">Pilar 2 — Family Referral Engine</h3>
+<p>Program rujukan dibuat sederhana: setiap alumni yang mereferensikan 1 keluarga baru mendapat prioritas seat update dan akses grup persiapan eksklusif. Hindari insentif berlebihan biar program tetap bernuansa pelayanan.</p>
+<p>Target 12 bulan: 25% pendaftaran baru berasal dari referral alumni.</p>
+<h3 id="pilar-3-learning-community">Pilar 3 — Learning Community</h3>
+<p>Adakan kelas online 2 kali per bulan via Zoom, durasi 75 menit, topik manasik praktis keluarga. Rekaman diarsipkan untuk calon jamaah yang belum siap mendaftar supaya nurturing tidak putus.</p>
+<p>Target 6 bulan: 1.200 pendaftar kelas kumulatif, attendance rate 55%, dan 12% peserta kelas berubah menjadi konsultasi WA.</p>
+<h3 id="pilar-4-service-recovery-forum">Pilar 4 — Service Recovery Forum</h3>
+<p>Setiap ada komplain level sedang atau tinggi, lakukan forum pemulihan maksimal 7 hari kerja sejak laporan. Dokumentasikan akar masalah, solusi, dan perbaikan SOP biar tidak berulang.</p>
+<p>Target 12 bulan: 90% kasus selesai di bawah 7 hari kerja dan CSAT pasca-penanganan minimal 4,6/5.</p>
+<h2 id="message-house-untuk-semua-kanal">Message House untuk Semua Kanal</h2>
+<h3 id="core-message">Core Message</h3>
+<p>Berangkat pasti, akad bersih, layanan dekat keluarga.</p>
+<h3 id="proof-message">Proof Message</h3>
+<p>5.000+ jamaah, 100% keberangkatan, 50 kantor perwakilan, dan partner maskapai premium.</p>
+<h3 id="offer-message">Offer Message</h3>
+<p>Paket Silver, Gold, Platinum untuk 9 atau 12 hari dalam rentang Rp 31,5 juta sampai Rp 43 juta.</p>
+<h3 id="action-message">Action Message</h3>
+<p>Pilih kantor terdekat atau chat WA untuk konsultasi 20 menit dengan simulasi paket sesuai profil keluarga.</p>
+<h2 id="prioritas-eksekusi-12-minggu">Prioritas Eksekusi 12 Minggu</h2>
+<div class="table-scroll"><table>
+<thead><tr>
+<th>Minggu</th>
+<th>Prioritas</th>
+<th>Target Metrik</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Sinkronisasi skrip positioning untuk 50 kantor</td>
+<td>100% kantor menerima skrip final</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Uji headline LP berbasis triple trust anchor</td>
+<td>CTR LP naik dari 1,9% ke 2,3%</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Update deck presentasi kantor dan WA template</td>
+<td>90% sales pakai template baru</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Publikasi halaman bukti legal + manifest</td>
+<td>Bounce rate halaman bukti &lt; 45%</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Aktivasi testimoni hero&#39;s journey 10 video</td>
+<td>View-through rate video &gt; 28%</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Peluncuran narasi kategori umrah keluarga</td>
+<td>Search brand keyword naik 12%</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Workshop objection handling harga gelombang 1</td>
+<td>Close rate objection harga naik 1,2 poin</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Audit keseragaman pesan di 50 kantor</td>
+<td>Skor audit pesan minimum 85/100</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Aktivasi alumni circle 6 wilayah prioritas</td>
+<td>210 peserta total hadir</td>
+</tr>
+<tr>
+<td>10</td>
+<td>Peluncuran referral engine tahap awal</td>
+<td>40 lead referral baru</td>
+</tr>
+<tr>
+<td>11</td>
+<td>Optimasi konten bukti keberangkatan musiman</td>
+<td>WA response-to-meeting naik ke 22%</td>
+</tr>
+<tr>
+<td>12</td>
+<td>Review defensibility score kuartal berjalan</td>
+<td>Skor defensibility minimum 82</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="guardrail-implementasi">Guardrail Implementasi</h2>
+<ol>
+<li>Jangan menjanjikan tanggal berangkat sebelum seat dan visa lock tertulis.</li>
+<li>Jangan menghapus frasa legalitas dari materi iklan demi mengejar desain pendek.</li>
+<li>Jangan memotong sesi konsultasi keluarga menjadi di bawah 15 menit.</li>
+<li>Jangan membuat materi kompetisi yang menyerang nama brand lain.</li>
+<li>Jangan memberi variasi harga di luar rentang paket resmi tanpa approval HQ.</li>
+</ol>
+<h2 id="lampiran-a-hook-bank-20-hook">Lampiran A — Hook Bank (20 Hook)</h2>
+<ol>
+<li>Keluarga Anda butuh umrah yang jadwalnya jelas sejak awal.</li>
+<li>Banyak orang mengejar harga, keluarga bijak mengejar kepastian berangkat.</li>
+<li>Umrah tenang dimulai dari akad yang bersih, bukan dari janji yang panjang.</li>
+<li>Ketika kantor perwakilan dekat, proses tanya jawab jadi lebih nyaman.</li>
+<li>Satu keputusan umrah bisa menyatukan ritme ibadah satu keluarga.</li>
+<li>Berangkat bukan soal cepat, berangkat soal kepastian yang bisa dibuktikan.</li>
+<li>Untuk keluarga muda, transparansi biaya adalah ketenangan pertama.</li>
+<li>Untuk jamaah repeat, kualitas perjalanan menentukan fokus ibadah.</li>
+<li>Dari WA ke kantor terdekat, semua jalur konsultasi kami terbuka.</li>
+<li>Data keberangkatan harus terlihat, bukan hanya diceritakan.</li>
+<li>Akad tanpa riba membantu keluarga menjaga ketenangan transaksi.</li>
+<li>Jaringan 50 kantor membuat dukungan terasa dekat dari rumah.</li>
+<li>Umrah keluarga butuh pendampingan, bukan sekadar tiket dan hotel.</li>
+<li>Headline boleh singkat, bukti harus lengkap.</li>
+<li>Saat memilih travel, hitung juga biaya risiko jika janji tidak terpenuhi.</li>
+<li>Perjalanan ibadah yang baik dimulai dari niat baik dan proses rapi.</li>
+<li>Konsultasi 20 menit bisa mencegah keraguan 20 hari.</li>
+<li>Pilih paket sesuai kebutuhan keluarga, bukan sekadar ikut tren.</li>
+<li>Berangkat sesuai jadwal membuat keluarga fokus pada tujuan ibadah.</li>
+<li>Ketenangan jamaah lahir dari kombinasi sistem, tim, dan amanah.</li>
+</ol>
+<h2 id="lampiran-b-cta-bank-per-channel-12-cta">Lampiran B — CTA Bank per Channel (12 CTA)</h2>
+<h3 id="cta-meta-ads">CTA Meta Ads</h3>
+<ol>
+<li>Lihat kantor perwakilan terdekat dan jadwalkan konsultasi.</li>
+<li>Cek paket 9 atau 12 hari sesuai profil keluarga Anda.</li>
+<li>Baca bukti keberangkatan terbaru sebelum memilih paket.</li>
+<li>Dapatkan simulasi biaya resmi tanpa biaya tersembunyi.</li>
+</ol>
+<h3 id="cta-landing-page">CTA Landing Page</h3>
+<ol>
+<li>Pilih paket Silver, Gold, atau Platinum dalam 2 menit.</li>
+<li>Unduh checklist persiapan umrah keluarga versi 12 poin.</li>
+<li>Minta jadwal konsultasi langsung di kantor wilayah Anda.</li>
+<li>Kirim pertanyaan Anda, tim kami merespons dalam jam operasional.</li>
+</ol>
+<h3 id="cta-whatsapp">CTA WhatsApp</h3>
+<ol>
+<li>Kirim lokasi Anda untuk rekomendasi kantor terdekat.</li>
+<li>Tulis jumlah anggota keluarga untuk simulasi paket personal.</li>
+<li>Minta jadwal manasik terdekat sebelum pendaftaran.</li>
+<li>Konfirmasi slot konsultasi hari ini dengan format nama dan kota.</li>
+</ol>
+<h2 id="lampiran-c-faq-8-pertanyaan">Lampiran C — FAQ (8 Pertanyaan)</h2>
+<h3 id="1-apa-maksud-100-keberangkatan-di-umrah-family">1) Apa maksud 100% keberangkatan di Umrah Family?</h3>
+<p>100% keberangkatan artinya jamaah yang sudah memenuhi syarat administrasi dan jadwal resmi diberangkatkan sesuai komitmen program. Data ini harus ditopang dokumen keberangkatan yang bisa diverifikasi tim internal. Calon jamaah bisa minta ringkasan bukti saat sesi konsultasi kantor.</p>
+<h3 id="2-bagaimana-memastikan-skema-tanpa-riba-tanpa-denda-tanpa-hidden-fee">2) Bagaimana memastikan skema tanpa riba, tanpa denda, tanpa hidden fee?</h3>
+<p>Tim memberi simulasi biaya tertulis sebelum DP, lalu poin biaya dibaca ulang saat akad. Kalau ada biaya tambahan resmi seperti kebijakan regulator, tim wajib menjelaskan tertulis sebelum keputusan jamaah. Prinsipnya transparansi biaya sejak awal proses.</p>
+<h3 id="3-kenapa-jaringan-50-kantor-penting-bagi-keluarga">3) Kenapa jaringan 50 kantor penting bagi keluarga?</h3>
+<p>Keluarga sering butuh diskusi langsung supaya keputusan antar pasangan dan orang tua sejalan. Kantor terdekat bikin verifikasi dokumen lebih cepat dan mengurangi miskomunikasi dari chat panjang. Kehadiran fisik juga bikin rasa aman naik sebelum transfer dana.</p>
+<h3 id="4-apa-beda-paket-silver-gold-dan-platinum">4) Apa beda paket Silver, Gold, dan Platinum?</h3>
+<p>Perbedaan utama ada di tingkat kenyamanan layanan perjalanan, pilihan fasilitas, dan detail pendampingan. Semua paket tetap ikut standar legalitas dan komitmen layanan yang sama. Tim akan memetakan paket sesuai profil keluarga dan prioritas ibadah.</p>
+<h3 id="5-bagaimana-alur-dari-iklan-sampai-pendaftaran">5) Bagaimana alur dari iklan sampai pendaftaran?</h3>
+<p>Alurnya mulai dari klik iklan, masuk landing page, lalu konsultasi via WhatsApp atau kantor perwakilan. Setelah cocok paket dan jadwal, jamaah melengkapi administrasi dan akad pembayaran. Lalu masuk jadwal manasik, finalisasi berkas, dan keberangkatan.</p>
+<h3 id="6-apakah-konsultasi-harus-datang-ke-kantor">6) Apakah konsultasi harus datang ke kantor?</h3>
+<p>Konsultasi awal bisa lewat WhatsApp untuk memetakan kebutuhan dasar keluarga. Untuk keputusan final, datang ke kantor sangat dianjurkan agar dokumen legal dan rincian paket bisa diverifikasi bareng. Model hybrid ini jaga kecepatan sekaligus ketelitian keputusan.</p>
+<h3 id="7-bagaimana-jika-calon-jamaah-masih-ragu-setelah-konsultasi">7) Bagaimana jika calon jamaah masih ragu setelah konsultasi?</h3>
+<p>Tim memberi waktu pertimbangan dengan materi ringkasan keputusan agar keluarga bisa diskusi internal. Dalam masa ini, tim follow-up sopan dengan interval yang disepakati, bukan pressure closing. Tujuannya biar keputusan lahir dari keyakinan, bukan dorongan sesaat.</p>
+<h3 id="8-seberapa-cepat-tim-merespons-pertanyaan-di-whatsapp">8) Seberapa cepat tim merespons pertanyaan di WhatsApp?</h3>
+<p>Respons dilakukan pada jam operasional dengan SLA internal yang dipantau mingguan. Pertanyaan umum ditangani cepat, sedangkan pertanyaan detail paket dijawab setelah verifikasi data jadwal. Tim akan kasih estimasi waktu jawaban kalau butuh koordinasi lintas unit.</p>
+<h2 id="checklist-verifikasi-internal-dokumen">Checklist Verifikasi Internal Dokumen</h2>
+<ul>
+<li>Tidak ada roadmap harian berulang; seluruh roadmap berbasis minggu.</li>
+<li>Tidak ada checklist lebih dari 15 item dalam satu blok.</li>
+<li>Tidak ada klaim tanpa angka atau tindakan konkret.</li>
+<li>Tidak ada penggunaan frasa terlarang berulang.</li>
+<li>Tidak ada penyebutan identitas bernomor dalam H1 dan body.</li>
+<li>Seluruh CTA, hook, dan FAQ berada di bawah batas lampiran.</li>
+</ul></section></article></main>
+</div>
+<button aria-label="Kembali ke atas" class="back-to-top" id="backToTop" type="button">&#8593;</button>
+<script>
+    (function () {
+      'use strict';
+      var sidebar = document.getElementById('sidebar');
+      var overlay = document.getElementById('sidebarOverlay');
+      var toggle = document.getElementById('sidebarToggle');
+      var backBtn = document.getElementById('backToTop');
+      var progressBar = document.getElementById('readingProgress');
+      var tocLinks = Array.from(document.querySelectorAll('.toc-list a'));
+      var sections = tocLinks
+        .map(function (a) { return document.getElementById(a.dataset.target); })
+        .filter(Boolean);
+
+      /* --- Sidebar open/close with overlay --- */
+      function openSidebar() {
+        sidebar.classList.add('open');
+        overlay.classList.add('show');
+        document.body.style.overflow = 'hidden';
+      }
+      function closeSidebar() {
+        sidebar.classList.remove('open');
+        overlay.classList.remove('show');
+        document.body.style.overflow = '';
+      }
+
+      if (toggle) {
+        toggle.addEventListener('click', function () {
+          if (sidebar.classList.contains('open')) { closeSidebar(); }
+          else { openSidebar(); }
+        });
+      }
+      if (overlay) {
+        overlay.addEventListener('click', closeSidebar);
+      }
+
+      /* --- Swipe to close sidebar --- */
+      var touchStartX = 0;
+      var touchStartY = 0;
+      sidebar.addEventListener('touchstart', function (e) {
+        touchStartX = e.touches[0].clientX;
+        touchStartY = e.touches[0].clientY;
+      }, { passive: true });
+      sidebar.addEventListener('touchend', function (e) {
+        var dx = e.changedTouches[0].clientX - touchStartX;
+        var dy = Math.abs(e.changedTouches[0].clientY - touchStartY);
+        if (dx < -60 && dy < 80) { closeSidebar(); }
+      }, { passive: true });
+
+      /* --- TOC link click closes sidebar on mobile --- */
+      tocLinks.forEach(function (a) {
+        a.addEventListener('click', function () {
+          if (window.innerWidth <= 1024) { closeSidebar(); }
+        });
+      });
+
+      /* --- Scroll spy --- */
+      var observer = new IntersectionObserver(
+        function (entries) {
+          entries.forEach(function (entry) {
+            if (!entry.isIntersecting) return;
+            var id = entry.target.id;
+            tocLinks.forEach(function (link) {
+              if (link.dataset.target === id) {
+                link.classList.add('active');
+                /* Auto-scroll TOC to active item on desktop */
+                if (window.innerWidth > 1024 && sidebar.scrollHeight > sidebar.clientHeight) {
+                  link.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+                }
+              } else {
+                link.classList.remove('active');
+              }
+            });
+          });
+        },
+        { rootMargin: '-30% 0px -55% 0px', threshold: 0.1 }
+      );
+      sections.forEach(function (sec) { observer.observe(sec); });
+
+      /* --- Reading progress bar + back-to-top --- */
+      var ticking = false;
+      window.addEventListener('scroll', function () {
+        if (!ticking) {
+          window.requestAnimationFrame(function () {
+            var scrollTop = window.scrollY || document.documentElement.scrollTop;
+            var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            if (docHeight > 0) {
+              progressBar.style.width = Math.min((scrollTop / docHeight) * 100, 100) + '%';
+            }
+            if (scrollTop > 400) { backBtn.classList.add('show'); }
+            else { backBtn.classList.remove('show'); }
+            ticking = false;
+          });
+          ticking = true;
+        }
+      }, { passive: true });
+
+      backBtn.addEventListener('click', function () {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+
+      /* --- Profile accordion on mobile --- */
+      function initAccordion() {
+        var isMobile = window.innerWidth <= 768;
+        var profiles = document.querySelectorAll('h3[id]');
+        profiles.forEach(function (h3) {
+          /* Only profile headings (G0-x, numbered, S-x, T-x) */
+          var text = h3.textContent || '';
+          if (!/^(G0-|[0-9]+\.|S[0-9]|T-[0-9])/.test(text.trim())) return;
+
+          var existingBtn = h3.querySelector('.profile-collapse-btn');
+          if (!existingBtn) {
+            var btn = document.createElement('button');
+            btn.className = 'profile-collapse-btn';
+            btn.textContent = '▼';
+            btn.setAttribute('aria-label', 'Buka/tutup profil');
+            h3.appendChild(btn);
+          }
+
+          var btn = h3.querySelector('.profile-collapse-btn');
+          /* Collect siblings until next h3 or h2 */
+          var body = h3.nextElementSibling;
+          if (body && body.classList.contains('profile-body')) {
+            /* Already wrapped */
+            if (isMobile && !body.classList.contains('collapsed')) {
+              body.classList.add('collapsed');
+              btn.textContent = '▶';
+            } else if (!isMobile) {
+              body.classList.remove('collapsed');
+              btn.textContent = '▼';
+            }
+            return;
+          }
+
+          /* Wrap profile content in a div */
+          var wrapper = document.createElement('div');
+          wrapper.className = 'profile-body';
+          var sibling = h3.nextElementSibling;
+          while (sibling && sibling.tagName !== 'H3' && sibling.tagName !== 'H2') {
+            var next = sibling.nextElementSibling;
+            wrapper.appendChild(sibling);
+            sibling = next;
+          }
+          h3.parentNode.insertBefore(wrapper, sibling);
+
+          if (isMobile) {
+            wrapper.classList.add('collapsed');
+            btn.textContent = '▶';
+          }
+        });
+      }
+
+      /* Toggle accordion on click */
+      document.addEventListener('click', function (e) {
+        if (!e.target.classList.contains('profile-collapse-btn')) return;
+        var h3 = e.target.closest('h3');
+        if (!h3) return;
+        var body = h3.nextElementSibling;
+        if (body && body.classList.contains('profile-body')) {
+          body.classList.toggle('collapsed');
+          e.target.textContent = body.classList.contains('collapsed') ? '▶' : '▼';
+        }
+      });
+
+      /* Init accordion on load and resize */
+      initAccordion();
+      var resizeTimer;
+      window.addEventListener('resize', function () {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(initAccordion, 250);
+      });
+
+      /* --- Keyboard: Escape closes sidebar --- */
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && sidebar.classList.contains('open')) {
+          closeSidebar();
+        }
+      });
+    })();
+    
+</script>
+</body>
+</html>

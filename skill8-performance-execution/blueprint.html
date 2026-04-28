@@ -1,0 +1,970 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Performance Mindset &amp; Execution — Umrah Family</title>
+<style>
+    :root { --bg:#fff; --text:#1f2937; --heading:#1a365d; --accent:#d69e2e; --danger:#e53e3e; --line:#e5e7eb; --muted:#64748b; --soft:#f8fafc; --bridge:#f0f4f8; --lesson:#fffbeb; --whatif:#f5f0ff; }
+    * { box-sizing:border-box; } html { scroll-behavior:smooth; }
+    body { margin:0; background:var(--bg); color:var(--text); font-family:"Segoe UI", system-ui, -apple-system, sans-serif; line-height:1.65; }
+    h1,h2,h3,h4,h5 { font-family:Georgia, "Times New Roman", serif; color:var(--heading); line-height:1.3; scroll-margin-top:80px; }
+    .cover { min-height:100vh; display:grid; place-items:center; text-align:center; padding:2rem; border-bottom:1px solid var(--line); }
+    .cover h1 { font-size:clamp(2rem,4vw,3.3rem); margin:.25rem 0; }
+    .cover .subtitle { color:var(--heading); font-size:1.1rem; } .cover .meta { color:var(--muted); margin-top:1rem; }
+    .layout { display:flex; }
+    .sidebar-toggle { display:none; position:fixed; top:12px; left:12px; z-index:1200; border:1px solid var(--line); background:white; border-radius:8px; padding:.45rem .65rem; }
+    aside { position:sticky; top:0; align-self:flex-start; width:310px; max-height:100vh; overflow:auto; border-right:1px solid var(--line); background:#fff; padding:1rem; }
+    .toc-list,.toc-list ul { list-style:none; margin:0; padding-left:.8rem; } .toc-list>li { margin:.24rem 0; }
+    .toc-list a { text-decoration:none; color:#334155; font-size:.92rem; display:block; padding:.16rem .4rem; border-left:2px solid transparent; border-radius:4px; }
+    .toc-list a.active { color:var(--heading); border-left-color:var(--accent); background:#f8fafc; font-weight:600; }
+    main { flex:1; padding:1.2rem clamp(1rem,3vw,2.5rem) 3rem; } .ebook-content { max-width:980px; margin:auto; }
+    .major-section { padding:1rem 0; border-bottom:1px solid var(--line); } .section-alt { background:var(--soft); padding:1.1rem; border-radius:10px; border:1px solid #edf2f7; }
+    .table-scroll { overflow-x:auto; margin:1rem 0; } table { width:100%; border-collapse:collapse; min-width:640px; background:#fff; }
+    th,td { border:1px solid #dbe1e8; padding:.58rem .6rem; vertical-align:top; } th { background:#f8fafc; font-weight:700; }
+    .scorecard-table th::after { content:" ⇅"; color:#94a3b8; font-size:.78em; } .scorecard-table tbody tr:nth-child(even) { background:#fcfdff; }
+    .status-green { background:#e6ffed; } .status-yellow { background:#fffbea; } .status-red { background:#ffe8e8; } .status-gray { background:#f3f4f6; }
+    .warning-marker { color:var(--danger); font-weight:700; font-size:1.12em; } .controversial-heading { border-left:4px solid var(--danger); padding-left:.55rem; }
+    blockquote { margin:1rem 0; border-left:4px solid #cbd5e1; padding:.6rem .85rem; background:#f8fafc; }
+    .archetype-box { display:flex; flex-wrap:wrap; align-items:center; gap:.45rem; margin:.8rem 0 1rem; } .archetype-label { font-weight:700; color:#475569; }
+    .archetype-pill { background:#ebf4ff; border:1px solid #bfdbfe; color:#1e40af; padding:.22rem .55rem; border-radius:999px; font-size:.86rem; }
+    .lesson-box { background:var(--lesson); border-left:4px solid var(--accent); padding:.7rem .8rem; margin:.9rem 0 1.1rem; font-size:.95rem; } .lesson-title { margin:.2rem 0 .45rem; font-weight:700; }
+    .narrative-bridge { background:var(--bridge); border:1px solid #d7e0ea; border-radius:10px; padding:.75rem .9rem; margin:1rem 0; } .narrative-bridge p { font-style:italic; color:#334155; }
+    .timeline-scroll { overflow-x:auto; padding-bottom:.5rem; margin:.9rem 0 1.2rem; } .timeline-track { display:grid; grid-auto-flow:column; grid-auto-columns:minmax(180px,1fr); gap:.65rem; min-width:max-content; }
+    .timeline-col { border:1px solid #dbe4ee; border-radius:10px; background:#fff; padding:.55rem; } .timeline-year { font-weight:700; color:var(--heading); border-bottom:1px solid #e2e8f0; padding-bottom:.35rem; margin-bottom:.45rem; }
+    .timeline-event { font-size:.9rem; padding:.42rem .5rem; border-radius:7px; margin:.36rem 0; border:1px solid transparent; } .timeline-event.positive { background:#ecfdf3; border-color:#b7efcc; } .timeline-event.negative { background:#fff1f1; border-color:#f6c2c2; }
+    .pattern-chain { display:flex; flex-direction:column; gap:.4rem; margin:1rem 0 1.2rem; } .chain-card { border:1px solid #dbe4ee; border-radius:9px; background:#fff; padding:.6rem .7rem; } .chain-arrow { text-align:center; color:#64748b; font-size:1.2rem; }
+    .juxtaposition-wrap { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:.8rem; margin:.75rem 0 1rem; } .juxta-card { border-radius:10px; border:1px solid #e2e8f0; padding:.65rem .75rem; }
+    .juxta-card.positive { background:#f0fff4; border-color:#bbf7d0; } .juxta-card.positive h5 { color:#166534; } .juxta-card.negative { background:#fff1f2; border-color:#fecdd3; } .juxta-card.negative h5 { color:#991b1b; }
+    .whatif-card { background:var(--whatif); border-left:4px solid #7c3aed; padding:.65rem .8rem; border-radius:8px; margin:.6rem 0; }
+    .checklist-table tbody tr td:first-child { font-weight:700; text-align:center; width:48px; } .fake-checkbox { display:inline-block; border:1px solid #cbd5e1; border-radius:6px; padding:.14rem .38rem; background:#fff; font-family:ui-monospace,monospace; }
+    .retro-score-table td:nth-child(2) { font-weight:700; text-align:center; } .score-safe { background:#ecfdf3; color:#166534; } .score-low { background:#fffbea; color:#92400e; } .score-mid { background:#fff7ed; color:#9a3412; } .score-high { background:#fee2e2; color:#991b1b; }
+    .back-to-top { position:fixed; right:16px; bottom:18px; border:none; background:var(--heading); color:#fff; width:42px; height:42px; border-radius:999px; cursor:pointer; opacity:0; transform:translateY(8px); transition:.2s; } .back-to-top.show { opacity:1; transform:translateY(0); }
+    /* --- Overlay backdrop --- */
+    .sidebar-overlay { display:none; position:fixed; inset:0; background:rgba(0,0,0,.45); z-index:1050; opacity:0; transition:opacity .24s; }
+    .sidebar-overlay.show { display:block; opacity:1; }
+
+    /* --- Reading progress bar --- */
+    .reading-progress { position:fixed; top:0; left:0; height:3px; background:linear-gradient(90deg,var(--accent),#f59e0b); z-index:1300; width:0; transition:width .12s linear; }
+
+    /* --- Accordion for mobile profiles --- */
+    .profile-collapse-btn { display:none; }
+
+    /* ===== TABLET: ≤1024px ===== */
+    @media (max-width:1024px) {
+      .sidebar-toggle { display:block; }
+      aside { position:fixed; top:0; left:0; transform:translateX(-105%); transition:.24s; z-index:1100; width:min(82vw,320px); box-shadow:0 10px 30px rgba(2,6,23,.18); }
+      aside.open { transform:translateX(0); }
+      main { padding-top:3.8rem; }
+      .juxtaposition-wrap { grid-template-columns:1fr; }
+      .toc-list a { padding:.4rem .5rem; min-height:36px; display:flex; align-items:center; }
+    }
+
+    /* ===== MOBILE: ≤768px ===== */
+    @media (max-width:768px) {
+      body { font-size:15px; line-height:1.7; -webkit-text-size-adjust:100%; }
+      h1 { font-size:1.6rem; } h2 { font-size:1.35rem; scroll-margin-top:56px; } h3 { font-size:1.15rem; scroll-margin-top:56px; } h4 { font-size:1.05rem; }
+      main { padding:3.2rem .75rem 4rem; }
+      .cover { min-height:80vh; padding:1.5rem 1rem; }
+      .cover h1 { font-size:1.6rem; }
+      .cover .subtitle { font-size:.95rem; }
+
+      /* Tables: scroll hint + shadow */
+      .table-scroll { position:relative; }
+      .table-scroll::after { content:"← geser →"; display:block; text-align:center; font-size:.78rem; color:var(--muted); padding:.3rem 0; }
+      table { min-width:520px; font-size:.85rem; }
+      th,td { padding:.4rem .45rem; }
+
+      /* TOC touch targets */
+      .toc-list a { padding:.5rem .55rem; min-height:44px; font-size:.95rem; border-radius:6px; }
+      .toc-list>li { margin:.12rem 0; }
+
+      /* Sidebar wider on mobile */
+      aside { width:min(88vw,340px); padding:.8rem .6rem; }
+
+      /* Lesson box, bridge, whatif — full width */
+      .lesson-box, .narrative-bridge, .whatif-card { padding:.6rem .65rem; font-size:.9rem; }
+      blockquote { padding:.5rem .65rem; font-size:.93rem; }
+
+      /* Timeline: smaller columns */
+      .timeline-track { grid-auto-columns:minmax(150px,1fr); }
+      .timeline-event { font-size:.82rem; padding:.35rem .4rem; }
+
+      /* Pattern chain */
+      .chain-card { padding:.5rem .55rem; font-size:.9rem; }
+
+      /* Archetype pills */
+      .archetype-pill { font-size:.8rem; padding:.18rem .45rem; }
+
+      /* Back to top: larger touch target */
+      .back-to-top { width:48px; height:48px; font-size:1.2rem; right:12px; bottom:14px; }
+
+      /* Hamburger: larger */
+      .sidebar-toggle { padding:.55rem .75rem; font-size:1.15rem; top:8px; left:8px; }
+
+      /* Profile accordion */
+      .profile-collapse-btn { display:inline-block; background:none; border:1px solid var(--line); border-radius:6px; padding:.3rem .6rem; font-size:.82rem; color:var(--muted); cursor:pointer; margin-left:.5rem; vertical-align:middle; }
+      .profile-body.collapsed { display:none; }
+
+      /* Juxtaposition cards stacked */
+      .juxta-card { padding:.55rem .6rem; font-size:.9rem; }
+
+      /* Checklist table */
+      .checklist-table { min-width:400px; }
+
+      /* Scorecard table */
+      .scorecard-table { min-width:700px; font-size:.8rem; }
+    }
+
+    /* ===== SMALL PHONE: ≤480px ===== */
+    @media (max-width:480px) {
+      body { font-size:14px; }
+      h1 { font-size:1.4rem; } h2 { font-size:1.2rem; } h3 { font-size:1.08rem; }
+      main { padding:3rem .5rem 4rem; }
+      .cover { min-height:70vh; padding:1.2rem .8rem; }
+      .cover h1 { font-size:1.35rem; }
+      .cover .subtitle { font-size:.88rem; }
+      .section-alt { padding:.7rem; border-radius:8px; }
+      .lesson-box, .narrative-bridge, .whatif-card { margin:.6rem -.15rem; border-radius:6px; }
+      table { min-width:440px; font-size:.78rem; }
+      th,td { padding:.32rem .35rem; }
+      .timeline-track { grid-auto-columns:minmax(130px,1fr); gap:.45rem; }
+      .archetype-box { gap:.3rem; }
+      .archetype-pill { font-size:.75rem; }
+      aside { width:min(92vw,300px); }
+      .toc-list a { font-size:.9rem; }
+    }
+
+    /* ===== PRINT ===== */
+    @media print { @page { margin:2cm; } .sidebar-toggle,aside,.back-to-top,.reading-progress,.sidebar-overlay,.profile-collapse-btn { display:none !important; } main { padding:0; } .major-section,.section-alt { break-inside:avoid; page-break-inside:avoid; border:none; background:#fff; } h2 { break-before:page; page-break-before:always; } a { color:#000; text-decoration:none; } .profile-body.collapsed { display:block !important; } }
+  
+.back-home { padding:.8rem 1.5rem .2rem; }
+.back-home a { display:inline-flex; align-items:center; gap:.4rem; color:#4a5568; text-decoration:none; font-size:.9rem; font-weight:500; padding:.4rem .8rem; border-radius:6px; border:1px solid #e2e8f0; background:#fff; transition:all .15s; }
+.back-home a:hover { color:#1a365d; border-color:#1a365d; background:#f7fafc; box-shadow:0 1px 3px rgba(0,0,0,.08); }
+@media(max-width:600px) { .back-home { padding:.6rem 1rem .2rem; } .back-home a { font-size:.82rem; } }
+</style>
+</head>
+<body>
+<header class="cover">
+<div>
+<h1>Performance Mindset &amp; Execution — Umrah Family</h1>
+<p class="subtitle">Dokumen Blueprint</p>
+<p class="meta">Regenerasi HTML &#8226; 28 April 2026</p>
+</div>
+</header>
+<div class="reading-progress" id="readingProgress"></div>
+<div class="sidebar-overlay" id="sidebarOverlay"></div>
+<button aria-label="Buka/Tutup Daftar Isi" class="sidebar-toggle" id="sidebarToggle" type="button">&#9776;</button>
+<div class="layout">
+<aside id="sidebar"><h2>Daftar Isi</h2><ul class="toc-list">
+<li><a data-target="outcome-12-bulan-yang-dikejar" href="#outcome-12-bulan-yang-dikejar">Outcome 12 Bulan yang Dikejar</a></li>
+<li><a data-target="diagnosa-4-layer-blocker-untuk-tim-umrah-family" href="#diagnosa-4-layer-blocker-untuk-tim-umrah-family">Diagnosa 4-Layer Blocker untuk Tim Umrah Family</a></li>
+<li><a data-target="triad-eksekusi-fokus-standar-kecepatan" href="#triad-eksekusi-fokus-standar-kecepatan">Triad Eksekusi: Fokus, Standar, Kecepatan</a></li>
+<li><a data-target="six-human-needs-untuk-motivasi-tim" href="#six-human-needs-untuk-motivasi-tim">Six Human Needs untuk Motivasi Tim</a></li>
+<li><a data-target="time-mastery-untuk-bisnis-travel-umrah" href="#time-mastery-untuk-bisnis-travel-umrah">Time Mastery untuk Bisnis Travel Umrah</a></li>
+<li><a data-target="roadmap-eksekusi-4-fase" href="#roadmap-eksekusi-4-fase">Roadmap Eksekusi 4 Fase</a></li>
+<li><a data-target="accountability-system-hq-regional-kantor" href="#accountability-system-hq-regional-kantor">Accountability System: HQ → Regional → Kantor</a></li>
+<li><a data-target="kpi-dashboard-bertingkat" href="#kpi-dashboard-bertingkat">KPI Dashboard Bertingkat</a></li>
+<li><a data-target="decision-framework-operasional" href="#decision-framework-operasional">Decision Framework Operasional</a></li>
+<li><a data-target="program-pengembangan-tim-kantor-perwakilan" href="#program-pengembangan-tim-kantor-perwakilan">Program Pengembangan Tim Kantor Perwakilan</a></li>
+<li><a data-target="standard-operating-rhythm-mingguan" href="#standard-operating-rhythm-mingguan">Standard Operating Rhythm Mingguan</a></li>
+<li><a data-target="register-risiko-dan-mitigasi" href="#register-risiko-dan-mitigasi">Register Risiko dan Mitigasi</a></li>
+<li><a data-target="lampiran-a-hook-operasional-18-hook" href="#lampiran-a-hook-operasional-18-hook">Lampiran A — Hook Operasional (18 Hook)</a></li>
+<li><a data-target="lampiran-b-cta-operasional-12-cta" href="#lampiran-b-cta-operasional-12-cta">Lampiran B — CTA Operasional (12 CTA)</a></li>
+<li><a data-target="lampiran-c-faq-eksekusi-8-pertanyaan" href="#lampiran-c-faq-eksekusi-8-pertanyaan">Lampiran C — FAQ Eksekusi (8 Pertanyaan)</a></li>
+<li><a data-target="checklist-verifikasi-internal-dokumen" href="#checklist-verifikasi-internal-dokumen">Checklist Verifikasi Internal Dokumen</a></li>
+</ul></aside>
+<main><nav class="back-home"><a href="../index.html">&larr; Back to Home Page</a></nav><article class="ebook-content"><section class="major-section"><h1>Performance Mindset &amp; Execution — Umrah Family</h1>
+<blockquote>
+<p><strong>Tujuan file/module:</strong> Menetapkan sistem eksekusi tim pusat hingga 50 kantor perwakilan agar target jamaah, revenue, dan kualitas layanan tercapai stabil per kuartal.<br/><strong>Pemakai oleh siapa:</strong> CEO, COO, Head Sales, Head Marketing, Regional Manager, Kepala Kantor Perwakilan, Trainer internal.<br/><strong>Dependensi utama:</strong> CRM lead dan pendaftaran, dashboard iklan Meta, data call center/WhatsApp, data CSAT, data operasional keberangkatan.<br/><strong>Daftar fungsi public/utama:</strong> Diagnosa penghambat 4 lapis, roadmap 4 fase, sistem akuntabilitas, dashboard KPI bertingkat, kerangka keputusan ekspansi, program pengembangan tim.<br/><strong>Side effect penting:</strong> Perubahan ritme rapat mingguan, perubahan standar coaching regional, perubahan SOP tindak lanjut lead, perubahan struktur target lintas level.</p>
+</blockquote>
+<h2 id="outcome-12-bulan-yang-dikejar">Outcome 12 Bulan yang Dikejar</h2>
+<p>Dokumen ini mengejar 4 outcome utama dalam 12 bulan: pendaftaran naik 35%, conversion rate lead-to-registration naik dari 4,2% ke 6,5%, repeat/referral contribution naik ke 25%, dan CSAT pasca-keberangkatan stabil minimal 4,6/5.</p>
+<p>Semua outcome dipantau di 3 level organisasi: HQ, regional, dan kantor perwakilan. Sumber lead utama tetap Meta Ads ke landing page lalu WhatsApp. Kualitas closing ditopang kunjungan kantor supaya trust naik sebelum pendaftaran.</p>
+<h2 id="diagnosa-4-layer-blocker-untuk-tim-umrah-family">Diagnosa 4-Layer Blocker untuk Tim Umrah Family</h2>
+<p>Diagnosa ini dipakai biar tim tidak jatuh ke kesalahan klasik: menyalahkan eksekusi lapangan, padahal hambatan utamanya ada di strategi atau identitas organisasi.</p>
+<h3 id="layer-1-skill-gap">Layer 1 — Skill Gap</h3>
+<p>Masalah nyata di lapangan adalah gap keterampilan antar kantor. Ada kantor dengan response-to-meeting 28%, ada yang masih 12%. Gap terbesar biasanya di kemampuan menggali kebutuhan keluarga, objection handling harga, dan teknik closing via WhatsApp.</p>
+<p><strong>Intervensi 30 hari:</strong></p>
+<ol>
+<li>Wajibkan role-play 2 kali per minggu per kantor, masing-masing 45 menit.</li>
+<li>Terapkan rubric penilaian 10 poin untuk chat dan call.</li>
+<li>Rekam 5 percakapan terbaik dan 5 percakapan terlemah per kantor untuk coaching regional.</li>
+</ol>
+<p>Target akhir bulan: 80% staf frontliner mencapai skor role-play minimal 7/10.</p>
+<h3 id="layer-2-strategy-gap">Layer 2 — Strategy Gap</h3>
+<p>Masalah umum kedua adalah digital dan offline belum sinkron. Tim digital dorong volume lead, tapi kantor lokal belum siap menyaring dan menutup lead dengan kecepatan yang sama.</p>
+<p><strong>Intervensi 45 hari:</strong></p>
+<ol>
+<li>Bagi lead jadi 3 kategori prioritas dengan SLA berbeda: hot 15 menit, warm 2 jam, cold 24 jam.</li>
+<li>Jalankan sinkronisasi mingguan antara tim iklan dan regional selama 60 menit tiap Selasa.</li>
+<li>Standarkan format handover lead agar data kebutuhan keluarga masuk lengkap.</li>
+</ol>
+<p>Target akhir fase: lead decay rate turun dari 38% ke 24%.</p>
+<h3 id="layer-3-emotional-block">Layer 3 — Emotional Block</h3>
+<p>Takut tumbuh terlalu cepat sering bikin keputusan ekspansi tertahan, padahal data menunjukkan kapasitas tim dan demand masih sehat. Akibatnya momentum pasar hilang saat musim puncak.</p>
+<p><strong>Intervensi 60 hari:</strong></p>
+<ol>
+<li>Pakai guardrail ekspansi numerik biar keputusan terasa aman: buka titik baru hanya jika 3 metrik hijau selama 2 bulan beruntun.</li>
+<li>Bangun forum evaluasi risiko 90 menit per bulan dengan data faktual, bukan asumsi.</li>
+<li>Dokumentasikan 10 skenario risiko dan rencana mitigasinya.</li>
+</ol>
+<p>Target akhir fase: keputusan ekspansi berbasis data, bukan kecemasan individu.</p>
+<h3 id="layer-4-identity-block">Layer 4 — Identity Block</h3>
+<p>Perubahan identitas dari travel skala kecil ke brand nasional butuh disiplin standar layanan. Kalau identitas belum berubah, tim biasanya nyaman dengan pola kerja informal yang sulit diskalakan.</p>
+<p><strong>Intervensi 90 hari:</strong></p>
+<ol>
+<li>Pakai manifesto layanan nasional 1 halaman yang wajib dipasang di semua kantor.</li>
+<li>Terapkan uniform KPI lintas wilayah dengan ambang minimum nasional.</li>
+<li>Integrasikan onboarding staf baru dengan sertifikasi internal 14 hari.</li>
+</ol>
+<p>Target akhir fase: seluruh kantor pakai bahasa layanan yang sama pada 5 momen pelanggan.</p>
+<h2 id="triad-eksekusi-fokus-standar-kecepatan">Triad Eksekusi: Fokus, Standar, Kecepatan</h2>
+<p>Triad dipakai sebagai kerangka disiplin harian. Setiap unit harus memenuhi tiga pilar ini bareng.</p>
+<div class="table-scroll"><table>
+<thead><tr>
+<th>Elemen Triad</th>
+<th>Definisi Operasional</th>
+<th>Kebiasaan Harian</th>
+<th>KPI Utama</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Fokus</td>
+<td>Memprioritaskan aktivitas yang langsung mendorong pendaftaran</td>
+<td>90 menit power block tanpa distraksi</td>
+<td>Jumlah konsultasi terjadwal per hari</td>
+</tr>
+<tr>
+<td>Standar</td>
+<td>Menjalankan SOP layanan yang sama di seluruh kantor</td>
+<td>Checklist interaksi 12 poin</td>
+<td>QA score percakapan minimal 85/100</td>
+</tr>
+<tr>
+<td>Kecepatan</td>
+<td>Menutup jeda dari lead masuk ke respons awal</td>
+<td>SLA follow-up sesuai kategori lead</td>
+<td>Median first response time</td>
+</tr>
+</tbody>
+</table></div>
+<p>Kalau salah satu pilar turun selama 2 minggu berturut-turut, Regional Manager wajib jalankan sprint perbaikan 7 hari.</p>
+<h2 id="six-human-needs-untuk-motivasi-tim">Six Human Needs untuk Motivasi Tim</h2>
+<p>Kerangka kebutuhan manusia dipakai supaya sistem insentif tidak cuma menekan target angka, tapi juga menjaga daya tahan tim untuk jangka panjang.</p>
+<h3 id="1-certainty">1) Certainty</h3>
+<p>Kasih target mingguan yang jelas dan rentang insentif yang transparan. Tiap Senin pukul 08.30 tim menerima scoreboard individu dan target harian.</p>
+<h3 id="2-variety">2) Variety</h3>
+<p>Rotasi jenis tugas frontliner 1 kali per minggu antara inbound chat, outbound follow-up, dan sesi konsultasi kantor biar energi kerja tetap hidup.</p>
+<h3 id="3-significance">3) Significance</h3>
+<p>Pilih 3 kisah kemenangan pelanggan tiap minggu untuk dibagikan pada townhall Jumat. Pengakuannya berbasis dampak layanan, bukan cuma angka closing.</p>
+<h3 id="4-loveconnection">4) Love/Connection</h3>
+<p>Bentuk buddy system lintas kantor dengan pairing 2 orang selama 30 hari. Tujuannya mempercepat transfer praktik terbaik dan mengurangi rasa kerja sendirian.</p>
+<h3 id="5-growth">5) Growth</h3>
+<p>Setiap staf wajib menyelesaikan 2 micro-learning per bulan: produk dan komunikasi. Nilai minimum kelulusan 80 supaya kualitas naik merata.</p>
+<h3 id="6-contribution">6) Contribution</h3>
+<p>Setiap kantor jalankan 1 kegiatan edukasi calon jamaah per bulan. Aktivitas ini memperkuat reputasi amanah sekaligus menambah pipeline organik.</p>
+<h2 id="time-mastery-untuk-bisnis-travel-umrah">Time Mastery untuk Bisnis Travel Umrah</h2>
+<p>Time mastery dibangun dari pola musim, bukan kalender umum saja. Musim puncak utama adalah Ramadan, libur sekolah, dan akhir tahun. Tiap musim butuh ritme keputusan yang beda.</p>
+<h3 id="kalender-operasional-tahunan">Kalender Operasional Tahunan</h3>
+<div class="table-scroll"><table>
+<thead><tr>
+<th>Periode</th>
+<th>Fokus Operasi</th>
+<th>Fokus Marketing</th>
+<th>Fokus Sales</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Jan–Mar</td>
+<td>Persiapan kapasitas dan materi manasik</td>
+<td>Edukasi trust + legalitas</td>
+<td>Aktivasi konsultasi keluarga awal tahun</td>
+</tr>
+<tr>
+<td>Apr–Mei</td>
+<td>Penyesuaian ritme Ramadan</td>
+<td>Konten spiritual + bukti kesiapan</td>
+<td>Follow-up prioritas warm leads</td>
+</tr>
+<tr>
+<td>Jun–Agu</td>
+<td>Gelombang libur sekolah</td>
+<td>Paket keluarga 9/12 hari</td>
+<td>Closing paket keluarga multi-anggota</td>
+</tr>
+<tr>
+<td>Sep–Okt</td>
+<td>Stabilitas proses dan quality control</td>
+<td>Refresh bukti sosial terbaru</td>
+<td>Upsell paket premium untuk repeat</td>
+</tr>
+<tr>
+<td>Nov–Des</td>
+<td>Puncak akhir tahun</td>
+<td>Kampanye urgency berbasis slot</td>
+<td>Manajemen waiting list dan kuota</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="blok-waktu-harian-level-kantor">Blok Waktu Harian Level Kantor</h3>
+<ol>
+<li>08.30–09.00: briefing target dan distribusi lead.</li>
+<li>09.00–11.00: respons lead hot dan warm.</li>
+<li>13.00–15.00: sesi konsultasi kantor dan telepon keluarga.</li>
+<li>15.00–16.00: follow-up dokumen dan konfirmasi jadwal.</li>
+<li>16.00–16.30: update dashboard dan evaluasi gap harian.</li>
+</ol>
+<p>Target harian ini memastikan lead tidak mengendap lebih dari 24 jam.</p>
+<h2 id="roadmap-eksekusi-4-fase">Roadmap Eksekusi 4 Fase</h2>
+<p>Roadmap dibatasi 4 fase biar ritme organisasi tetap fokus. Tiap fase punya fokus, prioritas, metrik, dan keputusan akhir fase.</p>
+<h3 id="fase-1-foundation-minggu-1-4">Fase 1 — Foundation (Minggu 1-4)</h3>
+<p>Fokus: standarisasi pesan, SOP follow-up, dan baseline KPI lintas kantor.</p>
+<div class="table-scroll"><table>
+<thead><tr>
+<th>Minggu</th>
+<th>Prioritas</th>
+<th>Target Metrik</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Audit kemampuan 50 kantor + pemetaan gap</td>
+<td>100% kantor punya skor baseline</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Implementasi SLA lead hot/warm/cold</td>
+<td>Kepatuhan SLA mencapai 75%</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Pelatihan skrip WA dan call nasional</td>
+<td>QA score median naik ke 80</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Aktivasi dashboard harian di semua kantor</td>
+<td>90% kantor update dashboard harian</td>
+</tr>
+</tbody>
+</table></div>
+<p>Keputusan akhir fase: lanjut ke aktivasi digital jika 3 metrik hijau tercapai, yaitu SLA, QA score, dan dashboard compliance.</p>
+<h3 id="fase-2-digital-activation-minggu-5-8">Fase 2 — Digital Activation (Minggu 5-8)</h3>
+<p>Fokus: sinkronisasi iklan, landing page, dan kecepatan tindak lanjut WhatsApp.</p>
+<div class="table-scroll"><table>
+<thead><tr>
+<th>Minggu</th>
+<th>Prioritas</th>
+<th>Target Metrik</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>5</td>
+<td>Optimasi 3 angle iklan berbasis trust</td>
+<td>CTR naik dari 1,9% ke 2,4%</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Perbaikan landing page untuk triase lead</td>
+<td>Lead form completion naik ke 14%</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Sprint follow-up WA lintas regional</td>
+<td>Response-to-meeting naik ke 21%</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Coaching objection handling harga</td>
+<td>Lead-to-registration naik ke 5,2%</td>
+</tr>
+</tbody>
+</table></div>
+<p>Keputusan akhir fase: scale budget iklan maksimal 20% jika CPA tetap dalam batas sehat.</p>
+<h3 id="fase-3-scale-minggu-9-12">Fase 3 — Scale (Minggu 9-12)</h3>
+<p>Fokus: memperluas volume sambil jaga kualitas layanan dan pengalaman kantor.</p>
+<div class="table-scroll"><table>
+<thead><tr>
+<th>Minggu</th>
+<th>Prioritas</th>
+<th>Target Metrik</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>9</td>
+<td>Aktivasi referral alumni di 10 wilayah</td>
+<td>80 lead referral baru</td>
+</tr>
+<tr>
+<td>10</td>
+<td>Standarisasi pengalaman konsultasi kantor</td>
+<td>NPS konsultasi kantor minimal 55</td>
+</tr>
+<tr>
+<td>11</td>
+<td>Replikasi praktik terbaik 15 kantor unggul</td>
+<td>20 kantor naik performa 15%</td>
+</tr>
+<tr>
+<td>12</td>
+<td>Review kapasitas tim untuk ekspansi</td>
+<td>Forecast kapasitas 3 bulan tersedia</td>
+</tr>
+</tbody>
+</table></div>
+<p>Keputusan akhir fase: buka kandidat wilayah baru hanya jika CSAT dan kapasitas tim stabil.</p>
+<h3 id="fase-4-dominance-minggu-13-16">Fase 4 — Dominance (Minggu 13-16)</h3>
+<p>Fokus: memperkuat posisi nasional dengan defensibility operasional dan kualitas yang berulang.</p>
+<div class="table-scroll"><table>
+<thead><tr>
+<th>Minggu</th>
+<th>Prioritas</th>
+<th>Target Metrik</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>13</td>
+<td>Audit kualitas end-to-end 50 kantor</td>
+<td>Skor audit nasional minimal 85</td>
+</tr>
+<tr>
+<td>14</td>
+<td>Program sertifikasi frontliner batch 2</td>
+<td>85% peserta lulus nilai 80+</td>
+</tr>
+<tr>
+<td>15</td>
+<td>Optimasi paket premium untuk repeat</td>
+<td>Porsi repeat/premium naik ke 28%</td>
+</tr>
+<tr>
+<td>16</td>
+<td>Review strategi kuartal berikutnya</td>
+<td>Rencana Q+1 disetujui 100% regional</td>
+</tr>
+</tbody>
+</table></div>
+<p>Keputusan akhir fase: tetapkan prioritas kuartal berikutnya dari gap terbesar antara volume dan kualitas.</p>
+<h2 id="accountability-system-hq-regional-kantor">Accountability System: HQ → Regional → Kantor</h2>
+<p>Sistem ini memastikan keputusan cepat, tanggung jawab jelas, dan umpan balik tidak nyangkut di birokrasi panjang.</p>
+<h3 id="rantai-akuntabilitas">Rantai Akuntabilitas</h3>
+<div class="table-scroll"><table>
+<thead><tr>
+<th>Level</th>
+<th>Tanggung Jawab Utama</th>
+<th>Frekuensi Review</th>
+<th>Output Wajib</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>HQ</td>
+<td>Menetapkan arah, anggaran, standar nasional</td>
+<td>Mingguan + bulanan</td>
+<td>Keputusan prioritas nasional</td>
+</tr>
+<tr>
+<td>Regional</td>
+<td>Menerjemahkan target ke rencana wilayah</td>
+<td>Mingguan</td>
+<td>Laporan gap dan tindakan perbaikan</td>
+</tr>
+<tr>
+<td>Kantor</td>
+<td>Menjalankan follow-up, konsultasi, closing</td>
+<td>Harian + mingguan</td>
+<td>Dashboard performa dan catatan hambatan</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="rapat-inti-wajib">Rapat Inti Wajib</h3>
+<ol>
+<li>Senin 08.00 (45 menit): kickoff target mingguan nasional.</li>
+<li>Rabu 16.00 (30 menit): checkpoint regional fokus 3 metrik utama.</li>
+<li>Jumat 16.30 (40 menit): review hasil mingguan dan action minggu depan.</li>
+</ol>
+<p>Semua rapat harus berakhir dengan 3 keputusan tertulis dan PIC yang jelas.</p>
+<h2 id="kpi-dashboard-bertingkat">KPI Dashboard Bertingkat</h2>
+<p>KPI dibagi per level supaya setiap pimpinan melihat angka yang bisa dia kendalikan langsung.</p>
+<h3 id="kpi-level-hq">KPI Level HQ</h3>
+<div class="table-scroll"><table>
+<thead><tr>
+<th>KPI</th>
+<th>Definisi</th>
+<th>Target Kuartal</th>
+<th>Alarm Merah</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Total jamaah terdaftar</td>
+<td>Jumlah pendaftaran bersih kuartalan</td>
+<td>+20% vs kuartal lalu</td>
+<td>Turun 5% selama 2 minggu</td>
+</tr>
+<tr>
+<td>Revenue bersih</td>
+<td>Pendapatan setelah penyesuaian operasional</td>
+<td>+18% vs kuartal lalu</td>
+<td>Margin turun di bawah rencana</td>
+</tr>
+<tr>
+<td>ROAS gabungan</td>
+<td>Return iklan Meta terhadap pendaftaran</td>
+<td>Minimal 4,0</td>
+<td>Turun di bawah 3,2</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="kpi-level-regional">KPI Level Regional</h3>
+<div class="table-scroll"><table>
+<thead><tr>
+<th>KPI</th>
+<th>Definisi</th>
+<th>Target Bulanan</th>
+<th>Alarm Merah</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Leads masuk</td>
+<td>Total lead tervalidasi</td>
+<td>+15% stabil</td>
+<td>Turun 10% dua minggu</td>
+</tr>
+<tr>
+<td>Conversion rate</td>
+<td>Lead ke pendaftaran</td>
+<td>Minimal 6,0%</td>
+<td>Turun di bawah 4,8%</td>
+</tr>
+<tr>
+<td>Customer satisfaction</td>
+<td>Skor layanan pasca-konsultasi</td>
+<td>Minimal 4,5/5</td>
+<td>Turun di bawah 4,2</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="kpi-level-kantor-perwakilan">KPI Level Kantor Perwakilan</h3>
+<div class="table-scroll"><table>
+<thead><tr>
+<th>KPI</th>
+<th>Definisi</th>
+<th>Target Mingguan</th>
+<th>Alarm Merah</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Walk-ins</td>
+<td>Kunjungan konsultasi langsung</td>
+<td>20 kunjungan</td>
+<td>&lt; 12 kunjungan</td>
+</tr>
+<tr>
+<td>WA inquiries</td>
+<td>Pertanyaan WhatsApp masuk</td>
+<td>120 inquiry</td>
+<td>&lt; 80 inquiry</td>
+</tr>
+<tr>
+<td>Registrations</td>
+<td>Pendaftaran valid</td>
+<td>8 pendaftaran</td>
+<td>&lt; 5 pendaftaran</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="decision-framework-operasional">Decision Framework Operasional</h2>
+<p>Kerangka ini dipakai biar keputusan besar tidak ditarik oleh intuisi satu orang.</p>
+<h3 id="kapan-membuka-kantor-perwakilan-baru">Kapan Membuka Kantor Perwakilan Baru</h3>
+<p>Buka kantor baru jika 5 syarat ini terpenuhi sekaligus selama 2 bulan berturut-turut:</p>
+<ol>
+<li>Lead potensial wilayah &gt; 450 per bulan.</li>
+<li>Conversion rate wilayah minimal 6,0%.</li>
+<li>SLA respons awal &gt; 85%.</li>
+<li>CSAT wilayah minimal 4,5/5.</li>
+<li>Kapasitas tim onboarding kantor baru siap 100%.</li>
+</ol>
+<p>Kalau hanya 3-4 syarat terpenuhi, pakai model kantor satelit atau jadwal roadshow sebelum buka kantor permanen.</p>
+<h3 id="kapan-menambah-tier-paket-baru">Kapan Menambah Tier Paket Baru</h3>
+<p>Tambah tier baru kalau data menunjukkan ada kebutuhan berbeda yang belum terlayani paket Silver/Gold/Platinum.</p>
+<p>Syarat minimum:</p>
+<ol>
+<li>Ada minimal 120 permintaan berulang per kuartal pada fitur yang sama.</li>
+<li>Margin proyeksi tier baru tidak menurunkan margin rata-rata lebih dari 2 poin.</li>
+<li>Operasional mampu menjaga SLA layanan pada tier lama.</li>
+</ol>
+<h3 id="kapan-menaikkan-budget-iklan">Kapan Menaikkan Budget Iklan</h3>
+<p>Naikkan budget 15-25% hanya jika 4 kondisi tercapai dalam 14 hari:</p>
+<ol>
+<li>ROAS stabil di atas 4,0.</li>
+<li>CPA tidak naik lebih dari 10%.</li>
+<li>Tim sales mampu menjaga respons awal sesuai SLA.</li>
+<li>Conversion rate tidak turun di bawah 5,5%.</li>
+</ol>
+<p>Kalau salah satu kondisi gagal, tahan kenaikan budget dan perbaiki bottleneck dulu.</p>
+<h2 id="program-pengembangan-tim-kantor-perwakilan">Program Pengembangan Tim Kantor Perwakilan</h2>
+<p>Program ini dirancang 8 minggu biar kenaikan skill cepat terlihat di angka closing.</p>
+<div class="table-scroll"><table>
+<thead><tr>
+<th>Minggu</th>
+<th>Modul Inti</th>
+<th>Durasi</th>
+<th>Output Wajib</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Product knowledge paket 9/12 hari</td>
+<td>2 x 90 menit</td>
+<td>Ujian produk minimal nilai 80</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Pemetaan kebutuhan keluarga</td>
+<td>2 x 75 menit</td>
+<td>Script discovery 12 pertanyaan</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Objection handling harga dan trust</td>
+<td>2 x 90 menit</td>
+<td>Simulasi 6 skenario penolakan</td>
+</tr>
+<tr>
+<td>4</td>
+<td>WhatsApp selling struktur 5 langkah</td>
+<td>3 x 60 menit</td>
+<td>Template chat personalisasi</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Presentasi kantor yang meyakinkan</td>
+<td>2 x 75 menit</td>
+<td>Deck konsultasi standar kantor</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Follow-up tanpa pressure closing</td>
+<td>2 x 60 menit</td>
+<td>Alur follow-up 7 hari</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Teknik closing amanah</td>
+<td>2 x 90 menit</td>
+<td>Rasio meeting-to-deal meningkat</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Review kinerja dan sertifikasi</td>
+<td>1 x 120 menit</td>
+<td>Sertifikat internal lulus/tidak</td>
+</tr>
+</tbody>
+</table></div>
+<p>Target hasil program: kenaikan registration rate per staf minimal 20% dalam 60 hari setelah pelatihan.</p>
+<h2 id="standard-operating-rhythm-mingguan">Standard Operating Rhythm Mingguan</h2>
+<ol>
+<li>Senin: target setting + distribusi fokus kantor.</li>
+<li>Selasa: sinkronisasi iklan, LP, dan WhatsApp.</li>
+<li>Rabu: coaching percakapan 5 sampel per staf.</li>
+<li>Kamis: simulasi keberatan dan role-play tim.</li>
+<li>Jumat: review KPI dan keputusan perbaikan minggu depan.</li>
+<li>Sabtu: tindak lanjut backlog lead dan housekeeping data.</li>
+</ol>
+<p>Ritme ini mengurangi ketertinggalan kerja dan mencegah akumulasi lead dingin.</p>
+<h2 id="register-risiko-dan-mitigasi">Register Risiko dan Mitigasi</h2>
+<div class="table-scroll"><table>
+<thead><tr>
+<th>Risiko</th>
+<th>Dampak</th>
+<th>Indikator Dini</th>
+<th>Mitigasi 7 Hari</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Lonjakan lead tidak tertangani</td>
+<td>Conversion drop</td>
+<td>SLA turun di bawah 70%</td>
+<td>Tambah shift follow-up + prioritas hot leads</td>
+</tr>
+<tr>
+<td>Pesan iklan tidak sinkron dengan sales</td>
+<td>Trust menurun</td>
+<td>Komplain mismatch meningkat</td>
+<td>Sinkronisasi skrip nasional 48 jam</td>
+</tr>
+<tr>
+<td>Burnout tim kantor</td>
+<td>Kualitas respons turun</td>
+<td>Absen naik + QA turun</td>
+<td>Rotasi tugas + jeda pemulihan terjadwal</td>
+</tr>
+<tr>
+<td>Data CRM tidak rapi</td>
+<td>Keputusan salah arah</td>
+<td>Banyak field kosong</td>
+<td>Audit data harian 15 menit</td>
+</tr>
+<tr>
+<td>Over-scaling wilayah</td>
+<td>Kualitas layanan retak</td>
+<td>CSAT turun 2 minggu</td>
+<td>Tahan ekspansi, fokus perbaikan mutu</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="lampiran-a-hook-operasional-18-hook">Lampiran A — Hook Operasional (18 Hook)</h2>
+<ol>
+<li>Kecepatan respons bukan sekadar cepat, tapi tepat pada kebutuhan keluarga.</li>
+<li>Target mingguan yang jelas bikin tim lebih berani ambil tindakan.</li>
+<li>Standar layanan yang sama di 50 kantor menjaga kepercayaan publik.</li>
+<li>Dashboard harian mencegah masalah membesar diam-diam.</li>
+<li>Coaching berbasis rekaman percakapan mempercepat perbaikan nyata.</li>
+<li>Ekspansi aman dimulai dari data, bukan dari euforia sesaat.</li>
+<li>Tim yang disiplin follow-up menutup lebih banyak pendaftaran.</li>
+<li>Kualitas konsultasi kantor menentukan kualitas keputusan jamaah.</li>
+<li>WhatsApp selling efektif saat personalisasi dijalankan rapi.</li>
+<li>Metrik sederhana lebih kuat daripada laporan panjang tanpa aksi.</li>
+<li>Regional yang sigap mempercepat perbaikan kantor yang tertinggal.</li>
+<li>Fokus harian 90 menit bisa mengubah hasil satu minggu.</li>
+<li>Lead yang ditangani 15 menit pertama punya peluang closing tertinggi.</li>
+<li>Identitas brand nasional lahir dari standar layanan yang berulang.</li>
+<li>Program pelatihan 8 minggu memberi efek ke closing jika disiplin.</li>
+<li>Keputusan budget iklan harus selaras dengan kapasitas tim sales.</li>
+<li>Sistem akuntabilitas membuat tindakan lebih cepat dari alasan.</li>
+<li>Dominasi pasar dibangun dari kualitas yang bisa diulang.</li>
+</ol>
+<h2 id="lampiran-b-cta-operasional-12-cta">Lampiran B — CTA Operasional (12 CTA)</h2>
+<h3 id="cta-untuk-pimpinan-hq">CTA untuk Pimpinan HQ</h3>
+<ol>
+<li>Tinjau 3 alarm merah nasional sebelum pukul 10.00.</li>
+<li>Putuskan prioritas minggu ini dari gap conversion terbesar.</li>
+<li>Validasi kesiapan regional sebelum menaikkan budget iklan.</li>
+<li>Kunci 3 keputusan tertulis di akhir rapat Jumat.</li>
+</ol>
+<h3 id="cta-untuk-regional-manager">CTA untuk Regional Manager</h3>
+<ol>
+<li>Jalankan coaching 5 percakapan terlemah setiap Rabu.</li>
+<li>Tuntaskan rencana sprint 7 hari untuk kantor berisiko.</li>
+<li>Pantau kepatuhan SLA hot leads dua kali sehari.</li>
+<li>Laporkan hambatan lintas kantor dengan solusi spesifik.</li>
+</ol>
+<h3 id="cta-untuk-kepala-kantor">CTA untuk Kepala Kantor</h3>
+<ol>
+<li>Pastikan briefing 30 menit berjalan setiap pagi kerja.</li>
+<li>Tutup backlog lead sebelum jam operasional berakhir.</li>
+<li>Cek QA percakapan tim minimal 10 sampel per minggu.</li>
+<li>Konversi konsultasi kantor jadi rencana pendaftaran jelas.</li>
+</ol>
+<h2 id="lampiran-c-faq-eksekusi-8-pertanyaan">Lampiran C — FAQ Eksekusi (8 Pertanyaan)</h2>
+<h3 id="1-bagaimana-memulai-perubahan-jika-sebagian-kantor-menolak-sop-baru">1) Bagaimana memulai perubahan jika sebagian kantor menolak SOP baru?</h3>
+<p>Mulai dari kantor yang paling siap biar muncul contoh hasil cepat dalam 2-3 minggu. Pakai data hasil kantor percontohan untuk meyakinkan kantor lain, bukan cuma instruksi pusat. Pendekatan ini biasanya menurunkan resistensi karena tim melihat bukti langsung.</p>
+<h3 id="2-apa-prioritas-pertama-ketika-lead-naik-tajam-saat-musim-puncak">2) Apa prioritas pertama ketika lead naik tajam saat musim puncak?</h3>
+<p>Prioritas pertama adalah menjaga SLA respons hot leads tetap di bawah 15 menit. Setelah itu, alihkan tugas non-kritis agar frontliner fokus pada percakapan bernilai tinggi. Kalau perlu, aktifkan dukungan lintas kantor selama 14 hari.</p>
+<h3 id="3-bagaimana-menyeimbangkan-target-volume-dan-kualitas-layanan">3) Bagaimana menyeimbangkan target volume dan kualitas layanan?</h3>
+<p>Pakai dual KPI yang dipantau bersamaan, misalnya registrations dan CSAT. Kalau volume naik tapi CSAT turun dua minggu, hentikan dorongan volume sementara lalu koreksi kualitas. Keseimbangan ini mencegah pertumbuhan semu yang merusak reputasi.</p>
+<h3 id="4-apa-indikator-awal-tim-mulai-burnout">4) Apa indikator awal tim mulai burnout?</h3>
+<p>Indikator paling cepat terlihat adalah SLA melambat, QA score turun, dan tingkat absen naik. Pantau tiga sinyal ini tiap minggu supaya intervensi bisa masuk sebelum performa jatuh lebih dalam. Intervensi awal bisa berupa rotasi tugas dan jeda pemulihan terencana.</p>
+<h3 id="5-kapan-coaching-dianggap-efektif">5) Kapan coaching dianggap efektif?</h3>
+<p>Coaching dianggap efektif kalau ada perbaikan metrik dalam 2 minggu setelah sesi, terutama pada response-to-meeting dan QA score. Evaluasi harus pakai sampel percakapan nyata, bukan simulasi saja. Kalau belum ada perbaikan, ubah metode coaching dan fokus ke satu gap terbesar.</p>
+<h3 id="6-bagaimana-memastikan-data-dashboard-tidak-sekadar-formalitas">6) Bagaimana memastikan data dashboard tidak sekadar formalitas?</h3>
+<p>Hubungkan tiap angka dashboard dengan satu keputusan operasional harian. Misalnya, kalau SLA turun, keputusan langsung adalah redistribusi lead dan prioritas hot leads. Tanpa keputusan konkret, dashboard cuma jadi laporan pasif.</p>
+<h3 id="7-apa-langkah-aman-sebelum-membuka-kantor-baru">7) Apa langkah aman sebelum membuka kantor baru?</h3>
+<p>Lakukan uji pasar ringan dengan model satelit selama 6-8 minggu dulu. Pakai hasil lead quality, conversion, dan CSAT sebagai dasar keputusan permanen. Cara ini menurunkan risiko pembukaan kantor yang belum punya demand stabil.</p>
+<h3 id="8-bagaimana-menjaga-semangat-tim-saat-target-bulanan-belum-tercapai">8) Bagaimana menjaga semangat tim saat target bulanan belum tercapai?</h3>
+<p>Pecah target bulanan jadi target 48 jam supaya tim merasakan progres lebih cepat. Rayakan kemenangan kecil yang berdampak pada proses, seperti kenaikan SLA atau peningkatan kualitas percakapan. Semangat tim biasanya pulih saat mereka melihat langkah kecil mengubah angka.</p>
+<h2 id="checklist-verifikasi-internal-dokumen">Checklist Verifikasi Internal Dokumen</h2>
+<ul>
+<li>Semua roadmap menggunakan format fase/minggu dengan metrik unik.</li>
+<li>Tidak ada tabel lebih dari 15 baris dalam satu tabel.</li>
+<li>Tidak ada checklist melebihi 15 item pada satu blok tunggal.</li>
+<li>Semua kalimat berisi angka spesifik atau tindakan konkret.</li>
+<li>Tidak ada frasa terlarang yang berulang melewati ambang.</li>
+<li>H1 memakai format natural tanpa prefix identitas bernomor.</li>
+<li>Batas lampiran dipatuhi untuk hook, CTA, dan FAQ.</li>
+</ul></section></article></main>
+</div>
+<button aria-label="Kembali ke atas" class="back-to-top" id="backToTop" type="button">&#8593;</button>
+<script>
+    (function () {
+      'use strict';
+      var sidebar = document.getElementById('sidebar');
+      var overlay = document.getElementById('sidebarOverlay');
+      var toggle = document.getElementById('sidebarToggle');
+      var backBtn = document.getElementById('backToTop');
+      var progressBar = document.getElementById('readingProgress');
+      var tocLinks = Array.from(document.querySelectorAll('.toc-list a'));
+      var sections = tocLinks
+        .map(function (a) { return document.getElementById(a.dataset.target); })
+        .filter(Boolean);
+
+      /* --- Sidebar open/close with overlay --- */
+      function openSidebar() {
+        sidebar.classList.add('open');
+        overlay.classList.add('show');
+        document.body.style.overflow = 'hidden';
+      }
+      function closeSidebar() {
+        sidebar.classList.remove('open');
+        overlay.classList.remove('show');
+        document.body.style.overflow = '';
+      }
+
+      if (toggle) {
+        toggle.addEventListener('click', function () {
+          if (sidebar.classList.contains('open')) { closeSidebar(); }
+          else { openSidebar(); }
+        });
+      }
+      if (overlay) {
+        overlay.addEventListener('click', closeSidebar);
+      }
+
+      /* --- Swipe to close sidebar --- */
+      var touchStartX = 0;
+      var touchStartY = 0;
+      sidebar.addEventListener('touchstart', function (e) {
+        touchStartX = e.touches[0].clientX;
+        touchStartY = e.touches[0].clientY;
+      }, { passive: true });
+      sidebar.addEventListener('touchend', function (e) {
+        var dx = e.changedTouches[0].clientX - touchStartX;
+        var dy = Math.abs(e.changedTouches[0].clientY - touchStartY);
+        if (dx < -60 && dy < 80) { closeSidebar(); }
+      }, { passive: true });
+
+      /* --- TOC link click closes sidebar on mobile --- */
+      tocLinks.forEach(function (a) {
+        a.addEventListener('click', function () {
+          if (window.innerWidth <= 1024) { closeSidebar(); }
+        });
+      });
+
+      /* --- Scroll spy --- */
+      var observer = new IntersectionObserver(
+        function (entries) {
+          entries.forEach(function (entry) {
+            if (!entry.isIntersecting) return;
+            var id = entry.target.id;
+            tocLinks.forEach(function (link) {
+              if (link.dataset.target === id) {
+                link.classList.add('active');
+                /* Auto-scroll TOC to active item on desktop */
+                if (window.innerWidth > 1024 && sidebar.scrollHeight > sidebar.clientHeight) {
+                  link.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+                }
+              } else {
+                link.classList.remove('active');
+              }
+            });
+          });
+        },
+        { rootMargin: '-30% 0px -55% 0px', threshold: 0.1 }
+      );
+      sections.forEach(function (sec) { observer.observe(sec); });
+
+      /* --- Reading progress bar + back-to-top --- */
+      var ticking = false;
+      window.addEventListener('scroll', function () {
+        if (!ticking) {
+          window.requestAnimationFrame(function () {
+            var scrollTop = window.scrollY || document.documentElement.scrollTop;
+            var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            if (docHeight > 0) {
+              progressBar.style.width = Math.min((scrollTop / docHeight) * 100, 100) + '%';
+            }
+            if (scrollTop > 400) { backBtn.classList.add('show'); }
+            else { backBtn.classList.remove('show'); }
+            ticking = false;
+          });
+          ticking = true;
+        }
+      }, { passive: true });
+
+      backBtn.addEventListener('click', function () {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+
+      /* --- Profile accordion on mobile --- */
+      function initAccordion() {
+        var isMobile = window.innerWidth <= 768;
+        var profiles = document.querySelectorAll('h3[id]');
+        profiles.forEach(function (h3) {
+          /* Only profile headings (G0-x, numbered, S-x, T-x) */
+          var text = h3.textContent || '';
+          if (!/^(G0-|[0-9]+\.|S[0-9]|T-[0-9])/.test(text.trim())) return;
+
+          var existingBtn = h3.querySelector('.profile-collapse-btn');
+          if (!existingBtn) {
+            var btn = document.createElement('button');
+            btn.className = 'profile-collapse-btn';
+            btn.textContent = '▼';
+            btn.setAttribute('aria-label', 'Buka/tutup profil');
+            h3.appendChild(btn);
+          }
+
+          var btn = h3.querySelector('.profile-collapse-btn');
+          /* Collect siblings until next h3 or h2 */
+          var body = h3.nextElementSibling;
+          if (body && body.classList.contains('profile-body')) {
+            /* Already wrapped */
+            if (isMobile && !body.classList.contains('collapsed')) {
+              body.classList.add('collapsed');
+              btn.textContent = '▶';
+            } else if (!isMobile) {
+              body.classList.remove('collapsed');
+              btn.textContent = '▼';
+            }
+            return;
+          }
+
+          /* Wrap profile content in a div */
+          var wrapper = document.createElement('div');
+          wrapper.className = 'profile-body';
+          var sibling = h3.nextElementSibling;
+          while (sibling && sibling.tagName !== 'H3' && sibling.tagName !== 'H2') {
+            var next = sibling.nextElementSibling;
+            wrapper.appendChild(sibling);
+            sibling = next;
+          }
+          h3.parentNode.insertBefore(wrapper, sibling);
+
+          if (isMobile) {
+            wrapper.classList.add('collapsed');
+            btn.textContent = '▶';
+          }
+        });
+      }
+
+      /* Toggle accordion on click */
+      document.addEventListener('click', function (e) {
+        if (!e.target.classList.contains('profile-collapse-btn')) return;
+        var h3 = e.target.closest('h3');
+        if (!h3) return;
+        var body = h3.nextElementSibling;
+        if (body && body.classList.contains('profile-body')) {
+          body.classList.toggle('collapsed');
+          e.target.textContent = body.classList.contains('collapsed') ? '▶' : '▼';
+        }
+      });
+
+      /* Init accordion on load and resize */
+      initAccordion();
+      var resizeTimer;
+      window.addEventListener('resize', function () {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(initAccordion, 250);
+      });
+
+      /* --- Keyboard: Escape closes sidebar --- */
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && sidebar.classList.contains('open')) {
+          closeSidebar();
+        }
+      });
+    })();
+    
+</script>
+</body>
+</html>

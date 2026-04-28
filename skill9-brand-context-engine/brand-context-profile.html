@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Brand Context Engine — Umrah Family</title>
+<style>
+  :root { --bg:#faf9f5; --text:#1f2937; --heading:#1a5c3a; --accent:#2e8b57; --line:#e5e7eb; --muted:#64748b; --card:#fff; --gold:#d4a843; --warn:#dc2626; --info:#2563eb; }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body { background:var(--bg); color:var(--text); font-family:"Segoe UI",system-ui,-apple-system,sans-serif; line-height:1.7; }
+
+  /* Reading progress */
+  .reading-progress { position:fixed; top:0; left:0; height:3px; background:var(--accent); z-index:1000; transition:width .1s; width:0; }
+
+  /* Hero */
+  .hero { background:linear-gradient(135deg,#1a5c3a 0%,#2e8b57 50%,#d4a843 100%); color:#fff; padding:3rem 2rem; text-align:center; }
+  .hero h1 { font-size:clamp(1.4rem,3.5vw,2.2rem); font-family:Georgia,serif; margin-bottom:.4rem; }
+  .hero p { color:#e2e8f0; font-size:1rem; }
+  .hero .badge { display:inline-block; background:var(--gold); color:#1a1a1a; padding:.2rem .7rem; border-radius:999px; font-size:.8rem; font-weight:700; margin-top:.6rem; }
+
+  /* Layout */
+  .layout { display:flex; max-width:1200px; margin:0 auto; }
+  .sidebar { width:260px; position:sticky; top:20px; height:fit-content; padding:1.5rem 1rem; border-right:1px solid var(--line); flex-shrink:0; }
+  .sidebar h3 { font-size:.85rem; color:var(--muted); text-transform:uppercase; letter-spacing:.05em; margin-bottom:.8rem; }
+  .sidebar a { display:block; padding:.35rem .6rem; font-size:.85rem; color:var(--text); text-decoration:none; border-radius:6px; margin-bottom:.15rem; border-left:3px solid transparent; transition:all .15s; }
+  .sidebar a:hover, .sidebar a.active { background:#d1fae5; color:var(--heading); border-left-color:var(--accent); }
+  .main { flex:1; padding:2rem 2.5rem; min-width:0; }
+
+  /* Sections */
+  h2 { font-family:Georgia,serif; color:var(--heading); font-size:1.5rem; border-bottom:2px solid var(--accent); padding-bottom:.4rem; margin:2.5rem 0 1rem; }
+  h3 { color:var(--heading); font-size:1.15rem; margin:1.5rem 0 .6rem; }
+  h4 { color:var(--text); font-size:1rem; margin:1.2rem 0 .4rem; font-weight:600; }
+
+  /* Cards */
+  .profile-card { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:1.2rem 1.5rem; margin-bottom:1rem; }
+  .profile-card h4 { margin-top:0; color:var(--heading); }
+  .profile-card .label { font-size:.8rem; color:var(--muted); text-transform:uppercase; letter-spacing:.04em; font-weight:600; }
+  .profile-card .value { font-size:.95rem; margin-bottom:.6rem; }
+
+  /* Tags */
+  .tag { display:inline-block; padding:.15rem .55rem; border-radius:4px; font-size:.78rem; font-weight:600; margin:.15rem .2rem .15rem 0; }
+  .tag-green { background:#d1fae5; color:#065f46; }
+  .tag-red { background:#fee2e2; color:#991b1b; }
+  .tag-blue { background:#dbeafe; color:#1e40af; }
+  .tag-gold { background:#fef3c7; color:#92400e; }
+  .tag-gray { background:#f3f4f6; color:#374151; }
+
+  /* Persona cards */
+  .persona { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:1.5rem; margin-bottom:1.2rem; }
+  .persona h4 { margin-top:0; font-size:1.1rem; }
+  .persona .persona-id { font-size:.78rem; color:var(--muted); font-weight:600; }
+
+  /* Lists */
+  ul, ol { padding-left:1.3rem; margin:.4rem 0 .8rem; }
+  li { margin-bottom:.35rem; font-size:.93rem; }
+
+  /* Copy snippets */
+  .snippet { background:#f8fafc; border-left:3px solid var(--accent); padding:.8rem 1rem; margin:.6rem 0; border-radius:0 8px 8px 0; font-size:.9rem; }
+  .snippet .snippet-type { font-size:.75rem; color:var(--accent); font-weight:700; text-transform:uppercase; margin-bottom:.3rem; }
+
+  /* Product table */
+  .table-wrap { overflow-x:auto; margin:.8rem 0; }
+  table { width:100%; border-collapse:collapse; font-size:.88rem; }
+  th { background:var(--heading); color:#fff; padding:.6rem .8rem; text-align:left; font-weight:600; }
+  td { padding:.5rem .8rem; border-bottom:1px solid var(--line); }
+  tr:hover td { background:#f0fdf4; }
+
+  /* Do/Don't */
+  .do-dont { display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin:1rem 0; }
+  .do-box, .dont-box { border-radius:10px; padding:1rem 1.2rem; }
+  .do-box { background:#f0fdf4; border:1px solid #bbf7d0; }
+  .dont-box { background:#fef2f2; border:1px solid #fecaca; }
+  .do-box h4 { color:#065f46; margin-top:0; }
+  .dont-box h4 { color:#991b1b; margin-top:0; }
+
+  /* Back to top */
+  .back-top { position:fixed; bottom:2rem; right:2rem; background:var(--accent); color:#fff; border:none; width:44px; height:44px; border-radius:50%; font-size:1.2rem; cursor:pointer; display:none; box-shadow:0 2px 8px rgba(0,0,0,.2); z-index:999; }
+  .back-top:hover { background:var(--heading); }
+
+  /* Back home */
+  .back-home { padding:.8rem 0 .2rem; }
+  .back-home a { display:inline-flex; align-items:center; gap:.4rem; color:#4a5568; text-decoration:none; font-size:.9rem; font-weight:500; padding:.4rem .8rem; border-radius:6px; border:1px solid #e2e8f0; background:#fff; transition:all .15s; }
+  .back-home a:hover { color:var(--heading); border-color:var(--heading); background:#f7fafc; box-shadow:0 1px 3px rgba(0,0,0,.08); }
+
+  /* Responsive */
+  @media(max-width:768px) {
+    .layout { flex-direction:column; }
+    .sidebar { width:100%; position:static; border-right:none; border-bottom:1px solid var(--line); padding:1rem; }
+    .main { padding:1.5rem 1rem; }
+    .do-dont { grid-template-columns:1fr; }
+    .hero { padding:2rem 1rem; }
+  }
+</style>
+</head>
+<body>
+<div class="reading-progress" id="progress"></div>
+
+<div class="hero">
+  <h1>🔒 Brand Context Engine</h1>
+  <p>Umrah Family — PT. Ezkia Barokah Abadi</p>
+  <span class="badge">Brand Profile v1.1</span>
+</div>
+
+<div class="layout">
+  <nav class="sidebar">
+    <h3>Navigasi</h3>
+    <a href="#overview">Overview</a>
+    <a href="#products">Produk & Pricing</a>
+    <a href="#personas">Customer Personas</a>
+    <a href="#voice">Brand Voice</a>
+    <a href="#copy-snippets">Copy Snippets</a>
+    <a href="#values">Visi & Values</a>
+    <a href="#content">Content Preferences</a>
+    <a href="#cta">CTA Library</a>
+    <a href="#tech">Tech Stack</a>
+    <a href="#dos-donts">Do's & Don'ts</a>
+    <a href="#social-proof">Social Proof</a>
+  </nav>
+
+  <main class="main">
+    <nav class="back-home"><a href="../index.html">&larr; Back to Home Page</a></nav>
+
+    <!-- OVERVIEW -->
+    <h2 id="overview">Overview</h2>
+    <div class="profile-card">
+      <div class="label">Brand Name</div>
+      <div class="value"><strong>Umrah Family</strong></div>
+      <div class="label">Legal Entity</div>
+      <div class="value">PT. Ezkia Barokah Abadi (est. 2023)</div>
+      <div class="label">Mission</div>
+      <div class="value">Menyediakan perjalanan ibadah umrah yang amanah, terpercaya, dan terjangkau untuk seluruh kalangan masyarakat Indonesia.</div>
+      <div class="label">Problem yang Diselesaikan</div>
+      <div class="value">Keresahan masyarakat terhadap biro travel umrah yang tidak amanah — keberangkatan tidak pasti, biaya tersembunyi, skema riba, dan pelayanan tidak profesional.</div>
+      <div class="label">Elevator Pitch</div>
+      <div class="value" style="font-style:italic; border-left:3px solid var(--gold); padding-left:.8rem;">Umrah Family adalah mitra perjalanan umrah dengan izin resmi Kemenag, 100% track record keberangkatan, tanpa riba, tanpa denda, tanpa biaya tersembunyi. Dengan 5,000+ jamaah berangkat, 50 kantor perwakilan, dan kerjasama dengan maskapai premium (Garuda, Etihad, Turkish, Qatar, Oman Air), kami hadir sebagai solusi umrah yang aman untuk keluarga Indonesia.</div>
+    </div>
+    <div class="profile-card">
+      <div class="label">Links</div>
+      <div class="value">
+        <a href="https://umrahfamily.id/" target="_blank" style="color:var(--accent)">umrahfamily.id</a> ·
+        <a href="https://member.umrahfamily.id/" target="_blank" style="color:var(--accent)">Member Portal</a> ·
+        <a href="https://api.whatsapp.com/send?phone=6282288992626" target="_blank" style="color:var(--accent)">WhatsApp</a>
+      </div>
+      <div class="label">Social Media</div>
+      <div class="value">
+        <a href="https://www.facebook.com/share/15ghz6ruuQ/" target="_blank" style="color:var(--accent)">Facebook</a> ·
+        <a href="https://www.instagram.com/umrahfamily_pusat/" target="_blank" style="color:var(--accent)">Instagram</a> ·
+        <a href="https://www.tiktok.com/@umrahfamily1" target="_blank" style="color:var(--accent)">TikTok</a> ·
+        <a href="https://www.youtube.com/@umrahfamilytv" target="_blank" style="color:var(--accent)">YouTube</a>
+      </div>
+      <div class="label">Lokasi</div>
+      <div class="value">Jl. Mission Drive, Gading Serpong, Kab. Tangerang, Banten 15810</div>
+      <div class="label">Kontak</div>
+      <div class="value">0822-8899-2626 · cs@umrahfamily.id</div>
+    </div>
+
+    <!-- PRODUCTS -->
+    <h2 id="products">Produk & Pricing</h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Level</th><th>Paket</th><th>Harga</th><th>Target</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><span class="tag tag-gray">Lead Magnet</span></td><td>Konsultasi Gratis via WhatsApp</td><td>Gratis</td><td>PERSONA_01</td></tr>
+          <tr><td><span class="tag tag-green">Front-End</span></td><td>Silver 9 Hari</td><td>Rp 31.500.000</td><td>PERSONA_01</td></tr>
+          <tr><td><span class="tag tag-green">Front-End</span></td><td>Silver 12 Hari</td><td>Rp 33.500.000</td><td>PERSONA_01</td></tr>
+          <tr><td><span class="tag tag-blue">Mid-Ticket</span></td><td>Gold 9 Hari</td><td>Rp 34.500.000</td><td>PERSONA_01</td></tr>
+          <tr><td><span class="tag tag-gold">Mid-Ticket ⭐</span></td><td>Gold 12 Hari <strong>(Populer)</strong></td><td>Rp 37.500.000</td><td>PERSONA_02</td></tr>
+          <tr><td><span class="tag tag-blue">Back-End</span></td><td>Platinum 9 Hari</td><td>Rp 39.000.000</td><td>PERSONA_02</td></tr>
+          <tr><td><span class="tag tag-blue">Back-End</span></td><td>Platinum 12 Hari</td><td>Rp 43.000.000</td><td>PERSONA_02</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="profile-card">
+      <div class="label">Pricing Model</div>
+      <div class="value">Tiered pricing berdasarkan kualitas hotel & durasi (9 vs 12 hari). Range Rp 31.5 Jt - Rp 43 Jt per orang. Tanpa riba, tanpa agunan, tanpa denda. Harga transparan, no hidden fee.</div>
+    </div>
+
+    <!-- PERSONAS -->
+    <h2 id="personas">Customer Personas</h2>
+
+    <div class="persona">
+      <span class="persona-id">PERSONA_01</span>
+      <h4>👨‍👩‍👧‍👦 Keluarga Muda Pertama Umrah</h4>
+      <div class="label">Demografi</div>
+      <div class="value">Usia 30-45 · Jabodetabek & kota besar · Karyawan/PNS/wiraswasta · Mid-tier ekonomi</div>
+      <div class="label">Awareness Level</div>
+      <div class="value"><span class="tag tag-gold">Problem-Aware</span></div>
+      <div class="label">Masalah Utama</div>
+      <ul>
+        <li>Takut tertipu biro travel umrah bodong</li>
+        <li>Bingung pilih paket — banyak pilihan tapi nggak tahu mana yang amanah</li>
+        <li>Khawatir biaya tersembunyi — harga awal murah tapi ujungnya bengkak</li>
+        <li>Nggak yakin kapan bisa berangkat — takut uang masuk tapi keberangkatan ditunda</li>
+        <li>Mau ibadah khusyuk tapi takut pelayanan buruk</li>
+      </ul>
+      <div class="label">Desired Outcomes</div>
+      <ul>
+        <li>Berangkat umrah bersama keluarga dengan tenang dan aman</li>
+        <li>Ibadah khusyuk tanpa khawatir urusan logistik</li>
+        <li>Pelayanan profesional dengan harga jelas dan transparan</li>
+        <li>Pulang dengan pengalaman spiritual berkesan untuk seluruh keluarga</li>
+      </ul>
+      <div class="label">Common Objections</div>
+      <ul>
+        <li>"Dari mana saya tahu Umrah Family bukan travel bodong?"</li>
+        <li>"Kenapa harganya segitu? Ada yang lebih murah"</li>
+        <li>"Bagaimana kalau keberangkatan ditunda?"</li>
+        <li>"Saya belum siap finansial — bisa cicil?"</li>
+      </ul>
+      <div class="label">Trigger Words</div>
+      <div class="value">
+        <span class="tag tag-green">umrah keluarga</span>
+        <span class="tag tag-green">travel umrah terpercaya</span>
+        <span class="tag tag-green">umrah aman</span>
+        <span class="tag tag-green">umrah tanpa riba</span>
+        <span class="tag tag-green">dijamin berangkat</span>
+        <span class="tag tag-green">izin Kemenag</span>
+        <span class="tag tag-green">umrah pertama</span>
+      </div>
+    </div>
+
+    <div class="persona">
+      <span class="persona-id">PERSONA_02</span>
+      <h4>🕌 Jamaah Repeat / Premium Seeker</h4>
+      <div class="label">Demografi</div>
+      <div class="value">Usia 40-60 · Seluruh Indonesia · Pengusaha/profesional senior/pensiunan · Premium ekonomi</div>
+      <div class="label">Awareness Level</div>
+      <div class="value"><span class="tag tag-blue">Solution-Aware</span></div>
+      <div class="label">Masalah Utama</div>
+      <ul>
+        <li>Pengalaman umrah sebelumnya kurang memuaskan (hotel jauh, pelayanan buruk)</li>
+        <li>Mau upgrade — hotel dekat Masjidil Haram, pembimbing berkualitas</li>
+        <li>Cari travel yang bisa handle grup keluarga besar</li>
+        <li>Mau ibadah lebih mendalam, bukan sekadar wisata religi</li>
+      </ul>
+      <div class="label">Desired Outcomes</div>
+      <ul>
+        <li>Pengalaman umrah premium — hotel bintang 5 dekat Haram, pelayanan VIP</li>
+        <li>Pembimbing yang benar-benar membimbing ibadah</li>
+        <li>Koordinasi sempurna untuk rombongan keluarga besar</li>
+        <li>Tenang karena semua sudah diurus profesional</li>
+      </ul>
+      <div class="label">Common Objections</div>
+      <ul>
+        <li>"Apa bedanya Platinum dengan Gold selain harga?"</li>
+        <li>"Saya sudah punya travel langganan — kenapa harus pindah?"</li>
+        <li>"Bisa request hotel spesifik?"</li>
+        <li>"Bagaimana handling untuk orang tua / lansia?"</li>
+      </ul>
+      <div class="label">Trigger Words</div>
+      <div class="value">
+        <span class="tag tag-blue">umrah premium</span>
+        <span class="tag tag-blue">hotel dekat Haram</span>
+        <span class="tag tag-blue">Tower Zam-Zam</span>
+        <span class="tag tag-blue">Platinum</span>
+        <span class="tag tag-blue">umrah VIP</span>
+        <span class="tag tag-blue">pelayanan terbaik</span>
+        <span class="tag tag-blue">repeat umrah</span>
+      </div>
+    </div>
+
+    <!-- BRAND VOICE -->
+    <h2 id="voice">Brand Voice</h2>
+    <div class="profile-card">
+      <div class="label">Tone</div>
+      <div class="value">
+        <span class="tag tag-green">Amanah</span>
+        <span class="tag tag-green">Hangat-Kekeluargaan</span>
+        <span class="tag tag-green">Profesional-Terpercaya</span>
+      </div>
+      <div class="label">Sapaan</div>
+      <div class="value">Bapak/Ibu · Kakak · Sahabat</div>
+      <div class="label">Formality</div>
+      <div class="value">Semi-formal — sopan tapi nggak kaku, Islami tapi bukan ceramah</div>
+      <div class="label">Writing Guidelines</div>
+      <div class="value">Komunikasi bernuansa Islami tapi nggak kaku. Bahasa yang menyentuh hati, mengingatkan niat ibadah, dan membangun kepercayaan. Storytelling berbasis pengalaman jamaah nyata. Selalu sertakan trust anchor (legalitas & keamanan). Hindari hard-sell — pakai pendekatan konsultatif.</div>
+    </div>
+
+    <h3>Power Words</h3>
+    <div style="margin-bottom:1rem;">
+      <span class="tag tag-green">amanah</span>
+      <span class="tag tag-green">terpercaya</span>
+      <span class="tag tag-green">dijamin berangkat</span>
+      <span class="tag tag-green">100% keberangkatan</span>
+      <span class="tag tag-green">izin resmi Kemenag</span>
+      <span class="tag tag-green">tanpa riba</span>
+      <span class="tag tag-green">tanpa biaya tersembunyi</span>
+      <span class="tag tag-green">khusyuk</span>
+      <span class="tag tag-green">keluarga</span>
+      <span class="tag tag-green">bimbingan profesional</span>
+    </div>
+
+    <h3>Banned Words</h3>
+    <div style="margin-bottom:1rem;">
+      <span class="tag tag-red">termurah</span>
+      <span class="tag tag-red">paling murah</span>
+      <span class="tag tag-red">diskon gila-gilaan</span>
+      <span class="tag tag-red">promo habis-habisan</span>
+      <span class="tag tag-red">buruan sebelum kehabisan</span>
+      <span class="tag tag-red">investasi akhirat</span>
+      <span class="tag tag-red">MLM</span>
+      <span class="tag tag-red">passive income</span>
+      <span class="tag tag-red">cuan</span>
+    </div>
+
+    <!-- COPY SNIPPETS -->
+    <h2 id="copy-snippets">Copy Snippets</h2>
+    <div class="snippet">
+      <div class="snippet-type">Hook — Trust</div>
+      5,000+ jamaah sudah berangkat bersama kami. 100% keberangkatan terpenuhi. Bukan janji — ini track record.
+    </div>
+    <div class="snippet">
+      <div class="snippet-type">Hook — Fear</div>
+      Masih ragu pilih travel umrah? Wajar. Tapi jangan sampai keraguan itu menunda ibadah Anda bertahun-tahun.
+    </div>
+    <div class="snippet">
+      <div class="snippet-type">Hook — Family</div>
+      Bayangkan, sekeluarga berdoa bersama di depan Ka'bah. Momen yang tidak bisa dibeli dengan uang — tapi bisa diwujudkan dengan pilihan travel yang tepat.
+    </div>
+    <div class="snippet">
+      <div class="snippet-type">Benefit — Transparency</div>
+      Harga yang Anda lihat = harga yang Anda bayar. Tanpa biaya tersembunyi, tanpa riba, tanpa denda. Transparan dari awal.
+    </div>
+    <div class="snippet">
+      <div class="snippet-type">Urgency CTA</div>
+      Kuota keberangkatan terbatas. Hubungi kami sekarang untuk konsultasi gratis dan reservasi tempat untuk keluarga Anda.
+    </div>
+    <div class="snippet">
+      <div class="snippet-type">Guarantee CTA</div>
+      Izin resmi Kemenag. 100% keberangkatan terjamin. Daftar sekarang, berangkat dengan tenang.
+    </div>
+    <div class="snippet">
+      <div class="snippet-type">WA Opener</div>
+      Assalamualaikum, Bapak/Ibu. Terima kasih sudah menghubungi Umrah Family. Ada yang bisa kami bantu terkait rencana umrah keluarga?
+    </div>
+    <div class="snippet">
+      <div class="snippet-type">Hadith Anchor</div>
+      <em>"Ibadah Umrah ke ibadah umrah berikutnya adalah penggugur (dosa) diantara keduanya, dan haji yang mabrur tiada balasan (bagi pelakunya) melainkan surga."</em> — HR. Muslim dan Bukhari
+    </div>
+
+    <!-- VALUES -->
+    <h2 id="values">Visi & Values</h2>
+    <div class="profile-card">
+      <div class="label">Long-Term Vision</div>
+      <div class="value">Menjadi biro travel umrah terpercaya #1 di Indonesia dengan jaringan 100+ kantor perwakilan dan 50,000+ jamaah dalam 5 tahun.</div>
+      <div class="label">Core Values</div>
+      <ul>
+        <li><strong>Amanah</strong> — setiap rupiah jamaah adalah tanggung jawab kami</li>
+        <li><strong>Transparansi</strong> — harga jelas, proses jelas, nggak ada yang disembunyikan</li>
+        <li><strong>Kekeluargaan</strong> — jamaah bukan customer, tapi keluarga</li>
+        <li><strong>Profesionalisme</strong> — pelayanan standar tinggi dari pendaftaran sampai kepulangan</li>
+        <li><strong>Syariah</strong> — tanpa riba, tanpa denda, sesuai prinsip Islam</li>
+      </ul>
+      <div class="label">Key Differentiators</div>
+      <ul>
+        <li>100% track record keberangkatan — zero kasus gagal berangkat</li>
+        <li>Tanpa riba, tanpa agunan, tanpa denda — skema pembayaran paling aman</li>
+        <li>50 kantor perwakilan — akses fisik di kota-kota besar, bukan cuma online</li>
+        <li>Partner maskapai premium (Garuda, Etihad, Turkish, Qatar, Oman Air)</li>
+        <li>Izin resmi Kemenag — legalitas lengkap dan terverifikasi</li>
+      </ul>
+    </div>
+
+    <!-- CONTENT PREFERENCES -->
+    <h2 id="content">Content Preferences</h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Channel</th><th>Purpose</th><th>Format Rules</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>Meta Ads</strong></td><td>Awareness + Conversion</td><td>Video 15-30s (testimoni, BTS, hotel tour). Carousel paket. CTA ke WhatsApp. Pendekatan emosional-spiritual.</td></tr>
+          <tr><td><strong>Instagram</strong></td><td>Awareness + Nurturing</td><td>Reels (BTS perjalanan, momen ibadah, testimoni). Carousel edukasi. Stories untuk engagement & Q&A.</td></tr>
+          <tr><td><strong>TikTok</strong></td><td>Awareness</td><td>Short video 15-60s. Konten edukatif ringan, BTS, momen emosional. Trending audio Islami.</td></tr>
+          <tr><td><strong>YouTube</strong></td><td>Nurturing + Authority</td><td>Vlog perjalanan, review hotel, tips persiapan, testimoni panjang. 5-15 menit.</td></tr>
+          <tr><td><strong>WhatsApp</strong></td><td>Conversion + Follow-up</td><td>Konsultatif, bukan jualan. Jawab sabar. Kirim brosur digital + link. Follow-up 3-5-7 hari.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="profile-card">
+      <div class="label">Length & Depth</div>
+      <div class="value">Medium — cukup detail untuk bangun kepercayaan, nggak terlalu panjang karena decision-making melibatkan keluarga (butuh shareable content)</div>
+      <div class="label">Visual vs Textual</div>
+      <div class="value">Visual dominan — foto/video perjalanan nyata, hotel, momen ibadah. Hindari stock photo.</div>
+    </div>
+
+    <!-- CTA LIBRARY -->
+    <h2 id="cta">CTA Library</h2>
+    <h4>Awareness</h4>
+    <ul>
+      <li>Lihat paket umrah lengkap di umrahfamily.id</li>
+      <li>Tonton pengalaman jamaah kami di YouTube</li>
+      <li>Follow @umrahfamily_pusat untuk tips umrah harian</li>
+    </ul>
+    <h4>Nurturing</h4>
+    <ul>
+      <li>Download checklist persiapan umrah gratis</li>
+      <li>Tanya langsung ke tim kami via WhatsApp — gratis, tanpa komitmen</li>
+      <li>Baca testimoni 5,000+ jamaah yang sudah berangkat</li>
+    </ul>
+    <h4>Conversion</h4>
+    <ul>
+      <li>Daftar sekarang di kantor perwakilan terdekat</li>
+      <li>Hubungi 0822-8899-2626 untuk reservasi tempat</li>
+      <li>Klik Daftar Umrah — kuota keberangkatan terbatas</li>
+    </ul>
+
+    <!-- TECH STACK -->
+    <h2 id="tech">Tech Stack</h2>
+    <div class="profile-card">
+      <div class="label">Website</div>
+      <div class="value">Custom HTML/CSS/JS (static site)</div>
+      <div class="label">Member Portal</div>
+      <div class="value">member.umrahfamily.id (custom registration system)</div>
+      <div class="label">Payment</div>
+      <div class="value">Via kantor perwakilan (offline) + member portal (online)</div>
+      <div class="label">Ads Platform</div>
+      <div class="value">Meta Ads (Facebook + Instagram)</div>
+      <div class="label">Integrations</div>
+      <div class="value">WhatsApp Business · Google Maps embed</div>
+    </div>
+
+    <!-- DO'S & DON'TS -->
+    <h2 id="dos-donts">Do's & Don'ts</h2>
+    <div class="do-dont">
+      <div class="do-box">
+        <h4>✅ DO</h4>
+        <ul>
+          <li>Selalu sertakan izin Kemenag dan legalitas</li>
+          <li>Pakai foto/video asli perjalanan jamaah</li>
+          <li>Sertakan hadith atau ayat yang relevan</li>
+          <li>Tampilkan social proof (5,000+ jamaah, 100% keberangkatan, 50 kantor)</li>
+          <li>Pendekatan konsultatif — bantu memilih, bukan paksa beli</li>
+          <li>Hormati proses keputusan keluarga — kasih waktu</li>
+          <li>Selalu sebut "tanpa riba, tanpa denda, tanpa biaya tersembunyi"</li>
+        </ul>
+      </div>
+      <div class="dont-box">
+        <h4>❌ DON'T</h4>
+        <ul>
+          <li>Jangan hard-sell atau FOMO berlebihan</li>
+          <li>Jangan bandingkan langsung dengan travel lain secara negatif</li>
+          <li>Jangan pakai kata "termurah" atau "paling murah"</li>
+          <li>Jangan pakai stock photo Makkah/Madinah</li>
+          <li>Jangan janjikan hal di luar kendali</li>
+          <li>Jangan pakai istilah "investasi akhirat"</li>
+          <li>Jangan abaikan follow-up — respon WA < 1 jam</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- SOCIAL PROOF -->
+    <h2 id="social-proof">Social Proof</h2>
+    <div class="profile-card">
+      <div style="display:grid; grid-template-columns:repeat(auto-fill,minmax(180px,1fr)); gap:1rem; text-align:center;">
+        <div>
+          <div style="font-size:2rem; font-weight:700; color:var(--heading);">5,000+</div>
+          <div style="font-size:.85rem; color:var(--muted);">Jamaah Berangkat</div>
+        </div>
+        <div>
+          <div style="font-size:2rem; font-weight:700; color:var(--heading);">100%</div>
+          <div style="font-size:.85rem; color:var(--muted);">Keberangkatan Rate</div>
+        </div>
+        <div>
+          <div style="font-size:2rem; font-weight:700; color:var(--heading);">50+</div>
+          <div style="font-size:.85rem; color:var(--muted);">Kantor Perwakilan</div>
+        </div>
+      </div>
+      <div style="margin-top:1rem;">
+        <div class="label">Airline Partners</div>
+        <div class="value">
+          <span class="tag tag-gold">Garuda Indonesia</span>
+          <span class="tag tag-gold">Etihad Airways</span>
+          <span class="tag tag-gold">Turkish Airlines</span>
+          <span class="tag tag-gold">Oman Air</span>
+          <span class="tag tag-gold">Qatar Airways</span>
+        </div>
+        <div class="label">Legalitas</div>
+        <div class="value"><span class="tag tag-green">Izin Resmi Kemenag</span></div>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<button class="back-top" id="backTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">&uarr;</button>
+
+<footer style="text-align:center; padding:2rem; color:var(--muted); font-size:.85rem; border-top:1px solid var(--line); margin-top:2rem;">
+  Brand Context Engine v1.1 · Umrah Family · PT. Ezkia Barokah Abadi
+</footer>
+
+<script>
+// Reading progress
+window.addEventListener('scroll', () => {
+  const h = document.documentElement.scrollHeight - window.innerHeight;
+  document.getElementById('progress').style.width = (window.scrollY / h * 100) + '%';
+  document.getElementById('backTop').style.display = window.scrollY > 400 ? 'block' : 'none';
+});
+
+// Scroll spy
+const links = document.querySelectorAll('.sidebar a[href^="#"]');
+const sections = [...links].map(a => document.querySelector(a.getAttribute('href'))).filter(Boolean);
+window.addEventListener('scroll', () => {
+  let current = '';
+  sections.forEach(s => { if (s.getBoundingClientRect().top < 120) current = s.id; });
+  links.forEach(a => {
+    a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+  });
+});
+</script>
+</body>
+</html>

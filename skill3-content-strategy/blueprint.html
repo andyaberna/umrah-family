@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Content Strategy &amp; Attention Growth — Umrah Family</title>
+<style>
+    :root { --bg:#fff; --text:#1f2937; --heading:#1a365d; --accent:#d69e2e; --danger:#e53e3e; --line:#e5e7eb; --muted:#64748b; --soft:#f8fafc; --bridge:#f0f4f8; --lesson:#fffbeb; --whatif:#f5f0ff; }
+    * { box-sizing:border-box; } html { scroll-behavior:smooth; }
+    body { margin:0; background:var(--bg); color:var(--text); font-family:"Segoe UI", system-ui, -apple-system, sans-serif; line-height:1.65; }
+    h1,h2,h3,h4,h5 { font-family:Georgia, "Times New Roman", serif; color:var(--heading); line-height:1.3; scroll-margin-top:80px; }
+    .cover { min-height:100vh; display:grid; place-items:center; text-align:center; padding:2rem; border-bottom:1px solid var(--line); }
+    .cover h1 { font-size:clamp(2rem,4vw,3.3rem); margin:.25rem 0; }
+    .cover .subtitle { color:var(--heading); font-size:1.1rem; } .cover .meta { color:var(--muted); margin-top:1rem; }
+    .layout { display:flex; }
+    .sidebar-toggle { display:none; position:fixed; top:12px; left:12px; z-index:1200; border:1px solid var(--line); background:white; border-radius:8px; padding:.45rem .65rem; }
+    aside { position:sticky; top:0; align-self:flex-start; width:310px; max-height:100vh; overflow:auto; border-right:1px solid var(--line); background:#fff; padding:1rem; }
+    .toc-list,.toc-list ul { list-style:none; margin:0; padding-left:.8rem; } .toc-list>li { margin:.24rem 0; }
+    .toc-list a { text-decoration:none; color:#334155; font-size:.92rem; display:block; padding:.16rem .4rem; border-left:2px solid transparent; border-radius:4px; }
+    .toc-list a.active { color:var(--heading); border-left-color:var(--accent); background:#f8fafc; font-weight:600; }
+    main { flex:1; padding:1.2rem clamp(1rem,3vw,2.5rem) 3rem; } .ebook-content { max-width:980px; margin:auto; }
+    .major-section { padding:1rem 0; border-bottom:1px solid var(--line); } .section-alt { background:var(--soft); padding:1.1rem; border-radius:10px; border:1px solid #edf2f7; }
+    .table-scroll { overflow-x:auto; margin:1rem 0; } table { width:100%; border-collapse:collapse; min-width:640px; background:#fff; }
+    th,td { border:1px solid #dbe1e8; padding:.58rem .6rem; vertical-align:top; } th { background:#f8fafc; font-weight:700; }
+    .scorecard-table th::after { content:" ⇅"; color:#94a3b8; font-size:.78em; } .scorecard-table tbody tr:nth-child(even) { background:#fcfdff; }
+    .status-green { background:#e6ffed; } .status-yellow { background:#fffbea; } .status-red { background:#ffe8e8; } .status-gray { background:#f3f4f6; }
+    .warning-marker { color:var(--danger); font-weight:700; font-size:1.12em; } .controversial-heading { border-left:4px solid var(--danger); padding-left:.55rem; }
+    blockquote { margin:1rem 0; border-left:4px solid #cbd5e1; padding:.6rem .85rem; background:#f8fafc; }
+    .archetype-box { display:flex; flex-wrap:wrap; align-items:center; gap:.45rem; margin:.8rem 0 1rem; } .archetype-label { font-weight:700; color:#475569; }
+    .archetype-pill { background:#ebf4ff; border:1px solid #bfdbfe; color:#1e40af; padding:.22rem .55rem; border-radius:999px; font-size:.86rem; }
+    .lesson-box { background:var(--lesson); border-left:4px solid var(--accent); padding:.7rem .8rem; margin:.9rem 0 1.1rem; font-size:.95rem; } .lesson-title { margin:.2rem 0 .45rem; font-weight:700; }
+    .narrative-bridge { background:var(--bridge); border:1px solid #d7e0ea; border-radius:10px; padding:.75rem .9rem; margin:1rem 0; } .narrative-bridge p { font-style:italic; color:#334155; }
+    .timeline-scroll { overflow-x:auto; padding-bottom:.5rem; margin:.9rem 0 1.2rem; } .timeline-track { display:grid; grid-auto-flow:column; grid-auto-columns:minmax(180px,1fr); gap:.65rem; min-width:max-content; }
+    .timeline-col { border:1px solid #dbe4ee; border-radius:10px; background:#fff; padding:.55rem; } .timeline-year { font-weight:700; color:var(--heading); border-bottom:1px solid #e2e8f0; padding-bottom:.35rem; margin-bottom:.45rem; }
+    .timeline-event { font-size:.9rem; padding:.42rem .5rem; border-radius:7px; margin:.36rem 0; border:1px solid transparent; } .timeline-event.positive { background:#ecfdf3; border-color:#b7efcc; } .timeline-event.negative { background:#fff1f1; border-color:#f6c2c2; }
+    .pattern-chain { display:flex; flex-direction:column; gap:.4rem; margin:1rem 0 1.2rem; } .chain-card { border:1px solid #dbe4ee; border-radius:9px; background:#fff; padding:.6rem .7rem; } .chain-arrow { text-align:center; color:#64748b; font-size:1.2rem; }
+    .juxtaposition-wrap { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:.8rem; margin:.75rem 0 1rem; } .juxta-card { border-radius:10px; border:1px solid #e2e8f0; padding:.65rem .75rem; }
+    .juxta-card.positive { background:#f0fff4; border-color:#bbf7d0; } .juxta-card.positive h5 { color:#166534; } .juxta-card.negative { background:#fff1f2; border-color:#fecdd3; } .juxta-card.negative h5 { color:#991b1b; }
+    .whatif-card { background:var(--whatif); border-left:4px solid #7c3aed; padding:.65rem .8rem; border-radius:8px; margin:.6rem 0; }
+    .checklist-table tbody tr td:first-child { font-weight:700; text-align:center; width:48px; } .fake-checkbox { display:inline-block; border:1px solid #cbd5e1; border-radius:6px; padding:.14rem .38rem; background:#fff; font-family:ui-monospace,monospace; }
+    .retro-score-table td:nth-child(2) { font-weight:700; text-align:center; } .score-safe { background:#ecfdf3; color:#166534; } .score-low { background:#fffbea; color:#92400e; } .score-mid { background:#fff7ed; color:#9a3412; } .score-high { background:#fee2e2; color:#991b1b; }
+    .back-to-top { position:fixed; right:16px; bottom:18px; border:none; background:var(--heading); color:#fff; width:42px; height:42px; border-radius:999px; cursor:pointer; opacity:0; transform:translateY(8px); transition:.2s; } .back-to-top.show { opacity:1; transform:translateY(0); }
+    /* --- Overlay backdrop --- */
+    .sidebar-overlay { display:none; position:fixed; inset:0; background:rgba(0,0,0,.45); z-index:1050; opacity:0; transition:opacity .24s; }
+    .sidebar-overlay.show { display:block; opacity:1; }
+
+    /* --- Reading progress bar --- */
+    .reading-progress { position:fixed; top:0; left:0; height:3px; background:linear-gradient(90deg,var(--accent),#f59e0b); z-index:1300; width:0; transition:width .12s linear; }
+
+    /* --- Accordion for mobile profiles --- */
+    .profile-collapse-btn { display:none; }
+
+    /* ===== TABLET: ≤1024px ===== */
+    @media (max-width:1024px) {
+      .sidebar-toggle { display:block; }
+      aside { position:fixed; top:0; left:0; transform:translateX(-105%); transition:.24s; z-index:1100; width:min(82vw,320px); box-shadow:0 10px 30px rgba(2,6,23,.18); }
+      aside.open { transform:translateX(0); }
+      main { padding-top:3.8rem; }
+      .juxtaposition-wrap { grid-template-columns:1fr; }
+      .toc-list a { padding:.4rem .5rem; min-height:36px; display:flex; align-items:center; }
+    }
+
+    /* ===== MOBILE: ≤768px ===== */
+    @media (max-width:768px) {
+      body { font-size:15px; line-height:1.7; -webkit-text-size-adjust:100%; }
+      h1 { font-size:1.6rem; } h2 { font-size:1.35rem; scroll-margin-top:56px; } h3 { font-size:1.15rem; scroll-margin-top:56px; } h4 { font-size:1.05rem; }
+      main { padding:3.2rem .75rem 4rem; }
+      .cover { min-height:80vh; padding:1.5rem 1rem; }
+      .cover h1 { font-size:1.6rem; }
+      .cover .subtitle { font-size:.95rem; }
+
+      /* Tables: scroll hint + shadow */
+      .table-scroll { position:relative; }
+      .table-scroll::after { content:"← geser →"; display:block; text-align:center; font-size:.78rem; color:var(--muted); padding:.3rem 0; }
+      table { min-width:520px; font-size:.85rem; }
+      th,td { padding:.4rem .45rem; }
+
+      /* TOC touch targets */
+      .toc-list a { padding:.5rem .55rem; min-height:44px; font-size:.95rem; border-radius:6px; }
+      .toc-list>li { margin:.12rem 0; }
+
+      /* Sidebar wider on mobile */
+      aside { width:min(88vw,340px); padding:.8rem .6rem; }
+
+      /* Lesson box, bridge, whatif — full width */
+      .lesson-box, .narrative-bridge, .whatif-card { padding:.6rem .65rem; font-size:.9rem; }
+      blockquote { padding:.5rem .65rem; font-size:.93rem; }
+
+      /* Timeline: smaller columns */
+      .timeline-track { grid-auto-columns:minmax(150px,1fr); }
+      .timeline-event { font-size:.82rem; padding:.35rem .4rem; }
+
+      /* Pattern chain */
+      .chain-card { padding:.5rem .55rem; font-size:.9rem; }
+
+      /* Archetype pills */
+      .archetype-pill { font-size:.8rem; padding:.18rem .45rem; }
+
+      /* Back to top: larger touch target */
+      .back-to-top { width:48px; height:48px; font-size:1.2rem; right:12px; bottom:14px; }
+
+      /* Hamburger: larger */
+      .sidebar-toggle { padding:.55rem .75rem; font-size:1.15rem; top:8px; left:8px; }
+
+      /* Profile accordion */
+      .profile-collapse-btn { display:inline-block; background:none; border:1px solid var(--line); border-radius:6px; padding:.3rem .6rem; font-size:.82rem; color:var(--muted); cursor:pointer; margin-left:.5rem; vertical-align:middle; }
+      .profile-body.collapsed { display:none; }
+
+      /* Juxtaposition cards stacked */
+      .juxta-card { padding:.55rem .6rem; font-size:.9rem; }
+
+      /* Checklist table */
+      .checklist-table { min-width:400px; }
+
+      /* Scorecard table */
+      .scorecard-table { min-width:700px; font-size:.8rem; }
+    }
+
+    /* ===== SMALL PHONE: ≤480px ===== */
+    @media (max-width:480px) {
+      body { font-size:14px; }
+      h1 { font-size:1.4rem; } h2 { font-size:1.2rem; } h3 { font-size:1.08rem; }
+      main { padding:3rem .5rem 4rem; }
+      .cover { min-height:70vh; padding:1.2rem .8rem; }
+      .cover h1 { font-size:1.35rem; }
+      .cover .subtitle { font-size:.88rem; }
+      .section-alt { padding:.7rem; border-radius:8px; }
+      .lesson-box, .narrative-bridge, .whatif-card { margin:.6rem -.15rem; border-radius:6px; }
+      table { min-width:440px; font-size:.78rem; }
+      th,td { padding:.32rem .35rem; }
+      .timeline-track { grid-auto-columns:minmax(130px,1fr); gap:.45rem; }
+      .archetype-box { gap:.3rem; }
+      .archetype-pill { font-size:.75rem; }
+      aside { width:min(92vw,300px); }
+      .toc-list a { font-size:.9rem; }
+    }
+
+    /* ===== PRINT ===== */
+    @media print { @page { margin:2cm; } .sidebar-toggle,aside,.back-to-top,.reading-progress,.sidebar-overlay,.profile-collapse-btn { display:none !important; } main { padding:0; } .major-section,.section-alt { break-inside:avoid; page-break-inside:avoid; border:none; background:#fff; } h2 { break-before:page; page-break-before:always; } a { color:#000; text-decoration:none; } .profile-body.collapsed { display:block !important; } }
+  
+.back-home { padding:.8rem 1.5rem .2rem; }
+.back-home a { display:inline-flex; align-items:center; gap:.4rem; color:#4a5568; text-decoration:none; font-size:.9rem; font-weight:500; padding:.4rem .8rem; border-radius:6px; border:1px solid #e2e8f0; background:#fff; transition:all .15s; }
+.back-home a:hover { color:#1a365d; border-color:#1a365d; background:#f7fafc; box-shadow:0 1px 3px rgba(0,0,0,.08); }
+@media(max-width:600px) { .back-home { padding:.6rem 1rem .2rem; } .back-home a { font-size:.82rem; } }
+</style>
+</head>
+<body>
+<header class="cover">
+<div>
+<h1>Content Strategy &amp; Attention Growth — Umrah Family</h1>
+<p class="subtitle">Dokumen Blueprint</p>
+<p class="meta">Regenerasi HTML &#8226; 28 April 2026</p>
+</div>
+</header>
+<div class="reading-progress" id="readingProgress"></div>
+<div class="sidebar-overlay" id="sidebarOverlay"></div>
+<button aria-label="Buka/Tutup Daftar Isi" class="sidebar-toggle" id="sidebarToggle" type="button">&#9776;</button>
+<div class="layout">
+<aside id="sidebar"><h2>Daftar Isi</h2><ul class="toc-list">
+<li><a data-target="1-north-star-konteks-bisnis-dan-target-90-hari" href="#1-north-star-konteks-bisnis-dan-target-90-hari">1) North Star, Konteks Bisnis, dan Target 90 Hari</a></li>
+<li><a data-target="2-segmentasi-audiens-operasional" href="#2-segmentasi-audiens-operasional">2) Segmentasi Audiens Operasional</a></li>
+<li><a data-target="3-empat-pilar-konten" href="#3-empat-pilar-konten">3) Empat Pilar Konten</a></li>
+<li><a data-target="4-content-pyramid-dan-volume-strategy" href="#4-content-pyramid-dan-volume-strategy">4) Content Pyramid dan Volume Strategy</a></li>
+<li><a data-target="5-platform-strategy-platform-native" href="#5-platform-strategy-platform-native">5) Platform Strategy (Platform-Native)</a></li>
+<li><a data-target="6-komposisi-konten-8020-jab-vs-right-hook" href="#6-komposisi-konten-8020-jab-vs-right-hook">6) Komposisi Konten 80:20 (Jab vs Right Hook)</a></li>
+<li><a data-target="7-weekly-rhythm-content-calendar" href="#7-weekly-rhythm-content-calendar">7) Weekly Rhythm Content Calendar</a></li>
+<li><a data-target="8-roadmap-eksekusi-faseminggu-12-minggu" href="#8-roadmap-eksekusi-faseminggu-12-minggu">8) Roadmap Eksekusi FASE/MINGGU (12 Minggu)</a></li>
+<li><a data-target="9-hook-bank-15-hook-spesifik-umrah-family" href="#9-hook-bank-15-hook-spesifik-umrah-family">9) Hook Bank (15 Hook Spesifik Umrah Family)</a></li>
+<li><a data-target="10-atomization-plan-dari-1-vlog-perjalanan" href="#10-atomization-plan-dari-1-vlog-perjalanan">10) Atomization Plan dari 1 Vlog Perjalanan</a></li>
+<li><a data-target="11-personal-brand-dan-wajah-komunikasi" href="#11-personal-brand-dan-wajah-komunikasi">11) Personal Brand dan Wajah Komunikasi</a></li>
+<li><a data-target="12-kpi-dashboard-mingguan-dan-rules-evaluasi" href="#12-kpi-dashboard-mingguan-dan-rules-evaluasi">12) KPI Dashboard Mingguan dan Rules Evaluasi</a></li>
+<li><a data-target="13-sop-produksi-document-dont-create" href="#13-sop-produksi-document-dont-create">13) SOP Produksi “Document, Don’t Create”</a></li>
+<li><a data-target="14-guardrail-brand-kepatuhan-dan-quality-gate" href="#14-guardrail-brand-kepatuhan-dan-quality-gate">14) Guardrail Brand, Kepatuhan, dan Quality Gate</a></li>
+<li><a data-target="15-penutup-operasional" href="#15-penutup-operasional">15) Penutup Operasional</a></li>
+</ul></aside>
+<main><nav class="back-home"><a href="../index.html">&larr; Back to Home Page</a></nav><article class="ebook-content"><section class="major-section"><h1>Content Strategy &amp; Attention Growth — Umrah Family</h1>
+<h2 id="1-north-star-konteks-bisnis-dan-target-90-hari">1) North Star, Konteks Bisnis, dan Target 90 Hari</h2>
+<p>Blueprint ini ngarahin funnel Meta Ads → Landing Page → WhatsApp → Kantor Perwakilan → Pendaftaran. Output utamanya tetap sama: percakapan WhatsApp yang berkualitas. Brand context yang dipakai tetap: paket Silver/Gold/Platinum untuk 9 dan 12 hari, rentang Rp 31,5 Jt sampai Rp 43 Jt per orang. Nada konten harus amanah, hangat-kekeluargaan, dan profesional, dengan sapaan Bapak/Ibu/Kakak/Sahabat. Setiap konten utama wajib ngulang 5 bukti trust minimal 1 kali: 5.000+ jamaah, 100% keberangkatan, izin Kemenag, 50 kantor, partner maskapai premium.</p>
+<p>Target 90 hari:</p>
+<div class="table-scroll"><table>
+<thead><tr>
+<th>Metrik Utama</th>
+<th>Baseline Operasional</th>
+<th>Target 90 Hari</th>
+<th>Cara Ukur</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Reach bulanan gabungan IG+TikTok+FB+YouTube</td>
+<td>450.000 akun</td>
+<td>1.200.000 akun</td>
+<td>Insight native + GA4 UTM</td>
+</tr>
+<tr>
+<td>Engagement rate konten organik</td>
+<td>2,8%</td>
+<td>5,0%</td>
+<td>(Like+Comment+Share+Save)/Reach</td>
+</tr>
+<tr>
+<td>Save rate konten edukasi</td>
+<td>1,2%</td>
+<td>3,5%</td>
+<td>Save/Reach per posting</td>
+</tr>
+<tr>
+<td>Klik WhatsApp dari konten + LP</td>
+<td>1.100 klik/bulan</td>
+<td>3.000 klik/bulan</td>
+<td>CTA click tracking</td>
+</tr>
+<tr>
+<td>DM inquiry valid per bulan</td>
+<td>380 DM</td>
+<td>1.000 DM</td>
+<td>Tagging CRM “minat paket”</td>
+</tr>
+<tr>
+<td>Rasio DM ke chat WA aktif</td>
+<td>42%</td>
+<td>60%</td>
+<td>DM yang pindah ke WA</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="2-segmentasi-audiens-operasional">2) Segmentasi Audiens Operasional</h2>
+<h3 id="icp-a-keluarga-muda-pertama-umrah-30-45">ICP A: Keluarga Muda Pertama Umrah (30-45)</h3>
+<p>Prioritas pesan: keamanan keberangkatan, transparansi biaya, dan cicilan syariah tanpa riba/denda/biaya tersembunyi. Format paling efektif: carousel checklist, reels edukasi 30-45 detik, QnA story 6 frame. Waktu posting utama: pukul 06.00-07.00, 12.00-13.00, 20.00-21.30. CTA: “Kirim kata CHECKLIST ke WhatsApp untuk simulasi biaya keluarga 3 orang.”</p>
+<h3 id="icp-b-jamaah-repeat-premium-seeker-40-60">ICP B: Jamaah Repeat / Premium Seeker (40-60)</h3>
+<p>Prioritas pesan: kenyamanan perjalanan, maskapai premium, pembimbing berpengalaman, ritme ibadah yang lebih tenang. Format paling efektif: video testimoni 45-60 detik, vlog itinerary, perbandingan paket Gold vs Platinum. Waktu posting utama: pukul 05.30-06.30, 11.30-12.30, 19.30-20.30. CTA: “Jadwalkan konsultasi 15 menit untuk memilih paket yang paling sesuai prioritas ibadah Bapak/Ibu.”</p>
+<h2 id="3-empat-pilar-konten">3) Empat Pilar Konten</h2>
+<h3 id="pilar-1-edukasi-umrah">Pilar 1 — Edukasi Umrah</h3>
+<p>Tujuan: naikkan save rate sampai 3,5% lewat konten yang bantu keputusan nyata sebelum daftar. Tema inti: checklist dokumen, tips fisik pra-umrah 30 hari, manasik dasar, perencanaan budget keluarga. Frekuensi: 6 konten per minggu. Format: 3 carousel, 2 reels, 1 live recap 20 menit. Contoh serial mingguan: “Checklist Selasa”, “Manasik Kamis”, “Budget Sabtu”.</p>
+<h3 id="pilar-2-testimoni-pengalaman-jamaah">Pilar 2 — Testimoni &amp; Pengalaman Jamaah</h3>
+<p>Tujuan: naikin trust signal supaya rasio DM ke WA naik ke 60%. Tema inti: kisah jamaah keluarga, pengalaman lansia, pengalaman repeat jamaah paket premium. Frekuensi: 4 konten per minggu. Format: 2 video testimoni, 1 carousel before-after perasaan ibadah, 1 story highlight kantor perwakilan. Setiap testimoni wajib tampilkan data konkret: kota asal jamaah, paket yang dipilih, tanggal keberangkatan.</p>
+<h3 id="pilar-3-behind-the-scenes-perjalanan">Pilar 3 — Behind-the-Scenes Perjalanan</h3>
+<p>Tujuan: turunkan keraguan operasional dengan nunjukin proses nyata dari kantor ke bandara sampai hotel. Tema inti: briefing keberangkatan, pengurusan bagasi, koordinasi tim lapangan, cuplikan pendampingan jamaah. Frekuensi: 4 konten per minggu. Format: 2 reels BTS, 1 vlog YouTube 8-12 menit, 1 foto cerita di Facebook. Standar visual: wajah jamaah harus punya izin publikasi tertulis, minimal lewat formulir digital.</p>
+<h3 id="pilar-4-spiritual-motivasi-ibadah">Pilar 4 — Spiritual &amp; Motivasi Ibadah</h3>
+<p>Tujuan: kuatkan ikatan emosional biar audiens balik ke akun minimal 2 kali per minggu. Tema inti: adab safar ibadah, niat dan persiapan hati, doa perjalanan, refleksi setelah umrah. Frekuensi: 4 konten per minggu. Format: 2 reels renungan 30 detik, 1 carousel ayat/hadits + penjelasan praktis, 1 story interaktif polling. Guardrail: hindari klaim berlebihan dan hindari kata-kata terlarang brand.</p>
+<h2 id="4-content-pyramid-dan-volume-strategy">4) Content Pyramid dan Volume Strategy</h2>
+<p>Piramida konten dibagi jadi 3 level biar tim bisa produksi rutin tanpa nurunin kualitas.</p>
+<div class="table-scroll"><table>
+<thead><tr>
+<th>Level</th>
+<th>Tujuan</th>
+<th>Volume/Bulan</th>
+<th>Durasi Produksi</th>
+<th>KPI Primer</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Hero</td>
+<td>Meningkatkan awareness besar</td>
+<td>4 konten</td>
+<td>3-4 hari/konten</td>
+<td>Reach 80.000/konten</td>
+</tr>
+<tr>
+<td>Hub</td>
+<td>Menjaga interaksi rutin</td>
+<td>24 konten</td>
+<td>1 hari/konten</td>
+<td>ER 5%</td>
+</tr>
+<tr>
+<td>Help</td>
+<td>Menjawab pertanyaan spesifik</td>
+<td>36 konten</td>
+<td>2-4 jam/konten</td>
+<td>Save rate 4%</td>
+</tr>
+</tbody>
+</table></div>
+<p>Rumus volume mingguan tim: Senin sampai Minggu hasilkan 18-24 aset mikro lintas platform dari 1-2 aset makro. Setiap minggu minimal ada 1 konten Hero, 6 konten Hub, dan 9 konten Help. Batch shooting jalan 2 hari per minggu: Selasa dan Jumat, masing-masing 3 jam.</p>
+<h2 id="5-platform-strategy-platform-native">5) Platform Strategy (Platform-Native)</h2>
+<h3 id="instagram-reels-carousel">Instagram (Reels + Carousel)</h3>
+<p>Fungsi utama: edukasi cepat + trust proof + pengumpul DM. Porsi mingguan: 7 reels, 4 carousel, 14-21 stories. Spesifikasi kreatif: hook 2 detik pertama, subtitle full, CTA di frame terakhir dan caption baris 1-2. Optimasi: simpan 8 template cover biar feed rapi dan gampang dikenali.</p>
+<h3 id="tiktok-short-video">TikTok (Short Video)</h3>
+<p>Fungsi utama: discovery audiens baru usia 25-45 dan retargeting organik. Porsi mingguan: 5-7 video 20-40 detik. Format: gaya “jawab pertanyaan calon jamaah” dengan teks besar 5-8 kata per scene. Optimasi: posting jam 12.00 dan 20.00, split test 2 variasi hook untuk 3 video tiap minggu.</p>
+<h3 id="youtube-vlog-perjalanan">YouTube (Vlog Perjalanan)</h3>
+<p>Fungsi utama: bukti perjalanan komprehensif untuk calon jamaah high-intent. Porsi mingguan: 1 vlog 8-12 menit + 2 Shorts. Struktur video: pembuka itinerary 45 detik, proses perjalanan 6 menit, insight ibadah 2 menit, CTA 30 detik. Optimasi: pakai timestamp 5 segmen biar penonton langsung ke topik yang dicari.</p>
+<h3 id="facebook-community-ads">Facebook (Community + Ads)</h3>
+<p>Fungsi utama: komunitas keluarga, diskusi FAQ, dan amplifikasi konten iklan. Porsi mingguan: 5 posting feed + 2 thread komunitas + 1 live 25 menit. Format unggulan: cerita jamaah kota-daerah, album foto manasik kantor perwakilan, polling kebutuhan jadwal. Optimasi: admin jawab komentar maksimal 30 menit setelah pertanyaan masuk pada jam 08.00-21.00.</p>
+<h2 id="6-komposisi-konten-8020-jab-vs-right-hook">6) Komposisi Konten 80:20 (Jab vs Right Hook)</h2>
+<p>Rasio 80% jab dipakai untuk edukasi, testimoni, BTS, dan spiritual tanpa hard selling. Rasio 20% right hook dipakai untuk ajakan konsultasi, pembukaan seat paket, dan pengumuman jadwal keberangkatan.</p>
+<div class="table-scroll"><table>
+<thead><tr>
+<th>Jenis Konten</th>
+<th>Porsi</th>
+<th>Output Mingguan</th>
+<th>Tujuan</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Jab: Edukasi + Testimoni + BTS + Spiritual</td>
+<td>80%</td>
+<td>16 konten</td>
+<td>Trust, save, share</td>
+</tr>
+<tr>
+<td>Right Hook: CTA daftar/konsultasi/promo paket</td>
+<td>20%</td>
+<td>4 konten</td>
+<td>Klik WA, form, appointment</td>
+</tr>
+</tbody>
+</table></div>
+<p>Aturan distribusi right hook biar tidak terasa agresif: Right hook hanya tayang pada Rabu, Jumat, dan Ahad pukul 20.00 untuk IG/TikTok. Right hook wajib didahului minimal 3 jab bertema serupa dalam 72 jam sebelumnya. Setiap right hook harus bawa bukti konkret: seat tersisa, tanggal manasik, atau kota keberangkatan.</p>
+<h2 id="7-weekly-rhythm-content-calendar">7) Weekly Rhythm Content Calendar</h2>
+<div class="table-scroll"><table>
+<thead><tr>
+<th>Hari</th>
+<th>Instagram</th>
+<th>TikTok</th>
+<th>YouTube</th>
+<th>Facebook</th>
+<th>Target Aksi</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Senin</td>
+<td>Carousel checklist dokumen</td>
+<td>QnA 30 detik</td>
+<td>Shorts FAQ 45 detik</td>
+<td>Post komunitas “tanya admin”</td>
+<td>120 save</td>
+</tr>
+<tr>
+<td>Selasa</td>
+<td>Reels testimoni keluarga</td>
+<td>Storyline perjalanan</td>
+<td>-</td>
+<td>Album manasik kantor</td>
+<td>80 DM</td>
+</tr>
+<tr>
+<td>Rabu</td>
+<td>Reels edukasi budget</td>
+<td>Video hook trust</td>
+<td>-</td>
+<td>Post CTA konsultasi WA</td>
+<td>150 klik WA</td>
+</tr>
+<tr>
+<td>Kamis</td>
+<td>Carousel manasik praktis</td>
+<td>Tips fisik 7 hari</td>
+<td>Shorts refleksi</td>
+<td>Thread diskusi jadwal</td>
+<td>100 komentar</td>
+</tr>
+<tr>
+<td>Jumat</td>
+<td>Reels spiritual</td>
+<td>Video doa safar</td>
+<td>Upload vlog 8-12 menit</td>
+<td>Share vlog + CTA</td>
+<td>1.500 views YouTube</td>
+</tr>
+<tr>
+<td>Sabtu</td>
+<td>Reels BTS bandara/hotel</td>
+<td>Cuplikan BTS</td>
+<td>-</td>
+<td>Live 25 menit</td>
+<td>60 lead live</td>
+</tr>
+<tr>
+<td>Ahad</td>
+<td>Reels right hook seat paket</td>
+<td>Recap mingguan</td>
+<td>-</td>
+<td>Post testimoni premium</td>
+<td>12 appointment</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="8-roadmap-eksekusi-faseminggu-12-minggu">8) Roadmap Eksekusi FASE/MINGGU (12 Minggu)</h2>
+<div class="table-scroll"><table>
+<thead><tr>
+<th>Minggu</th>
+<th>Prioritas</th>
+<th>Target Metrik</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>FASE 1 - Minggu 1</td>
+<td>Audit 60 konten lama, tandai 20 konten yang bisa di-repurpose</td>
+<td>Daftar 20 aset siap edit</td>
+</tr>
+<tr>
+<td>FASE 1 - Minggu 2</td>
+<td>Bangun 8 template visual dan 4 template caption</td>
+<td>Waktu produksi turun dari 120 ke 75 menit/konten</td>
+</tr>
+<tr>
+<td>FASE 1 - Minggu 3</td>
+<td>Produksi batch 18 konten perdana + setup UTM semua CTA</td>
+<td>100% konten punya tracking link</td>
+</tr>
+<tr>
+<td>FASE 2 - Minggu 4</td>
+<td>Jalankan serial edukasi “Checklist 4 Pekan”</td>
+<td>Save rate edukasi mencapai 2,2%</td>
+</tr>
+<tr>
+<td>FASE 2 - Minggu 5</td>
+<td>Rilis 4 testimoni video lintas kota</td>
+<td>DM inquiry naik 20% dibanding minggu 3</td>
+</tr>
+<tr>
+<td>FASE 2 - Minggu 6</td>
+<td>Aktivasi 1 live mingguan + FAQ story harian</td>
+<td>300 pertanyaan terkumpul untuk konten help</td>
+</tr>
+<tr>
+<td>FASE 3 - Minggu 7</td>
+<td>Scale distribusi TikTok dari 5 ke 7 video per minggu</td>
+<td>Reach TikTok naik 35%</td>
+</tr>
+<tr>
+<td>FASE 3 - Minggu 8</td>
+<td>Luncurkan 2 vlog perjalanan berurutan</td>
+<td>Watch time YouTube rata-rata 3:30 menit</td>
+</tr>
+<tr>
+<td>FASE 3 - Minggu 9</td>
+<td>Perkuat right hook berbasis seat dan jadwal</td>
+<td>Klik WA mingguan tembus 750</td>
+</tr>
+<tr>
+<td>FASE 4 - Minggu 10</td>
+<td>Optimasi 10 konten top performer menjadi iklan dark post</td>
+<td>Cost per WA click turun 15%</td>
+</tr>
+<tr>
+<td>FASE 4 - Minggu 11</td>
+<td>Sinkronkan konten organik dengan 50 kantor perwakilan</td>
+<td>25 kantor aktif repost mingguan</td>
+</tr>
+<tr>
+<td>FASE 4 - Minggu 12</td>
+<td>Review total 90 hari dan tetapkan tema kuartal berikutnya</td>
+<td>Playbook Q berikutnya disetujui manajemen</td>
+</tr>
+</tbody>
+</table></div>
+<p>Keputusan akhir tiap fase harus ditutup dalam rapat 45 menit setiap Jumat pekan terakhir fase. Dokumen keputusan memuat 3 item: konten dihentikan, konten dilanjutkan, konten di-scale menjadi iklan.</p>
+<h2 id="9-hook-bank-15-hook-spesifik-umrah-family">9) Hook Bank (15 Hook Spesifik Umrah Family)</h2>
+<ol>
+<li>“Bapak/Ibu, 3 dokumen ini paling sering bikin calon jamaah tertunda berangkat—cek sebelum terlambat.”</li>
+<li>“Kenapa 1 keluarga bisa berangkat tanpa khawatir biaya tersembunyi? Ini format rincian yang kami pakai.”</li>
+<li>“Kakak, bedanya paket 9 hari vs 12 hari bukan cuma durasi—ini dampaknya ke ritme ibadah.”</li>
+<li>“Sahabat, ini momen jamaah lansia kami tetap tenang dari bandara sampai hotel.”</li>
+<li>“Sebelum pilih paket, cek 4 pertanyaan ini dulu agar keputusan keluarga tidak berubah di tengah jalan.”</li>
+<li>“5 menit yang menentukan: briefing terakhir sebelum take-off bersama pembimbing.”</li>
+<li>“Kalau Bapak/Ibu baru pertama kali umrah, urutan persiapan 30 hari ini paling aman diikuti.”</li>
+<li>“Bukan soal harga paling rendah, tapi soal keberangkatan yang pasti—lihat bukti prosesnya.”</li>
+<li>“Jamaah repeat biasanya cek 3 hal ini sebelum upgrade ke paket premium.”</li>
+<li>“Ini alasan kenapa banyak keluarga menyimpan konten checklist ini dan mengirimkannya ke grup.”</li>
+<li>“Doa safar yang dibaca jamaah kami sebelum berangkat, lengkap dengan cara praktiknya.”</li>
+<li>“Dari kantor perwakilan ke Tanah Suci: alur pendampingan yang sering tidak terlihat di iklan.”</li>
+<li>“Kursi keberangkatan bulan depan tinggal terbatas—cek kota keberangkatan yang masih tersedia.”</li>
+<li>“Apa yang terjadi setelah daftar? Ini timeline 7 langkah sampai hari H.”</li>
+<li>“Satu keputusan kecil yang membuat ibadah keluarga lebih tenang selama perjalanan.”</li>
+</ol>
+<h2 id="10-atomization-plan-dari-1-vlog-perjalanan">10) Atomization Plan dari 1 Vlog Perjalanan</h2>
+<p>Sumber konten makro: 1 vlog YouTube durasi 10 menit dari keberangkatan satu rombongan.</p>
+<div class="table-scroll"><table>
+<thead><tr>
+<th>Turunan Konten</th>
+<th>Jumlah</th>
+<th>Fokus Topik</th>
+<th>Deadline Produksi</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Reels IG klip 20-30 detik</td>
+<td>5</td>
+<td>Hook trust + BTS</td>
+<td>H+2 setelah vlog tayang</td>
+</tr>
+<tr>
+<td>Carousel IG 7 slide</td>
+<td>3</td>
+<td>Checklist + timeline + FAQ</td>
+<td>H+3</td>
+</tr>
+<tr>
+<td>Stories IG</td>
+<td>10</td>
+<td>Polling, QnA, reminder CTA</td>
+<td>H+1 sampai H+5</td>
+</tr>
+<tr>
+<td>TikTok short</td>
+<td>2</td>
+<td>Pertanyaan paling sering</td>
+<td>H+2</td>
+</tr>
+</tbody>
+</table></div>
+<p>Pola kerja atomisasi editor: Hari 1 potong 25 timestamp penting. Hari 2 pilih 10 klip prioritas dari potensi save/share. Hari 3 tulis 12 varian caption untuk A/B test hook.</p>
+<h2 id="11-personal-brand-dan-wajah-komunikasi">11) Personal Brand dan Wajah Komunikasi</h2>
+<p>Akun utama perusahaan tetap dominan, lalu diperkuat 3 wajah komunikasi. Wajah 1: Pembimbing ibadah untuk konten manasik dan spiritual 3x per minggu. Wajah 2: Host perjalanan untuk BTS dan vlog 2x per minggu. Wajah 3: Admin konsultasi untuk FAQ biaya/jadwal 5x per minggu. Setiap wajah komunikasi menutup konten dengan ajakan konsultasi yang sama biar tracking rapi.</p>
+<h2 id="12-kpi-dashboard-mingguan-dan-rules-evaluasi">12) KPI Dashboard Mingguan dan Rules Evaluasi</h2>
+<p>KPI dicek setiap Senin pukul 09.00 selama 30 menit, format 1 halaman.</p>
+<div class="table-scroll"><table>
+<thead><tr>
+<th>KPI</th>
+<th>Target Mingguan</th>
+<th>Ambang Waspada</th>
+<th>Aksi Korektif 7 Hari</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Reach total</td>
+<td>250.000</td>
+<td>&lt;180.000</td>
+<td>Tambah 2 kolaborasi creator lokal</td>
+</tr>
+<tr>
+<td>Engagement rate</td>
+<td>5,0%</td>
+<td>&lt;3,5%</td>
+<td>Ubah hook 3 detik pertama pada 6 video</td>
+</tr>
+<tr>
+<td>Save rate edukasi</td>
+<td>3,5%</td>
+<td>&lt;2,0%</td>
+<td>Tambah checklist praktis</td>
+</tr>
+<tr>
+<td>DM inquiry</td>
+<td>250</td>
+<td>&lt;170</td>
+<td>Tambah CTA story 2x per hari</td>
+</tr>
+<tr>
+<td>Klik WhatsApp</td>
+<td>750</td>
+<td>&lt;500</td>
+<td>Perbaiki CTA caption dan pin comment</td>
+</tr>
+<tr>
+<td>DM → WA aktif</td>
+<td>60%</td>
+<td>&lt;45%</td>
+<td>Siapkan skrip admin 4 balasan awal</td>
+</tr>
+</tbody>
+</table></div>
+<p>Setiap metrik harus punya PIC tunggal biar keputusan tidak ketahan. PIC Reach dipegang tim distribusi. PIC DM dan WA dipegang admin CRM. PIC Save rate dipegang lead konten edukasi.</p>
+<h2 id="13-sop-produksi-document-dont-create">13) SOP Produksi “Document, Don’t Create”</h2>
+<p>Tim merekam proses nyata minimal 3 momen operasional per hari, bukan bikin adegan buatan. Momen 1: briefing pagi tim pendamping selama 10 menit. Momen 2: interaksi jamaah saat manasik 15-20 menit. Momen 3: follow-up admin ke calon jamaah 20 chat representatif. Setiap momen disimpan di folder cloud dengan format tanggal_kota_topik supaya pencarian klip lebih cepat.</p>
+<p>Checklist produksi harian maksimal 10 langkah. 1) Tentukan 3 tujuan konten harian sebelum jam 08.30. 2) Rekam 15-20 klip mentah vertikal. 3) Pilih 6 klip dengan audio paling jelas. 4) Tulis 3 hook berbeda untuk klip prioritas. 5) Edit final 2 reels + 1 carousel sebelum jam 17.00. 6) Jadwalkan posting lintas platform sebelum jam 19.00. 7) Siapkan 2 CTA yang relevan dengan tema hari itu. 8) Pantau komentar 60 menit setelah tayang. 9) Tag pertanyaan masuk ke kategori FAQ. 10) Rekap hasil harian di dashboard jam 21.30.</p>
+<h2 id="14-guardrail-brand-kepatuhan-dan-quality-gate">14) Guardrail Brand, Kepatuhan, dan Quality Gate</h2>
+<p>Kata terlarang tidak boleh muncul di caption, subtitle, komentar pin, atau naskah video. Konten harus hindari janji yang tidak bisa diverifikasi dan harus tampilkan sumber data internal saat sebut angka. Setiap aset yang memuat testimoni wajib ada persetujuan publikasi dari jamaah. Review kualitas jalan lewat 2 reviewer berbeda sebelum posting: reviewer syariah-komunikasi dan reviewer akurasi data.</p>
+<h2 id="15-penutup-operasional">15) Penutup Operasional</h2>
+<p>Blueprint ini butuh eksekusi rapi selama 12 minggu. Output mingguannya tetap 18-24 aset, dengan evaluasi terjadwal setiap Senin. Kalau target mingguan tercapai minimal 9 dari 12 minggu, tim lanjutkan playbook ini dengan kenaikan volume 20% di kuartal berikutnya. Kalau target mingguan cuma tercapai 6 minggu atau kurang, tim kurangi variasi ke 3 format terbaik dan fokuskan 70% tenaga pada konten dengan save rate tertinggi.</p></section></article></main>
+</div>
+<button aria-label="Kembali ke atas" class="back-to-top" id="backToTop" type="button">&#8593;</button>
+<script>
+    (function () {
+      'use strict';
+      var sidebar = document.getElementById('sidebar');
+      var overlay = document.getElementById('sidebarOverlay');
+      var toggle = document.getElementById('sidebarToggle');
+      var backBtn = document.getElementById('backToTop');
+      var progressBar = document.getElementById('readingProgress');
+      var tocLinks = Array.from(document.querySelectorAll('.toc-list a'));
+      var sections = tocLinks
+        .map(function (a) { return document.getElementById(a.dataset.target); })
+        .filter(Boolean);
+
+      /* --- Sidebar open/close with overlay --- */
+      function openSidebar() {
+        sidebar.classList.add('open');
+        overlay.classList.add('show');
+        document.body.style.overflow = 'hidden';
+      }
+      function closeSidebar() {
+        sidebar.classList.remove('open');
+        overlay.classList.remove('show');
+        document.body.style.overflow = '';
+      }
+
+      if (toggle) {
+        toggle.addEventListener('click', function () {
+          if (sidebar.classList.contains('open')) { closeSidebar(); }
+          else { openSidebar(); }
+        });
+      }
+      if (overlay) {
+        overlay.addEventListener('click', closeSidebar);
+      }
+
+      /* --- Swipe to close sidebar --- */
+      var touchStartX = 0;
+      var touchStartY = 0;
+      sidebar.addEventListener('touchstart', function (e) {
+        touchStartX = e.touches[0].clientX;
+        touchStartY = e.touches[0].clientY;
+      }, { passive: true });
+      sidebar.addEventListener('touchend', function (e) {
+        var dx = e.changedTouches[0].clientX - touchStartX;
+        var dy = Math.abs(e.changedTouches[0].clientY - touchStartY);
+        if (dx < -60 && dy < 80) { closeSidebar(); }
+      }, { passive: true });
+
+      /* --- TOC link click closes sidebar on mobile --- */
+      tocLinks.forEach(function (a) {
+        a.addEventListener('click', function () {
+          if (window.innerWidth <= 1024) { closeSidebar(); }
+        });
+      });
+
+      /* --- Scroll spy --- */
+      var observer = new IntersectionObserver(
+        function (entries) {
+          entries.forEach(function (entry) {
+            if (!entry.isIntersecting) return;
+            var id = entry.target.id;
+            tocLinks.forEach(function (link) {
+              if (link.dataset.target === id) {
+                link.classList.add('active');
+                /* Auto-scroll TOC to active item on desktop */
+                if (window.innerWidth > 1024 && sidebar.scrollHeight > sidebar.clientHeight) {
+                  link.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+                }
+              } else {
+                link.classList.remove('active');
+              }
+            });
+          });
+        },
+        { rootMargin: '-30% 0px -55% 0px', threshold: 0.1 }
+      );
+      sections.forEach(function (sec) { observer.observe(sec); });
+
+      /* --- Reading progress bar + back-to-top --- */
+      var ticking = false;
+      window.addEventListener('scroll', function () {
+        if (!ticking) {
+          window.requestAnimationFrame(function () {
+            var scrollTop = window.scrollY || document.documentElement.scrollTop;
+            var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            if (docHeight > 0) {
+              progressBar.style.width = Math.min((scrollTop / docHeight) * 100, 100) + '%';
+            }
+            if (scrollTop > 400) { backBtn.classList.add('show'); }
+            else { backBtn.classList.remove('show'); }
+            ticking = false;
+          });
+          ticking = true;
+        }
+      }, { passive: true });
+
+      backBtn.addEventListener('click', function () {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+
+      /* --- Profile accordion on mobile --- */
+      function initAccordion() {
+        var isMobile = window.innerWidth <= 768;
+        var profiles = document.querySelectorAll('h3[id]');
+        profiles.forEach(function (h3) {
+          /* Only profile headings (G0-x, numbered, S-x, T-x) */
+          var text = h3.textContent || '';
+          if (!/^(G0-|[0-9]+\.|S[0-9]|T-[0-9])/.test(text.trim())) return;
+
+          var existingBtn = h3.querySelector('.profile-collapse-btn');
+          if (!existingBtn) {
+            var btn = document.createElement('button');
+            btn.className = 'profile-collapse-btn';
+            btn.textContent = '▼';
+            btn.setAttribute('aria-label', 'Buka/tutup profil');
+            h3.appendChild(btn);
+          }
+
+          var btn = h3.querySelector('.profile-collapse-btn');
+          /* Collect siblings until next h3 or h2 */
+          var body = h3.nextElementSibling;
+          if (body && body.classList.contains('profile-body')) {
+            /* Already wrapped */
+            if (isMobile && !body.classList.contains('collapsed')) {
+              body.classList.add('collapsed');
+              btn.textContent = '▶';
+            } else if (!isMobile) {
+              body.classList.remove('collapsed');
+              btn.textContent = '▼';
+            }
+            return;
+          }
+
+          /* Wrap profile content in a div */
+          var wrapper = document.createElement('div');
+          wrapper.className = 'profile-body';
+          var sibling = h3.nextElementSibling;
+          while (sibling && sibling.tagName !== 'H3' && sibling.tagName !== 'H2') {
+            var next = sibling.nextElementSibling;
+            wrapper.appendChild(sibling);
+            sibling = next;
+          }
+          h3.parentNode.insertBefore(wrapper, sibling);
+
+          if (isMobile) {
+            wrapper.classList.add('collapsed');
+            btn.textContent = '▶';
+          }
+        });
+      }
+
+      /* Toggle accordion on click */
+      document.addEventListener('click', function (e) {
+        if (!e.target.classList.contains('profile-collapse-btn')) return;
+        var h3 = e.target.closest('h3');
+        if (!h3) return;
+        var body = h3.nextElementSibling;
+        if (body && body.classList.contains('profile-body')) {
+          body.classList.toggle('collapsed');
+          e.target.textContent = body.classList.contains('collapsed') ? '▶' : '▼';
+        }
+      });
+
+      /* Init accordion on load and resize */
+      initAccordion();
+      var resizeTimer;
+      window.addEventListener('resize', function () {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(initAccordion, 250);
+      });
+
+      /* --- Keyboard: Escape closes sidebar --- */
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && sidebar.classList.contains('open')) {
+          closeSidebar();
+        }
+      });
+    })();
+    
+</script>
+</body>
+</html>

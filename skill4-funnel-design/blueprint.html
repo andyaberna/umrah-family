@@ -1,0 +1,1055 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Funnels, Conversions &amp; Customer Journeys — Umrah Family</title>
+<style>
+    :root { --bg:#fff; --text:#1f2937; --heading:#1a365d; --accent:#d69e2e; --danger:#e53e3e; --line:#e5e7eb; --muted:#64748b; --soft:#f8fafc; --bridge:#f0f4f8; --lesson:#fffbeb; --whatif:#f5f0ff; }
+    * { box-sizing:border-box; } html { scroll-behavior:smooth; }
+    body { margin:0; background:var(--bg); color:var(--text); font-family:"Segoe UI", system-ui, -apple-system, sans-serif; line-height:1.65; }
+    h1,h2,h3,h4,h5 { font-family:Georgia, "Times New Roman", serif; color:var(--heading); line-height:1.3; scroll-margin-top:80px; }
+    .cover { min-height:100vh; display:grid; place-items:center; text-align:center; padding:2rem; border-bottom:1px solid var(--line); }
+    .cover h1 { font-size:clamp(2rem,4vw,3.3rem); margin:.25rem 0; }
+    .cover .subtitle { color:var(--heading); font-size:1.1rem; } .cover .meta { color:var(--muted); margin-top:1rem; }
+    .layout { display:flex; }
+    .sidebar-toggle { display:none; position:fixed; top:12px; left:12px; z-index:1200; border:1px solid var(--line); background:white; border-radius:8px; padding:.45rem .65rem; }
+    aside { position:sticky; top:0; align-self:flex-start; width:310px; max-height:100vh; overflow:auto; border-right:1px solid var(--line); background:#fff; padding:1rem; }
+    .toc-list,.toc-list ul { list-style:none; margin:0; padding-left:.8rem; } .toc-list>li { margin:.24rem 0; }
+    .toc-list a { text-decoration:none; color:#334155; font-size:.92rem; display:block; padding:.16rem .4rem; border-left:2px solid transparent; border-radius:4px; }
+    .toc-list a.active { color:var(--heading); border-left-color:var(--accent); background:#f8fafc; font-weight:600; }
+    main { flex:1; padding:1.2rem clamp(1rem,3vw,2.5rem) 3rem; } .ebook-content { max-width:980px; margin:auto; }
+    .major-section { padding:1rem 0; border-bottom:1px solid var(--line); } .section-alt { background:var(--soft); padding:1.1rem; border-radius:10px; border:1px solid #edf2f7; }
+    .table-scroll { overflow-x:auto; margin:1rem 0; } table { width:100%; border-collapse:collapse; min-width:640px; background:#fff; }
+    th,td { border:1px solid #dbe1e8; padding:.58rem .6rem; vertical-align:top; } th { background:#f8fafc; font-weight:700; }
+    .scorecard-table th::after { content:" ⇅"; color:#94a3b8; font-size:.78em; } .scorecard-table tbody tr:nth-child(even) { background:#fcfdff; }
+    .status-green { background:#e6ffed; } .status-yellow { background:#fffbea; } .status-red { background:#ffe8e8; } .status-gray { background:#f3f4f6; }
+    .warning-marker { color:var(--danger); font-weight:700; font-size:1.12em; } .controversial-heading { border-left:4px solid var(--danger); padding-left:.55rem; }
+    blockquote { margin:1rem 0; border-left:4px solid #cbd5e1; padding:.6rem .85rem; background:#f8fafc; }
+    .archetype-box { display:flex; flex-wrap:wrap; align-items:center; gap:.45rem; margin:.8rem 0 1rem; } .archetype-label { font-weight:700; color:#475569; }
+    .archetype-pill { background:#ebf4ff; border:1px solid #bfdbfe; color:#1e40af; padding:.22rem .55rem; border-radius:999px; font-size:.86rem; }
+    .lesson-box { background:var(--lesson); border-left:4px solid var(--accent); padding:.7rem .8rem; margin:.9rem 0 1.1rem; font-size:.95rem; } .lesson-title { margin:.2rem 0 .45rem; font-weight:700; }
+    .narrative-bridge { background:var(--bridge); border:1px solid #d7e0ea; border-radius:10px; padding:.75rem .9rem; margin:1rem 0; } .narrative-bridge p { font-style:italic; color:#334155; }
+    .timeline-scroll { overflow-x:auto; padding-bottom:.5rem; margin:.9rem 0 1.2rem; } .timeline-track { display:grid; grid-auto-flow:column; grid-auto-columns:minmax(180px,1fr); gap:.65rem; min-width:max-content; }
+    .timeline-col { border:1px solid #dbe4ee; border-radius:10px; background:#fff; padding:.55rem; } .timeline-year { font-weight:700; color:var(--heading); border-bottom:1px solid #e2e8f0; padding-bottom:.35rem; margin-bottom:.45rem; }
+    .timeline-event { font-size:.9rem; padding:.42rem .5rem; border-radius:7px; margin:.36rem 0; border:1px solid transparent; } .timeline-event.positive { background:#ecfdf3; border-color:#b7efcc; } .timeline-event.negative { background:#fff1f1; border-color:#f6c2c2; }
+    .pattern-chain { display:flex; flex-direction:column; gap:.4rem; margin:1rem 0 1.2rem; } .chain-card { border:1px solid #dbe4ee; border-radius:9px; background:#fff; padding:.6rem .7rem; } .chain-arrow { text-align:center; color:#64748b; font-size:1.2rem; }
+    .juxtaposition-wrap { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:.8rem; margin:.75rem 0 1rem; } .juxta-card { border-radius:10px; border:1px solid #e2e8f0; padding:.65rem .75rem; }
+    .juxta-card.positive { background:#f0fff4; border-color:#bbf7d0; } .juxta-card.positive h5 { color:#166534; } .juxta-card.negative { background:#fff1f2; border-color:#fecdd3; } .juxta-card.negative h5 { color:#991b1b; }
+    .whatif-card { background:var(--whatif); border-left:4px solid #7c3aed; padding:.65rem .8rem; border-radius:8px; margin:.6rem 0; }
+    .checklist-table tbody tr td:first-child { font-weight:700; text-align:center; width:48px; } .fake-checkbox { display:inline-block; border:1px solid #cbd5e1; border-radius:6px; padding:.14rem .38rem; background:#fff; font-family:ui-monospace,monospace; }
+    .retro-score-table td:nth-child(2) { font-weight:700; text-align:center; } .score-safe { background:#ecfdf3; color:#166534; } .score-low { background:#fffbea; color:#92400e; } .score-mid { background:#fff7ed; color:#9a3412; } .score-high { background:#fee2e2; color:#991b1b; }
+    .back-to-top { position:fixed; right:16px; bottom:18px; border:none; background:var(--heading); color:#fff; width:42px; height:42px; border-radius:999px; cursor:pointer; opacity:0; transform:translateY(8px); transition:.2s; } .back-to-top.show { opacity:1; transform:translateY(0); }
+    /* --- Overlay backdrop --- */
+    .sidebar-overlay { display:none; position:fixed; inset:0; background:rgba(0,0,0,.45); z-index:1050; opacity:0; transition:opacity .24s; }
+    .sidebar-overlay.show { display:block; opacity:1; }
+
+    /* --- Reading progress bar --- */
+    .reading-progress { position:fixed; top:0; left:0; height:3px; background:linear-gradient(90deg,var(--accent),#f59e0b); z-index:1300; width:0; transition:width .12s linear; }
+
+    /* --- Accordion for mobile profiles --- */
+    .profile-collapse-btn { display:none; }
+
+    /* ===== TABLET: ≤1024px ===== */
+    @media (max-width:1024px) {
+      .sidebar-toggle { display:block; }
+      aside { position:fixed; top:0; left:0; transform:translateX(-105%); transition:.24s; z-index:1100; width:min(82vw,320px); box-shadow:0 10px 30px rgba(2,6,23,.18); }
+      aside.open { transform:translateX(0); }
+      main { padding-top:3.8rem; }
+      .juxtaposition-wrap { grid-template-columns:1fr; }
+      .toc-list a { padding:.4rem .5rem; min-height:36px; display:flex; align-items:center; }
+    }
+
+    /* ===== MOBILE: ≤768px ===== */
+    @media (max-width:768px) {
+      body { font-size:15px; line-height:1.7; -webkit-text-size-adjust:100%; }
+      h1 { font-size:1.6rem; } h2 { font-size:1.35rem; scroll-margin-top:56px; } h3 { font-size:1.15rem; scroll-margin-top:56px; } h4 { font-size:1.05rem; }
+      main { padding:3.2rem .75rem 4rem; }
+      .cover { min-height:80vh; padding:1.5rem 1rem; }
+      .cover h1 { font-size:1.6rem; }
+      .cover .subtitle { font-size:.95rem; }
+
+      /* Tables: scroll hint + shadow */
+      .table-scroll { position:relative; }
+      .table-scroll::after { content:"← geser →"; display:block; text-align:center; font-size:.78rem; color:var(--muted); padding:.3rem 0; }
+      table { min-width:520px; font-size:.85rem; }
+      th,td { padding:.4rem .45rem; }
+
+      /* TOC touch targets */
+      .toc-list a { padding:.5rem .55rem; min-height:44px; font-size:.95rem; border-radius:6px; }
+      .toc-list>li { margin:.12rem 0; }
+
+      /* Sidebar wider on mobile */
+      aside { width:min(88vw,340px); padding:.8rem .6rem; }
+
+      /* Lesson box, bridge, whatif — full width */
+      .lesson-box, .narrative-bridge, .whatif-card { padding:.6rem .65rem; font-size:.9rem; }
+      blockquote { padding:.5rem .65rem; font-size:.93rem; }
+
+      /* Timeline: smaller columns */
+      .timeline-track { grid-auto-columns:minmax(150px,1fr); }
+      .timeline-event { font-size:.82rem; padding:.35rem .4rem; }
+
+      /* Pattern chain */
+      .chain-card { padding:.5rem .55rem; font-size:.9rem; }
+
+      /* Archetype pills */
+      .archetype-pill { font-size:.8rem; padding:.18rem .45rem; }
+
+      /* Back to top: larger touch target */
+      .back-to-top { width:48px; height:48px; font-size:1.2rem; right:12px; bottom:14px; }
+
+      /* Hamburger: larger */
+      .sidebar-toggle { padding:.55rem .75rem; font-size:1.15rem; top:8px; left:8px; }
+
+      /* Profile accordion */
+      .profile-collapse-btn { display:inline-block; background:none; border:1px solid var(--line); border-radius:6px; padding:.3rem .6rem; font-size:.82rem; color:var(--muted); cursor:pointer; margin-left:.5rem; vertical-align:middle; }
+      .profile-body.collapsed { display:none; }
+
+      /* Juxtaposition cards stacked */
+      .juxta-card { padding:.55rem .6rem; font-size:.9rem; }
+
+      /* Checklist table */
+      .checklist-table { min-width:400px; }
+
+      /* Scorecard table */
+      .scorecard-table { min-width:700px; font-size:.8rem; }
+    }
+
+    /* ===== SMALL PHONE: ≤480px ===== */
+    @media (max-width:480px) {
+      body { font-size:14px; }
+      h1 { font-size:1.4rem; } h2 { font-size:1.2rem; } h3 { font-size:1.08rem; }
+      main { padding:3rem .5rem 4rem; }
+      .cover { min-height:70vh; padding:1.2rem .8rem; }
+      .cover h1 { font-size:1.35rem; }
+      .cover .subtitle { font-size:.88rem; }
+      .section-alt { padding:.7rem; border-radius:8px; }
+      .lesson-box, .narrative-bridge, .whatif-card { margin:.6rem -.15rem; border-radius:6px; }
+      table { min-width:440px; font-size:.78rem; }
+      th,td { padding:.32rem .35rem; }
+      .timeline-track { grid-auto-columns:minmax(130px,1fr); gap:.45rem; }
+      .archetype-box { gap:.3rem; }
+      .archetype-pill { font-size:.75rem; }
+      aside { width:min(92vw,300px); }
+      .toc-list a { font-size:.9rem; }
+    }
+
+    /* ===== PRINT ===== */
+    @media print { @page { margin:2cm; } .sidebar-toggle,aside,.back-to-top,.reading-progress,.sidebar-overlay,.profile-collapse-btn { display:none !important; } main { padding:0; } .major-section,.section-alt { break-inside:avoid; page-break-inside:avoid; border:none; background:#fff; } h2 { break-before:page; page-break-before:always; } a { color:#000; text-decoration:none; } .profile-body.collapsed { display:block !important; } }
+  
+.back-home { padding:.8rem 1.5rem .2rem; }
+.back-home a { display:inline-flex; align-items:center; gap:.4rem; color:#4a5568; text-decoration:none; font-size:.9rem; font-weight:500; padding:.4rem .8rem; border-radius:6px; border:1px solid #e2e8f0; background:#fff; transition:all .15s; }
+.back-home a:hover { color:#1a365d; border-color:#1a365d; background:#f7fafc; box-shadow:0 1px 3px rgba(0,0,0,.08); }
+@media(max-width:600px) { .back-home { padding:.6rem 1rem .2rem; } .back-home a { font-size:.82rem; } }
+</style>
+</head>
+<body>
+<header class="cover">
+<div>
+<h1>Funnels, Conversions &amp; Customer Journeys — Umrah Family</h1>
+<p class="subtitle">Dokumen Blueprint</p>
+<p class="meta">Regenerasi HTML &#8226; 28 April 2026</p>
+</div>
+</header>
+<div class="reading-progress" id="readingProgress"></div>
+<div class="sidebar-overlay" id="sidebarOverlay"></div>
+<button aria-label="Buka/Tutup Daftar Isi" class="sidebar-toggle" id="sidebarToggle" type="button">&#9776;</button>
+<div class="layout">
+<aside id="sidebar"><h2>Daftar Isi</h2><ul class="toc-list">
+<li><a data-target="1-sasaran-funnel-120-hari-dan-batas-operasional" href="#1-sasaran-funnel-120-hari-dan-batas-operasional">1) Sasaran Funnel 120 Hari dan Batas Operasional</a></li>
+<li><a data-target="2-value-ladder-dan-produk-ascension" href="#2-value-ladder-dan-produk-ascension">2) Value Ladder dan Produk Ascension</a></li>
+<li><a data-target="3-arsitektur-funnel-utama" href="#3-arsitektur-funnel-utama">3) Arsitektur Funnel Utama</a></li>
+<li><a data-target="4-mapping-awareness-level-ke-tahap-funnel" href="#4-mapping-awareness-level-ke-tahap-funnel">4) Mapping Awareness Level ke Tahap Funnel</a></li>
+<li><a data-target="5-landing-page-wireframe-10-section" href="#5-landing-page-wireframe-10-section">5) Landing Page Wireframe 10 Section</a></li>
+<li><a data-target="6-hook-story-offer-untuk-iklan-dan-lp" href="#6-hook-story-offer-untuk-iklan-dan-lp">6) Hook-Story-Offer untuk Iklan dan LP</a></li>
+<li><a data-target="7-soap-opera-sequence-5-episode-pre-sale" href="#7-soap-opera-sequence-5-episode-pre-sale">7) Soap Opera Sequence 5 Episode (Pre-Sale)</a></li>
+<li><a data-target="8-attractive-character-dalam-eksekusi-funnel" href="#8-attractive-character-dalam-eksekusi-funnel">8) Attractive Character dalam Eksekusi Funnel</a></li>
+<li><a data-target="9-whatsapp-nurture-sequence-day-1-7" href="#9-whatsapp-nurture-sequence-day-1-7">9) WhatsApp Nurture Sequence Day 1-7</a></li>
+<li><a data-target="10-post-registration-journey-retention-referral" href="#10-post-registration-journey-retention-referral">10) Post-Registration Journey (Retention &amp; Referral)</a></li>
+<li><a data-target="11-conversion-benchmarks-dan-formula-kontrol" href="#11-conversion-benchmarks-dan-formula-kontrol">11) Conversion Benchmarks dan Formula Kontrol</a></li>
+<li><a data-target="12-funnel-leaks-paling-umum-dan-perbaikannya" href="#12-funnel-leaks-paling-umum-dan-perbaikannya">12) Funnel Leaks Paling Umum dan Perbaikannya</a></li>
+<li><a data-target="13-tool-stack-current-vs-recommended" href="#13-tool-stack-current-vs-recommended">13) Tool Stack: Current vs Recommended</a></li>
+<li><a data-target="14-roadmap-implementasi-faseminggu-12-minggu" href="#14-roadmap-implementasi-faseminggu-12-minggu">14) Roadmap Implementasi FASE/MINGGU (12 Minggu)</a></li>
+<li><a data-target="15-governance-sla-dan-guardrail-eksekusi" href="#15-governance-sla-dan-guardrail-eksekusi">15) Governance, SLA, dan Guardrail Eksekusi</a></li>
+<li><a data-target="16-template-ringkas-daily-control-board" href="#16-template-ringkas-daily-control-board">16) Template Ringkas Daily Control Board</a></li>
+</ul></aside>
+<main><nav class="back-home"><a href="../index.html">&larr; Back to Home Page</a></nav><article class="ebook-content"><section class="major-section"><h1>Funnels, Conversions &amp; Customer Journeys — Umrah Family</h1>
+<h2 id="1-sasaran-funnel-120-hari-dan-batas-operasional">1) Sasaran Funnel 120 Hari dan Batas Operasional</h2>
+<p>Funnel ini ngarahin calon jamaah dari impresi iklan sampai pembayaran pertama lewat jalur Meta Ads → Landing Page → WhatsApp → Kantor Perwakilan → Pendaftaran. Produk utama tetap paket Silver, Gold, dan Platinum dengan durasi 9 atau 12 hari di rentang Rp 31,5 Jt sampai Rp 43 Jt per orang. Tone funnel wajib amanah, hangat-kekeluargaan, dan profesional karena keputusan keluarga biasanya melibatkan 2 sampai 4 orang. Setiap aset funnel wajib tampilkan minimal 3 trust badge dari 5 bukti inti: 5.000+ jamaah, 100% keberangkatan, izin Kemenag, 50 kantor, partner maskapai premium.</p>
+<p>Target angka 120 hari:</p>
+<div class="table-scroll"><table>
+<thead><tr>
+<th>Metrik Funnel</th>
+<th>Baseline</th>
+<th>Target 120 Hari</th>
+<th>Definisi Ukur</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>CTR Meta Ads (cold traffic)</td>
+<td>1,4%</td>
+<td>2,2%</td>
+<td>Link click / impression</td>
+</tr>
+<tr>
+<td>CVR LP ke klik WA</td>
+<td>8%</td>
+<td>14%</td>
+<td>Klik tombol WA / unique visitor</td>
+</tr>
+<tr>
+<td>Response rate WA &lt; 5 menit</td>
+<td>38%</td>
+<td>75%</td>
+<td>Chat masuk dijawab &lt; 5 menit</td>
+</tr>
+<tr>
+<td>WA ke pendaftaran</td>
+<td>12%</td>
+<td>20%</td>
+<td>Chat aktif jadi form pendaftaran</td>
+</tr>
+<tr>
+<td>Pendaftaran ke pembayaran DP</td>
+<td>68%</td>
+<td>82%</td>
+<td>Form lengkap jadi transaksi DP</td>
+</tr>
+<tr>
+<td>CPA pendaftaran</td>
+<td>Rp 2,4 Jt</td>
+<td>Rp 1,6 Jt</td>
+<td>Spend / jumlah pendaftaran</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="2-value-ladder-dan-produk-ascension">2) Value Ladder dan Produk Ascension</h2>
+<p>Value ladder dipakai buat narik calon jamaah dari komitmen kecil ke komitmen besar, dengan risiko psikologis yang tetap rendah di tiap tahap.</p>
+<div class="table-scroll"><table>
+<thead><tr>
+<th>Tahap</th>
+<th>Penawaran</th>
+<th>Harga/Komitmen</th>
+<th>Tujuan Konversi</th>
+<th>Bukti yang Ditonjolkan</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Free konsultasi WhatsApp 15 menit</td>
+<td>Gratis</td>
+<td>Bangun trust awal</td>
+<td>100% keberangkatan + izin Kemenag</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Paket Silver</td>
+<td>Rp 31,5-34 Jt</td>
+<td>First purchase budget-conscious</td>
+<td>Transparansi biaya tanpa hidden fee</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Paket Gold</td>
+<td>Rp 35-39 Jt</td>
+<td>Upgrade kenyamanan</td>
+<td>Perbandingan fasilitas yang jelas</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Paket Platinum</td>
+<td>Rp 40-43 Jt</td>
+<td>Premium convenience</td>
+<td>Maskapai premium + pendampingan intensif</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Repeat Umrah program</td>
+<td>Paket khusus repeat</td>
+<td>Retensi 12-24 bulan</td>
+<td>Riwayat kepuasan jamaah lama</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Edukasi Haji</td>
+<td>Waiting list/konsultasi</td>
+<td>Ascension jangka panjang</td>
+<td>Kredibilitas pelayanan ibadah berkelanjutan</td>
+</tr>
+</tbody>
+</table></div>
+<p>Aturan eksekusi value ladder: Setiap calon jamaah yang belum siap beli harus tetap ditarik ke konsultasi gratis atau grup edukasi. Setiap calon jamaah yang sudah pernah umrah langsung terima opsi Gold/Platinum lebih awal di percakapan ke-2. Setiap jamaah yang selesai umrah masuk ke jalur repeat dan edukasi haji maksimal H+14 setelah pulang.</p>
+<h2 id="3-arsitektur-funnel-utama">3) Arsitektur Funnel Utama</h2>
+<h3 id="lead-funnel-volume">Lead Funnel (volume)</h3>
+<p>Lead funnel fokus ke volume inquiry lewat kombinasi iklan konversi WhatsApp dan iklan traffic ke LP. Komposisi budget awal: 60% untuk cold audience, 25% retargeting 30 hari, 15% lookalike dari database pendaftar. Lead magnet yang dipakai: checklist persiapan 30 hari, simulasi biaya keluarga 3 orang, dan jadwal keberangkatan terdekat.</p>
+<h3 id="application-funnel-kualitas-premiumgroup">Application Funnel (kualitas premium/group)</h3>
+<p>Application funnel dipakai untuk segmen premium dan grup keluarga lebih dari 4 orang. Flow: iklan/rujukan → halaman aplikasi singkat 7 pertanyaan → verifikasi admin → call 15 menit → penawaran paket prioritas. Kriteria masuk jalur ini: budget di atas Rp 38 Jt per orang atau kebutuhan kamar/itinerary khusus.</p>
+<h2 id="4-mapping-awareness-level-ke-tahap-funnel">4) Mapping Awareness Level ke Tahap Funnel</h2>
+<div class="table-scroll"><table>
+<thead><tr>
+<th>Awareness Level</th>
+<th>Kondisi Audiens</th>
+<th>Konten/Pesan</th>
+<th>Tujuan Micro-Conversion</th>
+<th>KPI Tahap</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Unaware</td>
+<td>Belum memikirkan umrah</td>
+<td>Konten keluarga dan nilai ibadah</td>
+<td>Video view 15 detik</td>
+<td>VTR 20%</td>
+</tr>
+<tr>
+<td>Problem-Aware</td>
+<td>Ingin umrah tapi bingung amanah</td>
+<td>Edukasi risiko travel tidak jelas</td>
+<td>Save konten checklist</td>
+<td>Save rate 3%</td>
+</tr>
+<tr>
+<td>Solution-Aware</td>
+<td>Tahu perlu travel resmi</td>
+<td>Perbandingan kriteria travel</td>
+<td>Klik ke LP</td>
+<td>CTR 2,2%</td>
+</tr>
+<tr>
+<td>Product-Aware</td>
+<td>Sudah kenal Umrah Family</td>
+<td>Testimoni + paket comparison</td>
+<td>Klik WhatsApp</td>
+<td>LP CVR 14%</td>
+</tr>
+<tr>
+<td>Most-Aware</td>
+<td>Siap berangkat</td>
+<td>Seat urgency + jadwal manasik</td>
+<td>Isi pendaftaran + bayar DP</td>
+<td>WA→Daftar 20%</td>
+</tr>
+</tbody>
+</table></div>
+<p>Tim ads harus pisahkan creative set berdasarkan awareness, jangan campur semua angle dalam 1 ad set. Tim admin juga harus sesuaikan skrip chat per awareness biar calon jamaah tidak merasa digiring terlalu cepat.</p>
+<h2 id="5-landing-page-wireframe-10-section">5) Landing Page Wireframe 10 Section</h2>
+<p>Wireframe ini dipakai untuk satu halaman utama dengan target klik WhatsApp dan pengajuan aplikasi premium.</p>
+<div class="table-scroll"><table>
+<thead><tr>
+<th>Section</th>
+<th>Isi Utama</th>
+<th>Elemen Wajib</th>
+<th>Target Perilaku</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>1. Hero + Trust Badges</td>
+<td>Headline amanah + subheadline paket</td>
+<td>5 badge trust, CTA WA di atas fold</td>
+<td>Klik WA 6% pengunjung</td>
+</tr>
+<tr>
+<td>2. Problem Agitation</td>
+<td>Risiko gagal berangkat/biaya tak jelas</td>
+<td>3 pain point nyata</td>
+<td>Scroll depth 50%</td>
+</tr>
+<tr>
+<td>3. Solusi Umrah Family</td>
+<td>Cara kerja pendampingan end-to-end</td>
+<td>Infografik alur 5 langkah</td>
+<td>Turunkan bounce rate</td>
+</tr>
+<tr>
+<td>4. Paket Comparison</td>
+<td>Silver vs Gold vs Platinum, 9 vs 12 hari</td>
+<td>Tabel fitur 8 bagian</td>
+<td>Klik detail paket</td>
+</tr>
+<tr>
+<td>5. Itinerary Snapshot</td>
+<td>Timeline perjalanan ringkas</td>
+<td>Hari-ke-hari inti ibadah</td>
+<td>Naikkan time on page</td>
+</tr>
+<tr>
+<td>6. Testimoni Jamaah</td>
+<td>Video + kutipan lintas kota</td>
+<td>Minimal 6 testimoni</td>
+<td>Bangun trust</td>
+</tr>
+<tr>
+<td>7. FAQ Kritis</td>
+<td>Pertanyaan biaya, legalitas, jadwal</td>
+<td>10 FAQ prioritas</td>
+<td>Kurangi keberatan chat</td>
+</tr>
+<tr>
+<td>8. Office Locator</td>
+<td>Daftar kantor perwakilan</td>
+<td>Peta + nomor WA cabang</td>
+<td>Dorong kunjungan kantor</td>
+</tr>
+<tr>
+<td>9. CTA Block Final</td>
+<td>Ajakan konsultasi + seat reminder</td>
+<td>Tombol WA sticky + form premium</td>
+<td>Konversi utama</td>
+</tr>
+<tr>
+<td>10. Compliance Footer</td>
+<td>Legal, izin, kebijakan</td>
+<td>Nomor izin + syarat layanan</td>
+<td>Tingkatkan kredibilitas</td>
+</tr>
+</tbody>
+</table></div>
+<p>Standar eksekusi LP: Waktu muat halaman di jaringan 4G tidak boleh lebih dari 2,8 detik. Setiap CTA harus punya UTM berbeda untuk source ads, organik, dan referral kantor. Tombol WA sticky aktif dari section 2 sampai footer tanpa nutupin konten inti.</p>
+<h2 id="6-hook-story-offer-untuk-iklan-dan-lp">6) Hook-Story-Offer untuk Iklan dan LP</h2>
+<p>Kerangka kreatif ini dipakai biar iklan dan LP ceritanya nyambung.</p>
+<div class="table-scroll"><table>
+<thead><tr>
+<th>Komponen</th>
+<th>Formula Operasional</th>
+<th>Contoh untuk ICP A</th>
+<th>Contoh untuk ICP B</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Hook</td>
+<td>1 masalah + 1 angka</td>
+<td>“3 dokumen yang sering membuat berangkat tertunda”</td>
+<td>“2 faktor kenyamanan yang paling menentukan ibadah 12 hari”</td>
+</tr>
+<tr>
+<td>Story</td>
+<td>Cerita 45-75 detik dengan bukti</td>
+<td>Kisah keluarga 4 orang dari daftar sampai berangkat</td>
+<td>Kisah repeat jamaah upgrade ke Platinum</td>
+</tr>
+<tr>
+<td>Offer</td>
+<td>Ajakan tindakan spesifik 1 langkah</td>
+<td>“Kirim kata DOKUMEN untuk checklist”</td>
+<td>“Jadwalkan call 15 menit untuk paket premium”</td>
+</tr>
+</tbody>
+</table></div>
+<p>Setiap creative wajib diuji minimal 3 hook berbeda per pekan dengan struktur story dan offer yang sama. Iklan pemenang dipilih dari biaya per klik WA paling rendah dan kualitas percakapan paling tinggi.</p>
+<h2 id="7-soap-opera-sequence-5-episode-pre-sale">7) Soap Opera Sequence 5 Episode (Pre-Sale)</h2>
+<p>Urutan ini dijalankan untuk retargeting 7 hari biar calon jamaah ngikutin alur emosi keputusan keluarga.</p>
+<div class="table-scroll"><table>
+<thead><tr>
+<th>Episode</th>
+<th>Narasi Inti</th>
+<th>Format</th>
+<th>CTA</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Titik awal: keluarga ingin umrah tapi takut salah pilih travel</td>
+<td>Reels 45 detik</td>
+<td>Lihat checklist travel amanah</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Hambatan: bingung biaya dan legalitas</td>
+<td>Carousel 7 slide</td>
+<td>Minta simulasi biaya keluarga</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Penemuan solusi: alur pendampingan 100% berangkat</td>
+<td>Video testimoni</td>
+<td>Chat admin untuk jadwal terdekat</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Bukti sosial: pengalaman jamaah lintas kota</td>
+<td>Video kompilasi 60 detik</td>
+<td>Pilih kantor perwakilan terdekat</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Keputusan: seat bulan depan terbatas</td>
+<td>LP block + WA</td>
+<td>Amankan slot konsultasi hari ini</td>
+</tr>
+</tbody>
+</table></div>
+<p>Jadwal tayang: episode 1-3 dalam 72 jam, episode 4-5 di 48 jam berikutnya. Kalau calon jamaah sudah chat setelah episode 2, admin pindahkan mereka ke jalur nurture WA dan hentikan retargeting agresif.</p>
+<h2 id="8-attractive-character-dalam-eksekusi-funnel">8) Attractive Character dalam Eksekusi Funnel</h2>
+<p>Karakter komunikasi dipakai buat bangun kedekatan tanpa nurunin profesionalisme.</p>
+<div class="table-scroll"><table>
+<thead><tr>
+<th>Peran</th>
+<th>Fungsi</th>
+<th>Frekuensi Muncul</th>
+<th>KPI Personal</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Pembimbing Ibadah</td>
+<td>Menjawab aspek manasik dan adab safar</td>
+<td>3 konten/minggu</td>
+<td>Save rate 4%</td>
+</tr>
+<tr>
+<td>Host Perjalanan</td>
+<td>Menunjukkan bukti lapangan dan alur keberangkatan</td>
+<td>2 konten/minggu</td>
+<td>View-through 25%</td>
+</tr>
+<tr>
+<td>Admin Konsultasi</td>
+<td>Menjawab biaya, jadwal, proses pendaftaran</td>
+<td>5 sesi story/minggu</td>
+<td>Response rate 75%</td>
+</tr>
+</tbody>
+</table></div>
+<p>Setiap karakter pakai skrip sapaan Bapak/Ibu/Kakak/Sahabat yang sama biar pengalaman lintas channel tetap nyambung.</p>
+<h2 id="9-whatsapp-nurture-sequence-day-1-7">9) WhatsApp Nurture Sequence Day 1-7</h2>
+<p>Sequence ini dibuat untuk siklus keputusan high-ticket keluarga yang biasanya butuh diskusi pasangan atau orang tua.</p>
+<div class="table-scroll"><table>
+<thead><tr>
+<th>Hari</th>
+<th>Tujuan</th>
+<th>Isi Pesan</th>
+<th>Aksi Admin</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Day 1</td>
+<td>Sambut dan kualifikasi</td>
+<td>Sapaan personal + 4 pertanyaan kebutuhan</td>
+<td>Tag ICP, budget, kota, target bulan</td>
+</tr>
+<tr>
+<td>Day 2</td>
+<td>Bangun trust legalitas</td>
+<td>Kirim bukti izin, 100% keberangkatan, profil kantor</td>
+<td>Tawarkan call 10-15 menit</td>
+</tr>
+<tr>
+<td>Day 3</td>
+<td>Klarifikasi paket</td>
+<td>Kirim perbandingan Silver/Gold/Platinum</td>
+<td>Tanyakan prioritas fasilitas</td>
+</tr>
+<tr>
+<td>Day 4</td>
+<td>Tangani keberatan biaya</td>
+<td>Kirim simulasi transparan tanpa hidden fee</td>
+<td>Jelaskan skema pembayaran</td>
+</tr>
+<tr>
+<td>Day 5</td>
+<td>Validasi sosial</td>
+<td>Kirim 2 testimoni sesuai profil calon</td>
+<td>Ajak kunjungan kantor terdekat</td>
+</tr>
+<tr>
+<td>Day 6</td>
+<td>Dorong keputusan</td>
+<td>Kirim ketersediaan seat dan jadwal manasik</td>
+<td>Buat deadline keputusan 48 jam</td>
+</tr>
+<tr>
+<td>Day 7</td>
+<td>Final close atau recycle</td>
+<td>Ringkas manfaat + langkah daftar</td>
+<td>Jika belum siap, masuk nurture 30 hari</td>
+</tr>
+</tbody>
+</table></div>
+<p>SLA percakapan: Balasan pertama maksimal 3 menit pada jam operasional 07.00-21.00. Follow-up manual jalan pukul 09.00, 14.00, dan 19.30. Percakapan tanpa respons 72 jam dipindah ke daftar retargeting konten edukasi.</p>
+<h2 id="10-post-registration-journey-retention-referral">10) Post-Registration Journey (Retention &amp; Referral)</h2>
+<p>Setelah pendaftaran terjadi, pengalaman pelanggan harus dipetakan biar pembatalan turun dan referral naik.</p>
+<div class="table-scroll"><table>
+<thead><tr>
+<th>Tahap</th>
+<th>Waktu</th>
+<th>Deliverable</th>
+<th>KPI</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Confirmation</td>
+<td>H+0</td>
+<td>Konfirmasi pembayaran + kontak PIC</td>
+<td>100% data valid</td>
+</tr>
+<tr>
+<td>Manasik Schedule</td>
+<td>H+1 sampai H+7</td>
+<td>Jadwal manasik online/offline</td>
+<td>Kehadiran manasik 90%</td>
+</tr>
+<tr>
+<td>Pre-Departure Checklist</td>
+<td>H-30 sampai H-3</td>
+<td>Dokumen, kesehatan, perlengkapan</td>
+<td>Dokumen lengkap 98%</td>
+</tr>
+<tr>
+<td>During Trip Assistance</td>
+<td>Hari keberangkatan sampai pulang</td>
+<td>Update grup harian + support lapangan</td>
+<td>Keluhan terselesaikan &lt; 24 jam</td>
+</tr>
+<tr>
+<td>Post-Trip Follow-up</td>
+<td>H+3 sampai H+14</td>
+<td>Form review + permintaan referral</td>
+<td>Review rate 40%, referral rate 15%</td>
+</tr>
+</tbody>
+</table></div>
+<p>Program referral dijalankan dengan insentif non-diskon, misalnya prioritas seat atau bonus sesi manasik keluarga. Cara ini jaga citra amanah dan hindari promosi berlebihan.</p>
+<h2 id="11-conversion-benchmarks-dan-formula-kontrol">11) Conversion Benchmarks dan Formula Kontrol</h2>
+<div class="table-scroll"><table>
+<thead><tr>
+<th>Tahap Konversi</th>
+<th>Target Minimum</th>
+<th>Target Ideal</th>
+<th>Alarm Trigger</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>CTR iklan ke LP/WA</td>
+<td>1,8%</td>
+<td>2,2%</td>
+<td>&lt;1,5% selama 3 hari</td>
+</tr>
+<tr>
+<td>LP CVR ke klik WA</td>
+<td>10%</td>
+<td>14%</td>
+<td>&lt;8% selama 500 visit</td>
+</tr>
+<tr>
+<td>WA response rate &lt;5 menit</td>
+<td>60%</td>
+<td>75%</td>
+<td>&lt;50% selama 7 hari</td>
+</tr>
+<tr>
+<td>WA ke pendaftaran</td>
+<td>15%</td>
+<td>20%</td>
+<td>&lt;12% selama 100 chat aktif</td>
+</tr>
+<tr>
+<td>Pendaftaran ke DP</td>
+<td>75%</td>
+<td>82%</td>
+<td>&lt;70% selama 1 bulan</td>
+</tr>
+<tr>
+<td>CAC per jamaah</td>
+<td>Rp 3,2 Jt</td>
+<td>Rp 2,5 Jt</td>
+<td>&gt;Rp 3,5 Jt</td>
+</tr>
+</tbody>
+</table></div>
+<p>Kontrol mingguan jalan Senin pukul 10.00 selama 45 menit dengan format “1 metrik, 1 akar masalah, 1 aksi 7 hari”. Tidak ada rapat tanpa keputusan numerik untuk minggu berikutnya.</p>
+<h2 id="12-funnel-leaks-paling-umum-dan-perbaikannya">12) Funnel Leaks Paling Umum dan Perbaikannya</h2>
+<div class="table-scroll"><table>
+<thead><tr>
+<th>Titik Bocor</th>
+<th>Gejala Angka</th>
+<th>Akar Masalah</th>
+<th>Fix 14 Hari</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Bounce tinggi di hero LP</td>
+<td>Bounce &gt;65%</td>
+<td>Headline tidak spesifik</td>
+<td>Uji 3 headline berbasis trust + angka</td>
+</tr>
+<tr>
+<td>Klik WA rendah</td>
+<td>CVR &lt;8%</td>
+<td>CTA terlalu umum</td>
+<td>Ubah CTA jadi tindakan 1 langkah + keyword</td>
+</tr>
+<tr>
+<td>Chat dingin setelah balasan pertama</td>
+<td>Drop-off &gt;45%</td>
+<td>Skrip admin terlalu panjang</td>
+<td>Ganti ke format 3 pertanyaan ringkas</td>
+</tr>
+<tr>
+<td>Banyak tanya harga lalu hilang</td>
+<td>No reply &gt;50%</td>
+<td>Tidak ada framing value</td>
+<td>Kirim perbandingan paket + prioritas kebutuhan</td>
+</tr>
+<tr>
+<td>Sudah daftar tapi tunda DP</td>
+<td>DP rate &lt;70%</td>
+<td>Ketidakjelasan timeline</td>
+<td>Kirim timeline H+0 sampai H-3 dalam 1 gambar</td>
+</tr>
+<tr>
+<td>Lead premium tidak terproses</td>
+<td>SLA &gt;30 menit</td>
+<td>Jalur aplikasi belum diprioritaskan</td>
+<td>Buat queue prioritas + callback slot harian</td>
+</tr>
+</tbody>
+</table></div>
+<p>Setiap leak wajib punya PIC tunggal dan target perbaikan numerik biar tidak mentok di diskusi.</p>
+<h2 id="13-tool-stack-current-vs-recommended">13) Tool Stack: Current vs Recommended</h2>
+<div class="table-scroll"><table>
+<thead><tr>
+<th>Layer</th>
+<th>Kondisi Saat Ini</th>
+<th>Upgrade Prioritas 30-60 Hari</th>
+<th>Dampak yang Ditargetkan</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Landing Page</td>
+<td>Static site sederhana</td>
+<td>LP builder dengan A/B testing</td>
+<td>CVR naik 2-4 poin</td>
+</tr>
+<tr>
+<td>Tracking</td>
+<td>UTM manual</td>
+<td>GA4 + server-side event + dashboard Looker Studio</td>
+<td>Akurasi atribusi naik</td>
+</tr>
+<tr>
+<td>WhatsApp</td>
+<td>WA manual per admin</td>
+<td>WA CRM dengan auto-tag + template</td>
+<td>Response rate naik 15 poin</td>
+</tr>
+<tr>
+<td>Lead Routing</td>
+<td>Distribusi semi-manual</td>
+<td>Round-robin ke 50 kantor berdasar kota</td>
+<td>Lead loss turun 30%</td>
+</tr>
+<tr>
+<td>Sales Script</td>
+<td>Berbeda antar admin</td>
+<td>Script bank 3 level awareness</td>
+<td>WA→Daftar naik 5 poin</td>
+</tr>
+<tr>
+<td>Remarketing</td>
+<td>Berbasis klik saja</td>
+<td>Sinkronisasi custom audience dari CRM</td>
+<td>CAC turun 10-15%</td>
+</tr>
+</tbody>
+</table></div>
+<p>Prioritas implementasi dimulai dari layer yang paling cepat ngasih dampak ke response rate dan CVR. Urutan praktis: WhatsApp CRM, LP A/B testing, lalu lead routing otomatis.</p>
+<h2 id="14-roadmap-implementasi-faseminggu-12-minggu">14) Roadmap Implementasi FASE/MINGGU (12 Minggu)</h2>
+<div class="table-scroll"><table>
+<thead><tr>
+<th>Minggu</th>
+<th>Prioritas</th>
+<th>Target Metrik</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>FASE 1 - Minggu 1</td>
+<td>Audit funnel existing dan petakan baseline tiap tahap</td>
+<td>Baseline dashboard siap 100%</td>
+</tr>
+<tr>
+<td>FASE 1 - Minggu 2</td>
+<td>Finalisasi skrip WA 3 awareness level</td>
+<td>Response rate naik ke 50%</td>
+</tr>
+<tr>
+<td>FASE 1 - Minggu 3</td>
+<td>Rilis LP versi 1 dengan wireframe 10 section</td>
+<td>LP CVR mencapai 10%</td>
+</tr>
+<tr>
+<td>FASE 2 - Minggu 4</td>
+<td>Jalankan A/B test headline, CTA, dan trust block</td>
+<td>Bounce rate turun 8 poin</td>
+</tr>
+<tr>
+<td>FASE 2 - Minggu 5</td>
+<td>Aktifkan retargeting soap sequence 5 episode</td>
+<td>CTR retargeting 2,8%</td>
+</tr>
+<tr>
+<td>FASE 2 - Minggu 6</td>
+<td>Terapkan queue prioritas untuk lead premium</td>
+<td>SLA premium &lt; 10 menit</td>
+</tr>
+<tr>
+<td>FASE 3 - Minggu 7</td>
+<td>Integrasikan WA CRM + auto-tag lead source</td>
+<td>Tagging valid 95%</td>
+</tr>
+<tr>
+<td>FASE 3 - Minggu 8</td>
+<td>Sinkronisasi routing lead ke kantor perwakilan</td>
+<td>Lead loss turun 20%</td>
+</tr>
+<tr>
+<td>FASE 3 - Minggu 9</td>
+<td>Optimasi skrip keberatan biaya dan legalitas</td>
+<td>WA→Daftar tembus 17%</td>
+</tr>
+<tr>
+<td>FASE 4 - Minggu 10</td>
+<td>Scale ad set pemenang + refresh creative</td>
+<td>CTR cold traffic 2,2%</td>
+</tr>
+<tr>
+<td>FASE 4 - Minggu 11</td>
+<td>Jalankan program review + referral pasca-trip</td>
+<td>Referral rate 12%</td>
+</tr>
+<tr>
+<td>FASE 4 - Minggu 12</td>
+<td>Review 120 hari dan tetapkan target kuartal berikutnya</td>
+<td>CAC turun ke Rp 2,5 Jt</td>
+</tr>
+</tbody>
+</table></div>
+<p>Keputusan akhir fase dilakukan pada rapat Jumat pekan terakhir setiap fase selama 60 menit. Hasil rapat wajib jadi dokumen 1 halaman berisi metrik aktual, keputusan budget, dan perubahan skrip yang disetujui.</p>
+<h2 id="15-governance-sla-dan-guardrail-eksekusi">15) Governance, SLA, dan Guardrail Eksekusi</h2>
+<p>Satu lead tidak boleh dihubungi lebih dari 2 admin dalam 24 jam biar pengalaman calon jamaah tetap jelas. Semua klaim promosi harus bisa diverifikasi pakai data legalitas dan histori keberangkatan. Bahasa promosi harus hindari kata-kata terlarang brand dan tone hiperbola yang merusak trust jangka panjang. Tim quality assurance audit 20 chat acak per minggu dengan skor minimum 85/100 untuk kelayakan follow-up.</p>
+<h2 id="16-template-ringkas-daily-control-board">16) Template Ringkas Daily Control Board</h2>
+<p>Template ini dipakai harian jam 21.00 biar perbaikan funnel jalan cepat.</p>
+<div class="table-scroll"><table>
+<thead><tr>
+<th>Item Harian</th>
+<th>Target</th>
+<th>Realisasi</th>
+<th>Keputusan Besok</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Lead masuk</td>
+<td>120</td>
+<td>isi harian</td>
+<td>Scale / hold budget</td>
+</tr>
+<tr>
+<td>Klik WA</td>
+<td>45</td>
+<td>isi harian</td>
+<td>Ubah CTA jika &lt; target</td>
+</tr>
+<tr>
+<td>Respons &lt;5 menit</td>
+<td>75%</td>
+<td>isi harian</td>
+<td>Tambah shift admin</td>
+</tr>
+<tr>
+<td>WA ke daftar</td>
+<td>20%</td>
+<td>isi harian</td>
+<td>Revisi skrip keberatan</td>
+</tr>
+<tr>
+<td>Daftar ke DP</td>
+<td>82%</td>
+<td>isi harian</td>
+<td>Follow-up timeline pembayaran</td>
+</tr>
+</tbody>
+</table></div>
+<p>Dengan ritme kontrol harian dan review mingguan yang disiplin, funnel Umrah Family bisa jaga kualitas trust sambil nurunin biaya akuisisi secara terukur.</p></section></article></main>
+</div>
+<button aria-label="Kembali ke atas" class="back-to-top" id="backToTop" type="button">&#8593;</button>
+<script>
+    (function () {
+      'use strict';
+      var sidebar = document.getElementById('sidebar');
+      var overlay = document.getElementById('sidebarOverlay');
+      var toggle = document.getElementById('sidebarToggle');
+      var backBtn = document.getElementById('backToTop');
+      var progressBar = document.getElementById('readingProgress');
+      var tocLinks = Array.from(document.querySelectorAll('.toc-list a'));
+      var sections = tocLinks
+        .map(function (a) { return document.getElementById(a.dataset.target); })
+        .filter(Boolean);
+
+      /* --- Sidebar open/close with overlay --- */
+      function openSidebar() {
+        sidebar.classList.add('open');
+        overlay.classList.add('show');
+        document.body.style.overflow = 'hidden';
+      }
+      function closeSidebar() {
+        sidebar.classList.remove('open');
+        overlay.classList.remove('show');
+        document.body.style.overflow = '';
+      }
+
+      if (toggle) {
+        toggle.addEventListener('click', function () {
+          if (sidebar.classList.contains('open')) { closeSidebar(); }
+          else { openSidebar(); }
+        });
+      }
+      if (overlay) {
+        overlay.addEventListener('click', closeSidebar);
+      }
+
+      /* --- Swipe to close sidebar --- */
+      var touchStartX = 0;
+      var touchStartY = 0;
+      sidebar.addEventListener('touchstart', function (e) {
+        touchStartX = e.touches[0].clientX;
+        touchStartY = e.touches[0].clientY;
+      }, { passive: true });
+      sidebar.addEventListener('touchend', function (e) {
+        var dx = e.changedTouches[0].clientX - touchStartX;
+        var dy = Math.abs(e.changedTouches[0].clientY - touchStartY);
+        if (dx < -60 && dy < 80) { closeSidebar(); }
+      }, { passive: true });
+
+      /* --- TOC link click closes sidebar on mobile --- */
+      tocLinks.forEach(function (a) {
+        a.addEventListener('click', function () {
+          if (window.innerWidth <= 1024) { closeSidebar(); }
+        });
+      });
+
+      /* --- Scroll spy --- */
+      var observer = new IntersectionObserver(
+        function (entries) {
+          entries.forEach(function (entry) {
+            if (!entry.isIntersecting) return;
+            var id = entry.target.id;
+            tocLinks.forEach(function (link) {
+              if (link.dataset.target === id) {
+                link.classList.add('active');
+                /* Auto-scroll TOC to active item on desktop */
+                if (window.innerWidth > 1024 && sidebar.scrollHeight > sidebar.clientHeight) {
+                  link.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+                }
+              } else {
+                link.classList.remove('active');
+              }
+            });
+          });
+        },
+        { rootMargin: '-30% 0px -55% 0px', threshold: 0.1 }
+      );
+      sections.forEach(function (sec) { observer.observe(sec); });
+
+      /* --- Reading progress bar + back-to-top --- */
+      var ticking = false;
+      window.addEventListener('scroll', function () {
+        if (!ticking) {
+          window.requestAnimationFrame(function () {
+            var scrollTop = window.scrollY || document.documentElement.scrollTop;
+            var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            if (docHeight > 0) {
+              progressBar.style.width = Math.min((scrollTop / docHeight) * 100, 100) + '%';
+            }
+            if (scrollTop > 400) { backBtn.classList.add('show'); }
+            else { backBtn.classList.remove('show'); }
+            ticking = false;
+          });
+          ticking = true;
+        }
+      }, { passive: true });
+
+      backBtn.addEventListener('click', function () {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+
+      /* --- Profile accordion on mobile --- */
+      function initAccordion() {
+        var isMobile = window.innerWidth <= 768;
+        var profiles = document.querySelectorAll('h3[id]');
+        profiles.forEach(function (h3) {
+          /* Only profile headings (G0-x, numbered, S-x, T-x) */
+          var text = h3.textContent || '';
+          if (!/^(G0-|[0-9]+\.|S[0-9]|T-[0-9])/.test(text.trim())) return;
+
+          var existingBtn = h3.querySelector('.profile-collapse-btn');
+          if (!existingBtn) {
+            var btn = document.createElement('button');
+            btn.className = 'profile-collapse-btn';
+            btn.textContent = '▼';
+            btn.setAttribute('aria-label', 'Buka/tutup profil');
+            h3.appendChild(btn);
+          }
+
+          var btn = h3.querySelector('.profile-collapse-btn');
+          /* Collect siblings until next h3 or h2 */
+          var body = h3.nextElementSibling;
+          if (body && body.classList.contains('profile-body')) {
+            /* Already wrapped */
+            if (isMobile && !body.classList.contains('collapsed')) {
+              body.classList.add('collapsed');
+              btn.textContent = '▶';
+            } else if (!isMobile) {
+              body.classList.remove('collapsed');
+              btn.textContent = '▼';
+            }
+            return;
+          }
+
+          /* Wrap profile content in a div */
+          var wrapper = document.createElement('div');
+          wrapper.className = 'profile-body';
+          var sibling = h3.nextElementSibling;
+          while (sibling && sibling.tagName !== 'H3' && sibling.tagName !== 'H2') {
+            var next = sibling.nextElementSibling;
+            wrapper.appendChild(sibling);
+            sibling = next;
+          }
+          h3.parentNode.insertBefore(wrapper, sibling);
+
+          if (isMobile) {
+            wrapper.classList.add('collapsed');
+            btn.textContent = '▶';
+          }
+        });
+      }
+
+      /* Toggle accordion on click */
+      document.addEventListener('click', function (e) {
+        if (!e.target.classList.contains('profile-collapse-btn')) return;
+        var h3 = e.target.closest('h3');
+        if (!h3) return;
+        var body = h3.nextElementSibling;
+        if (body && body.classList.contains('profile-body')) {
+          body.classList.toggle('collapsed');
+          e.target.textContent = body.classList.contains('collapsed') ? '▶' : '▼';
+        }
+      });
+
+      /* Init accordion on load and resize */
+      initAccordion();
+      var resizeTimer;
+      window.addEventListener('resize', function () {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(initAccordion, 250);
+      });
+
+      /* --- Keyboard: Escape closes sidebar --- */
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && sidebar.classList.contains('open')) {
+          closeSidebar();
+        }
+      });
+    })();
+    
+</script>
+</body>
+</html>
